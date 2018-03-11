@@ -1,0 +1,76 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    background: rgb(226, 225, 225);
+}
+
+.mainTitle{
+    padding: 10px 0;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.wrapper{
+    width: 100%;
+    
+    .buttons{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        .btn{
+            background: rgb(40, 111, 192);
+            color: #ddd;
+            transition: all 0.3s ease-in-out;
+            padding: 10px;
+            flex: 1;
+            text-align: center;
+            &:hover{
+                background: #ddd;
+                color: rgb(40, 111, 192); 
+            }
+        }
+    }
+    .nextTitle{
+        text-align: center;
+        padding: 10px 0;
+    }
+}
+#target{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background: #ddd;
+    color: rgb(7, 7, 7);
+    line-height: 2;
+
+}
+.placeHolder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    padding: 20px 10px;
+    background: rgb(33, 104, 161);
+    color: #fff;
+    text-align: center;
+    border-radius: 3px;
+    margin: 2px;
+    height: 50px;
+    box-shadow: 2px 2px 10px 0px #0000009e;
+    .number{
+        flex: 1;
+    }
+    .title{
+        flex: 9;
+    }
+}
+
+#btnX{
+    padding: 10px 20px;
+    background: #000;
+    color: #fff;
+}
+

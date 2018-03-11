@@ -1,0 +1,19 @@
+{
+  "name": "vademecumjs",
+  "version": "1.0.0",
+  "description": "zbior przykladowych rozwiazan js",
+  "main": "Gruntfile.js",
+  "dependencies": {
+    "grunt": "^1.0.2",
+    "grunt-timer": "^0.6.0"
+  },
+  "devDependencies": {
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0"
+  },
+  "scripts": {
+    "test": "vade"
+  },
+  "author": "chester",
+  "license": "MIT"
+}

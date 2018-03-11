@@ -1,0 +1,65 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  background: #e2e1e1; }
+
+.mainTitle {
+  padding: 10px 0;
+  text-align: center;
+  font-size: 2rem; }
+
+.wrapper {
+  width: 100%; }
+  .wrapper .buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; }
+    .wrapper .buttons .btn {
+      background: #286fc0;
+      color: #ddd;
+      transition: all 0.3s ease-in-out;
+      padding: 10px;
+      flex: 1;
+      text-align: center; }
+      .wrapper .buttons .btn:hover {
+        background: #ddd;
+        color: #286fc0; }
+  .wrapper .nextTitle {
+    text-align: center;
+    padding: 10px 0; }
+
+#target {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background: #ddd;
+  color: #070707;
+  line-height: 2; }
+
+.placeHolder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  padding: 20px 10px;
+  background: #2168a1;
+  color: #fff;
+  text-align: center;
+  border-radius: 3px;
+  margin: 2px;
+  height: 50px;
+  box-shadow: 2px 2px 10px 0px #0000009e; }
+  .placeHolder .number {
+    flex: 1; }
+  .placeHolder .title {
+    flex: 9; }
+
+#btnX {
+  padding: 10px 20px;
+  background: #000;
+  color: #fff; }
+
+/*# sourceMappingURL=total.css.map */
