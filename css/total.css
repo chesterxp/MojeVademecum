@@ -26,6 +26,45 @@ body {
       .wrapper .buttons .btn:hover {
         background: #ddd;
         color: #286fc0; }
+  .wrapper .box2 {
+    width: 300px;
+    height: 100px;
+    background: #1652ac;
+    color: #fff;
+    box-shadow: inset 0 0 20px #ddd;
+    margin: 40px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    padding: 20px 40px;
+    border: 20px solid black; }
+  .wrapper #btnX2 {
+    padding: 20px;
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    background: pink;
+    color: black; }
+  .wrapper #capturing {
+    border: 3px solid black;
+    text-align: center;
+    width: 500px;
+    margin: 20px auto; }
+    .wrapper #capturing #div1 {
+      border: 3px solid black;
+      width: 400px;
+      margin: 20px auto; }
+      .wrapper #capturing #div1:hover {
+        background: burlywood; }
+    .wrapper #capturing #div2 {
+      border: 3px solid black;
+      width: 300px;
+      margin: 20px auto; }
+    .wrapper #capturing #div3 {
+      border: 3px solid black;
+      width: 200px;
+      margin: 20px auto; }
   .wrapper .nextTitle {
     text-align: center;
     padding: 10px 0; }
@@ -59,7 +98,18 @@ body {
 
 #btnX {
   padding: 10px 20px;
-  background: #000;
-  color: #fff; }
+  color: #fff;
+  transition: all 1s ease-in-out; }
+
+#footer {
+  background: #464545;
+  color: bisque;
+  font-size: 20px;
+  padding: 10px 20px; }
+
+.foo {
+  background: red;
+  color: green;
+  text-align: center; }
 
 /*# sourceMappingURL=total.css.map */

@@ -155,7 +155,7 @@
         }, 1000);
     })
 
-    console.log($('#footer').offset().top);
+    // console.log($('#footer').offset().top);
 
         // $('a[href^="#"]').on('click', function(event) {
             

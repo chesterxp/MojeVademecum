@@ -1,5 +1,5 @@
 //Animacja w js vs JQ
-    //btn1-----------------------------------
+    /*//btn1-----------------------------------
     let btn1 = document.querySelector('.btn1'),
         box = document.querySelector('.box'),
         move = document.querySelector('.move1');
@@ -60,9 +60,9 @@
         })
     })
 
+    */
 
-
-///----------------------------------------------------arries exerices---------------------
+///--------------arries exerices---------------------
     function reverseString(str){
         var newWord = '';
         // for(var i=str.length-1;i>=0;i--){
@@ -126,7 +126,7 @@
     // console.log(reg);
     // console.log(reg2);
 
-// -----------------------------------------------Cwiczenia z stringami -------------------
+// ---------------Cwiczenia z stringami -------------------
     var car = 'Samochod';
     var zmiana = "X";
     var liczba = 130.5654321;
@@ -149,7 +149,7 @@
     // let numberr = 10;
     // ++numberr;
     // console.log(numberr); 
-//--------------------------Skrócona wersja funkcji -----------------------------------
+//----------------Skrócona wersja funkcji -----------------------------------
     // if(liczba > 100){
     //     console.log('wieksza');
     // }
@@ -171,7 +171,7 @@
     //     }
     // }
 
-//-------------------------Obiekty------------------------------------
+//----------------Obiekty------------------------------------
     var osoba = {
         imie: "jan",
         nazwisko : 'kowalski',
@@ -187,7 +187,7 @@
     // osoba.zmiana();
 
 
-//---------------------tablice---------------------------------------------
+//---------------tablice---------------------------------------------
     var tablica = ['dom','rower','auto','samolot','komputer'];
     // var tablica2 = ['dom2','rower2','auto2','samolot2','komputer2'];
 
@@ -238,6 +238,7 @@
     // let a7 = parseFloat(dom);
     // console.log(a7);
 
+//--------------Ćwiczenia z Math-----------------
     let full = 3.5421;
     // let a8 = Math.abs(full);//3.5421
     // let a8 = Math.ceil(full);//4
@@ -248,13 +249,163 @@
     // let a8 = Math.floor(Math.random()*100);
     // let a8 = Math.floor(Math.random()*100);
 
+//----------------Cwiczenia z Date()-------------------
     let data = new Date();
 
     // let a9 = data.getFullYear();
     // let a9 = data.getDate();
     let a9 = data.toString();
 
-    console.log(data);
-    console.log(a9);
+    // console.log(data);
+    // console.log(a9);
 
 //---------------Wyłapywanie błędów----------------------
+    try {
+        let domy = "Opel Astra";
+        // console.log(dom);
+    }
+    catch(e){
+        console.log(e);
+    }
+    // console.log('koniec');
+
+    function powitaj(imie){
+        if(!imie){
+            throw new Error('Imie nie zostało podane')
+        }
+        else{
+            return `Cześć ${imie}`
+        }
+    }
+
+    // powitaj();
+    // console.log('nie ma imienia')
+
+//----------------window.navigator-------------------
+
+    // console.log(window.navigator.appCodeName);
+    // console.log(window.navigator.language);
+    // console.log(window.navigator.appVersion);
+    // console.log(navigator.userAgent);
+    // console.log(window.navigator);
+//----------------window.screen-------------------
+    // console.log(screen);
+    // console.log('width',screen.width);
+    // console.log('height',screen.height);
+    // console.log('-------------------------')
+    // console.log('orientation', screen.orientation.type);
+    // console.log('colorDepth', screen.colorDepth);
+
+//----------------window.location-------------------
+    // console.log(location.href);
+    // console.log(location.hostname);
+    // console.log(location.pathname);
+    // console.log(location.protocol);
+
+//----------------setTimeout-------------------
+    function timer(){
+        let timer = setInterval(pokazLog,1000);
+        let liczbaa = 100;
+        function pokazLog(){
+            console.log('setInterval działa: ',liczbaa);
+            liczbaa++;
+        };
+
+        setTimeout(function(){
+            console.log('koniec');
+            clearInterval(timer)
+        },10000)
+    }
+//szerokość ---------wysokość
+    let box2 = document.getElementById('box2');
+    //offsetTop;
+    //offsetLeft;
+    let top4 = box2.offsetWidth;//szerokość z padingiem i borderem
+    let top5 = box2.offsetHeight;//wysokość jw
+    let top6 = box2.clientWidth;//szerokośc bez bordera
+    let top7 = box2.clientHeight;//wysokośc bez bordera
+    let top8 = innerWidth;//szerokość okna przeglądarki
+    let top9 = innerHeight;//wysokośc okna przeglądarki
+    let top10 = box2.scrollTop;//wysokośc okna przeglądarki
+
+    console.log(top10);
+
+    let btnX2 = document.getElementById('btnX2');
+    btnX2.addEventListener('click',function(){
+        scrollTop : 100;
+        console.log('klik btnX2')
+    })
+
+//----------------zadania z DOM-------------------
+    let lapek = document.getElementsByName('klikk');
+    // console.log(lapek);
+
+    let all = document.querySelector('.mainTitle')
+    all.style.border = '2px solid black';
+
+    let buttons = document.querySelector('.buttons');
+    // buttons.querySelectorAll('.btn').forEach(function(el){
+    //     el.style.background  = "pink";
+    // })
+    // console.log(buttons.innerHTML);
+    // console.log(buttons.outerHTML);
+    // console.log(buttons.textContent);
+    let nowyEl = document.createElement('div');
+    nowyEl.className = 'btn btn9';
+    nowyEl.innerText = "Nowy guzik";
+    // nowyEl.innerHTML = `< class="btn btn9">Nowy guzik`;
+    let btn3 = document.querySelector('.btn3');
+    buttons.appendChild(nowyEl)
+    // buttons.insertBefore(nowyEl,btn3);
+    // buttons.replaceChild(nowyEl,btn3)
+    // buttons.removeChild(btn3)
+    let a10 = buttons.children;
+    // console.log(a10);
+    let a11 = document.querySelector('#footer');
+    a11.setAttribute('name2','wow');
+    let a12 = a11.getAttribute('name');
+    // console.log(a12);
+    // if(a11.hasAttribute('namee')){
+    //     console.log('Ma klase name');
+    // }
+    // else{
+    //     console.log('nie ma name');
+    // }
+
+    let btnX = document.getElementById('btnX');
+    btnX.addEventListener('click', function(){
+        // console.log('kliknij')
+        btnX.classList.toggle('foo');
+    })
+    btnX.style['margin-bottom'] = '100px';
+    // console.log(window.getComutedStyle(btnX))
+    // let a13 = window.getComputedStyle(btnX);
+    // console.log(a13);
+
+
+//co to jest capturing 
+    let div = document.getElementById('capturing');
+    let divs = div.getElementsByTagName('div');
+
+    // console.log(divs);
+    // for (let i=0;i<divs.length;i++){
+    //     divs[i].addEventListener('click', clickHandler);
+    //     divs[i].addEventListener('click', click2);
+    // }
+    function clickHandler(e){
+        // e.stopPropagation();
+
+        alert(this.getAttribute('id'));
+        e.stopImmediatePropagation();
+        // alert('testy');
+    }
+    //false -> babling od 3 2 1
+    //true -> capturing od 1 2 3
+    //e.stopPropagation(); -> odpala sie tylko funkcja na konkretnym elemencie. Nie działa na rodzicach elementy.
+    //e.stopImmediatePropagation(); -> zatrzymuje działanie innych funkcji wywoływanych kliknięciem
+
+    function click2(e){
+        alert('testy3');
+    }
+
+//kolejne
