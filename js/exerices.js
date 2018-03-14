@@ -238,6 +238,111 @@
     // let a7 = parseFloat(dom);
     // console.log(a7);
 
+    
+    let tablica3 = [1,2,3,4,5,6,7,8,9,10];
+
+    function chunkArray(arr,number){
+        let bigArr =[];
+        let i = 0;
+
+        while(i<arr.length){
+            bigArr.push(arr.slice(i,i+number));
+            i += number;
+        }
+        console.log(bigArr);
+    }
+    // chunkArray(tablica3,3);
+    //cwiczenie z łączeniem 
+    //solution 1
+    let tablica4 = [[1,2,3,5,2],[1,3,4],[3,1,5,6],[7,8,9],[9]];
+
+    function polacz(arr){
+        let newArr = [];
+        for(var i=0;i<tablica4.length;i++){
+            for(var j=0;j<tablica4[i].length;j++){
+                newArr.push(tablica4[i][j]);
+            }
+        }
+        console.log('1 opcja',newArr);
+    }
+
+    polacz(tablica4);
+    //solution 2
+    function polacz2(arr){
+        return arr.reduce(function(a,b){
+            return a.concat(b);
+        })
+    }
+
+    console.log('2 opcja',polacz2(tablica4));
+    //solution 3 - do nauczenia !!!!xp!!!!!
+    function polacz3(arr){
+        return [].concat.apply([],arr);
+    }
+    console.log('3 opcja',polacz3(tablica4));
+    //solution 4 - do nauczenia !!!!xp!!!!!
+    function polacz3(arr){
+        return [].concat(...arr);
+    }
+    console.log('4 opcja',polacz3(tablica4));
+
+
+    function polacz5(arr){
+        return [].concat(...arr);
+    }
+    let tablica5 = [['dom'],[1,3,4],[3,1,5,6],[7,8,9],[9]];
+    console.log('Przykład',polacz5(tablica5))
+
+    //isAnagram
+
+    function isAnagram(str1, str2){
+        let result = modyfikacja(str1) === modyfikacja(str2);
+
+        if(result === true){
+            console.log(`Wyrazy ${word1} oraz ${word2} są anagramem`);   
+        }
+        else{
+            console.log(`Wyrazy ${word1} oraz ${word2} nie są anagramem`);  
+        }
+
+    }
+    function modyfikacja(str){
+        return str
+            .replace(/[^\w]/g,'')
+            .toLowerCase()
+            .split('')
+            .sort()
+            .join('');
+    }
+
+    let word1 = "doma",
+        word2 = "moda";
+
+    isAnagram(word1,word2);
+
+
+    //szefrowanie wiadomosci
+    function letterChanges(str){
+        let newStr = str.toLowerCase().replace(/[a-z]/gi, function(char){
+            if(char === 'z' || char === "Z"){
+                return "a";
+            }
+            else{
+                return String.fromCharCode(char.charCodeAt()+1);
+            }
+        });
+
+        newStr = newStr.replace(/a|e|i|o|u/gi, function(vowel){
+            return vowel.toUpperCase();
+        })
+
+        return newStr;
+
+    }
+
+
+    console.log(letterChanges('Siema co ty tam'));
+
 //--------------Ćwiczenia z Math-----------------
     let full = 3.5421;
     // let a8 = Math.abs(full);//3.5421
@@ -328,7 +433,7 @@
     let top9 = innerHeight;//wysokośc okna przeglądarki
     let top10 = box2.scrollTop;//wysokośc okna przeglądarki
 
-    console.log(top10);
+    // console.log(top10);
 
     let btnX2 = document.getElementById('btnX2');
     btnX2.addEventListener('click',function(){
