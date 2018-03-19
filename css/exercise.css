@@ -1,0 +1,55 @@
+body {
+  margin: 0;
+  padding: 0; }
+
+* {
+  box-sizing: border-box; }
+
+.buttons2 {
+  background: coral;
+  height: 400px;
+  position: relative; }
+  .buttons2 .btnAnimate {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 50px;
+    width: 200px;
+    text-align: center;
+    color: #111111;
+    border: 2px solid #fff;
+    border-radius: 3px;
+    font-size: 17px;
+    line-height: 47px;
+    font-weight: bold;
+    overflow: hidden;
+    cursor: pointer; }
+  .buttons2 .efect1:before {
+    content: "";
+    width: 0px;
+    height: 55px;
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    left: -10%;
+    transform: translateY(-50%) skewX(-20deg);
+    transition: all 0.5s;
+    z-index: -1; }
+  .buttons2 .efect1:hover:before {
+    width: 350px; }
+  .buttons2 .efect2:before {
+    content: "";
+    width: 0px;
+    height: 55px;
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) skewX(-20deg);
+    transition: all 0.5s;
+    z-index: -1; }
+  .buttons2 .efect2:hover:before {
+    width: 350px; }
+
+/*# sourceMappingURL=exercise.css.map */

@@ -534,31 +534,31 @@
     $('.lazy').lazy();
 
 //------------------form validation------------------
-const patterns = {
-    telephone: /^[0-9]{9}$/,
-    username: /^[a-zA-Z0-9]{5,12}$/,
-    password:/^[\w@-]{8,20}$/,
-    email: /^([a-z\d\.-]+)@([a-z\d-\.]+)\.([a-z]{2,3})(\.[a-z])?$/,
-    slug:/^[a-z\d]{8,20}$/
-}
-
-const inputs = document.querySelectorAll('#mainForm input');
-
-function validation(field, regex){
-    if(regex.test(field.value)){
-        field.parentElement.className = 'valid';
+    const patterns = {
+        telephone: /^[0-9]{9}$/,
+        username: /^[a-zA-Z0-9]{5,12}$/,
+        password:/^[\w@-]{8,20}$/,
+        email: /^([a-z\d\.-]+)@([a-z\d-\.]+)\.([a-z]{2,3})(\.[a-z])?$/,
+        slug:/^[a-z\d]{8,20}$/
     }
-    else{
-        field.parentElement.className = 'invalid';
+
+    const inputs = document.querySelectorAll('#mainForm input');
+
+    function validation(field, regex){
+        if(regex.test(field.value)){
+            field.parentElement.className = 'valid';
+        }
+        else{
+            field.parentElement.className = 'invalid';
+        }
     }
-}
-inputs.forEach(function(input){
-    input.addEventListener('keyup', function(e){
-        let name = e.target.attributes.name.value;
-        // console.log('target',e.target.value);
-        // console.log('reg',name);
-        validation(e.target, patterns[e.target.attributes.name.value]);
-        
-    });
-})
+    inputs.forEach(function(input){
+        input.addEventListener('keyup', function(e){
+            let name = e.target.attributes.name.value;
+            // console.log('target',e.target.value);
+            // console.log('reg',name);
+            validation(e.target, patterns[e.target.attributes.name.value]);
+            
+        });
+    })
 
