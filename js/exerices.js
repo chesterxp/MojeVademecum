@@ -266,7 +266,7 @@
         console.log('1 opcja',newArr);
     }
 
-    polacz(tablica4);
+    // polacz(tablica4);
     //solution 2
     function polacz2(arr){
         return arr.reduce(function(a,b){
@@ -274,24 +274,24 @@
         })
     }
 
-    console.log('2 opcja',polacz2(tablica4));
+    // console.log('2 opcja',polacz2(tablica4));
     //solution 3 - do nauczenia !!!!xp!!!!!
     function polacz3(arr){
         return [].concat.apply([],arr);
     }
-    console.log('3 opcja',polacz3(tablica4));
+    // console.log('3 opcja',polacz3(tablica4));
     //solution 4 - do nauczenia !!!!xp!!!!!
     function polacz3(arr){
         return [].concat(...arr);
     }
-    console.log('4 opcja',polacz3(tablica4));
+    // console.log('4 opcja',polacz3(tablica4));
 
 
     function polacz5(arr){
         return [].concat(...arr);
     }
     let tablica5 = [['dom'],[1,3,4],[3,1,5,6],[7,8,9],[9]];
-    console.log('Przykład',polacz5(tablica5))
+    // console.log('Przykład',polacz5(tablica5))
 
     //isAnagram
 
@@ -318,7 +318,7 @@
     let word1 = "doma",
         word2 = "moda";
 
-    isAnagram(word1,word2);
+    // isAnagram(word1,word2);
 
 
     //szefrowanie wiadomosci
@@ -331,17 +331,13 @@
                 return String.fromCharCode(char.charCodeAt()+1);
             }
         });
-
         newStr = newStr.replace(/a|e|i|o|u/gi, function(vowel){
             return vowel.toUpperCase();
         })
-
         return newStr;
-
     }
-
-
-    console.log(letterChanges('Siema co ty tam'));
+    
+    // console.log(letterChanges('Siema co ty tam'));
 
 //--------------Ćwiczenia z Math-----------------
     let full = 3.5421;
@@ -421,7 +417,7 @@
             clearInterval(timer)
         },10000)
     }
-//szerokość ---------wysokość
+//-----------------szerokość ---------wysokość-----offsetWidth
     let box2 = document.getElementById('box2');
     //offsetTop;
     //offsetLeft;
@@ -514,3 +510,55 @@
     }
 
 //kolejne
+    //cwiczenia z repeat/match i regularne
+    let sent1 = "Jade sobie rowerem przez miasto I jem kanapki";
+    let newSent1 = sent1.replace(/[a|i]/g, "A");
+    // let newSent1 = sent1.match(/[i]/gi).join("").toLowerCase().split('');
+    // let newSent1 = sent1.match(/[i|a]/gi);
+    // console.log(newSent1);
+
+    //var String.fromCharCode(65)
+    let res = String.fromCharCode(68);
+    // console.log(res);
+    let car2 = "MerceDes";
+    let char = car2.charAt(1);
+    // console.log(char);
+
+    let letter2 = car2.charCodeAt(5);
+    // console.log(letter2);
+
+    // let letter3 = String.fromCharCode(68);
+
+//lazyload
+
+    $('.lazy').lazy();
+
+//------------------form validation------------------
+const patterns = {
+    telephone: /^[0-9]{9}$/,
+    username: /^[a-zA-Z0-9]{5,12}$/,
+    password:/^[\w@-]{8,20}$/,
+    email: /^([a-z\d\.-]+)@([a-z\d-\.]+)\.([a-z]{2,3})(\.[a-z])?$/,
+    slug:/^[a-z\d]{8,20}$/
+}
+
+const inputs = document.querySelectorAll('#mainForm input');
+
+function validation(field, regex){
+    if(regex.test(field.value)){
+        field.parentElement.className = 'valid';
+    }
+    else{
+        field.parentElement.className = 'invalid';
+    }
+}
+inputs.forEach(function(input){
+    input.addEventListener('keyup', function(e){
+        let name = e.target.attributes.name.value;
+        // console.log('target',e.target.value);
+        // console.log('reg',name);
+        validation(e.target, patterns[e.target.attributes.name.value]);
+        
+    });
+})
+

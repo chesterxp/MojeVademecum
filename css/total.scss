@@ -3,8 +3,11 @@ body{
     padding: 0;
     font-size: 16px;
     background: rgb(226, 225, 225);
+    font-family: 'Roboto', sans-serif;
 }
-
+*{
+    box-sizing: border-box;
+}
 .mainTitle{
     padding: 10px 0;
     text-align: center;
@@ -13,7 +16,6 @@ body{
 
 .wrapper{
     width: 100%;
-    
     .buttons{
         display: flex;
         justify-content: center;
@@ -54,6 +56,20 @@ body{
         background: pink;
         color: black;
     }
+    .nextTitle{
+        text-align: center;
+        padding: 10px 0;
+    }
+    #target{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        background: #ddd;
+        color: rgb(7, 7, 7);
+        line-height: 2;
+    
+    }
     #capturing{
         border: 3px solid black;
         text-align: center;
@@ -78,60 +94,85 @@ body{
             margin: 20px auto;
         }
     }
-    .nextTitle{
+    .lazyLoad{
+       .lazy{
+        width: 700px; 
+        height: 467px; 
+        display: block;
+       } 
+    }
+    #footer{
+        background: rgb(70, 69, 69);
+        color: bisque;
+        font-size: 20px;
+        padding: 10px 20px;
+        #btnX{
+            padding: 10px 20px;
+            // background: #000;
+            color: #fff;
+            transition: all 1s ease-in-out;
+            
+        }
+    }
+    .placeHolder{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 300px;
+        padding: 20px 10px;
+        background: rgb(33, 104, 161);
+        color: #fff;
         text-align: center;
-        padding: 10px 0;
+        border-radius: 3px;
+        margin: 2px;
+        height: 50px;
+        box-shadow: 2px 2px 10px 0px #0000009e;
+        .number{
+            flex: 1;
+        }
+        .title{
+            flex: 9;
+        }
     }
 }
-#target{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    background: #ddd;
-    color: rgb(7, 7, 7);
-    line-height: 2;
 
-}
-.placeHolder{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 300px;
-    padding: 20px 10px;
-    background: rgb(33, 104, 161);
-    color: #fff;
-    text-align: center;
+#mainForm{
+    width: 500px;
+    margin: 10px auto;
+    // border: 2px solid rgba(3, 3, 3, 0.288);
     border-radius: 3px;
-    margin: 2px;
-    height: 50px;
-    box-shadow: 2px 2px 10px 0px #0000009e;
-    .number{
-        flex: 1;
+    padding: 20px 20px;
+    background: #fff;
+    input{
+        width: 100%;
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: 1px solid rgba(199, 199, 199, 0.589);
+        transition: all 0.2s ease-in-out;
+
     }
-    .title{
-        flex: 9;
+    p{
+        font-size: 10px;
+        opacity: 0;
+        transition: all 0.2s;
+        // padding: 0px 20px;
+    }
+    .invalid{
+        input{
+            border: 1px solid red;
+        }
+        p{
+            color: red;
+            opacity: 1;
+
+        }
+    }
+    .valid{
+        input{
+            border: 1px solid rgb(31, 202, 68);
+        }
+        // p{
+        //     color: rgb(31, 202, 68);
+        // }
     }
 }
-
-#btnX{
-    padding: 10px 20px;
-    // background: #000;
-    color: #fff;
-    transition: all 1s ease-in-out;
-    
-}
-
-#footer{
-    background: rgb(70, 69, 69);
-    color: bisque;
-    font-size: 20px;
-    padding: 10px 20px;
-}
-
-.foo{
-    background: red;
-    color: green;
-    text-align: center;
-}
-

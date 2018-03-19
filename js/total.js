@@ -5,6 +5,7 @@
 //$.get - do zrobienia
 //$.post - do zrobienia
 //ajax
+//fetch
 //Galeria w JS z efektem opacity
 //slider z przejściami po kliknięciu
 //płynne przejscie a href
@@ -72,6 +73,67 @@
     })
 
 
+//fetch
+    //text from document
+    function getText(){
+        fetch('js/simple.txt')
+        .then(function(res){
+            return res.text();
+        })
+        .then(function(data){
+            document.querySelector('.result2').innerHTML = data;
+        })
+        .catch(function(err){
+            console.log(err);
+        })
+    }
+    //text from JSON
+    function getJson(){
+        fetch('js/users.json')
+        .then((res) => res.json())
+        .then((data) => {
+            var output = '';
+            data.forEach(function(user){
+                output += '<div class="person">'+
+                '<div class="firstName">'+user.name+'</div>'+
+                '<div class="lastName">'+user.username+'</div>'+
+                '<div class="email">'+user.email+'</div>'+
+                '</div>';
+            })
+            document.querySelector('.result2').innerHTML = output;
+        })
+    }
+    //text from external API
+    function getAPIData(){
+        fetch('https://jsonplaceholder.typicode.com/posts')
+        .then(function(res){
+            return res.json();
+        })
+        .then(function(data){
+            console.log(data);
+        })
+    }
+    //send text using fetch
+    function addPost(e){
+        e.preventDefault();
+        let title = document.getElementById('text').value;
+        let body = document.getElementById('textBody').value;
+    
+        fetch('https://jsonplaceholder.typicode.com/posts',{
+            method : 'POST',
+            headers:{
+                'Accept': 'application/json, text/plain, */*',
+                "Content-type" : 'application/json'
+            },
+            body:JSON.stringify({title:title, body:body})
+        })
+        .then(function(res){
+            return res.json();
+        })
+        .then(function(data){
+            console.log(data);
+        })
+    }
 //Galeria w JS z efektem opacity----------------------------------------------
     var fadeInGallery = {
         imgs : document.querySelectorAll('#boxFoto img'),

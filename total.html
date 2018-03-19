@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Vademecum JS</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,900&amp;subset=latin-ext" rel="stylesheet">
     <link rel="stylesheet" href="css/total.css">
 </head>
 <body>
@@ -23,6 +24,34 @@
             <div class="btn btn7"><a href="#footer">foo a</a> </div>
             <div class="btn btn8">foo2 </div>
         </div>
+
+        <input type="text" name='username' placeholder="username">
+        <form action="" id="mainForm">
+            <div class="inputBox">
+                <p>Nazwa użytkownika musi być alfanumeryczna i posiadac od 5 do 12 znaków</p>
+            </div>
+            <div class="inputBox">
+                <input type="text" name='email' placeholder="email">
+                <p>Adres mailowy musi posiadać @ np lukasz@wp.pl</p>
+            </div>
+            <div class="inputBox">
+                <input type="text" name='password' placeholder="password">
+                <p>Hasło musi być alfanumeryczne i posiadać od 8 do 20 znaków, może zawierać znaki @, -, _.</p>
+            </div>
+            <div class="inputBox">
+                <input type="text" name='telephone' placeholder="telephone">
+                <p>Telefon komórkowy musi składać się z 9 cyft</p>
+            </div>
+            <div class="inputBox">
+                <input type="text" name='slug' placeholder="slug">
+                <p>Slug musi składać sie z małych liter lub cyfr oraz posiadac od 8 do 20 znaków</p>
+            </div>
+            
+            
+            
+            
+           
+        </form>
 
         <div class="box2" id="box2">
             <p>Moje Vademecum</p>
@@ -50,16 +79,38 @@
             </div>
         </div>
 
+        <!-- <div class="lazyLoad">
+            <img src="" alt="" data-src="image/foto1.jpg" class="lazy">
+            <img src="" alt="" data-src="image/foto2.jpg" class="lazy">
+            <img src="" alt="" data-src="image/foto3.jpg" class="lazy">
+            <img src="" alt="" data-src="image/foto4.jpg" class="lazy">
+            <img src="" alt="" data-src="image/foto5.jpg" class="lazy">
+            <img src="" alt="" data-src="image/foto6.jpg" class="lazy">
+            <img src="" alt="" data-src="image/foto7.jpg" class="lazy">
+            <img src="" alt="" data-src="image/foto8.jpg" class="lazy">
+            <img src="" alt="" data-src="image/foto9.jpg" class="lazy">
+            <img src="" alt="" data-src="image/foto10.jpg" class="lazy">
+            <img src="" alt="" data-src="image/foto11.jpg" class="lazy">
+            <img src="" alt="" data-src="image/foto12.jpg" class="lazy">
+            <img src="" alt="" data-src="image/foto13.jpg" class="lazy">
+            <img src="" alt="" data-src="image/foto14.jpg" class="lazy">
+            <img src="" alt="" data-src="image/foto15.jpg" class="lazy">
+        </div> -->
+
         <div id="footer"  name="stopka">
             <!-- <p>odniesienie do footer</p> -->
             <div id="btnX">Wróc</div>
         </div>
     </div>
+    
+    
 
 <script
 src="https://code.jquery.com/jquery-3.3.1.min.js"
 integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 crossorigin="anonymous"></script>
+
+<script src="js/jquery.lazy.min.js"></script>
 
 <script src="js/total.js"></script>    
 <script src="js/exerices.js"></script>    
