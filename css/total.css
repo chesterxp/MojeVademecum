@@ -13,103 +13,140 @@ body {
   text-align: center;
   font-size: 2rem; }
 
+.geo {
+  width: 50%;
+  border: 2px solid black;
+  text-align: center;
+  border-radius: 4px;
+  padding: 10px 20px;
+  background: #f3f3f3;
+  margin: 10px auto; }
+  .geo .czyWspiera, .geo .twojeDane {
+    padding: 5px 10px;
+    background: #fff;
+    border-radius: 3px;
+    margin: 10px 0;
+    color: #000; }
+  .geo .geoBtn {
+    padding: 3px 10px;
+    background: #be4545;
+    color: white;
+    border-radius: 3px;
+    border: 1px solid #be4545;
+    margin: 20px auto;
+    font-size: 12px;
+    display: inline-block;
+    transition: all 0.3s; }
+    .geo .geoBtn:hover {
+      background: #fff;
+      color: #be4545; }
+
 .wrapper {
   width: 100%; }
-  .wrapper .buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%; }
-    .wrapper .buttons .btn {
-      background: #286fc0;
-      color: #ddd;
-      transition: all 0.3s ease-in-out;
-      padding: 10px;
-      flex: 1;
-      text-align: center; }
-      .wrapper .buttons .btn:hover {
-        background: #ddd;
-        color: #286fc0; }
-  .wrapper .box2 {
-    width: 300px;
-    height: 100px;
-    background: #1652ac;
-    color: #fff;
-    box-shadow: inset 0 0 20px #ddd;
-    margin: 40px auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
-    padding: 20px 40px;
-    border: 20px solid black; }
-  .wrapper #btnX2 {
-    padding: 20px;
-    position: fixed;
-    top: 30px;
-    right: 30px;
-    background: pink;
-    color: black; }
-  .wrapper .nextTitle {
-    text-align: center;
-    padding: 10px 0; }
-  .wrapper #target {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    background: #ddd;
-    color: #070707;
-    line-height: 2; }
-  .wrapper #capturing {
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; }
+  .buttons .btn {
+    background: #286fc0;
+    color: #ddd;
+    transition: all 0.3s ease-in-out;
+    padding: 10px;
+    flex: 1;
+    text-align: center; }
+    .buttons .btn:hover {
+      background: #ddd;
+      color: #286fc0; }
+
+.box2 {
+  width: 300px;
+  height: 100px;
+  background: #1652ac;
+  color: #fff;
+  box-shadow: inset 0 0 20px #ddd;
+  margin: 40px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  padding: 20px 40px;
+  border: 20px solid black; }
+
+#btnX2 {
+  padding: 20px;
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  background: pink;
+  color: black; }
+
+.nextTitle {
+  text-align: center;
+  padding: 10px 0; }
+
+#target {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background: #ddd;
+  color: #070707;
+  line-height: 2; }
+
+#capturing {
+  border: 3px solid black;
+  text-align: center;
+  width: 500px;
+  margin: 20px auto; }
+  #capturing #div1 {
     border: 3px solid black;
-    text-align: center;
-    width: 500px;
+    width: 400px;
     margin: 20px auto; }
-    .wrapper #capturing #div1 {
-      border: 3px solid black;
-      width: 400px;
-      margin: 20px auto; }
-      .wrapper #capturing #div1:hover {
-        background: burlywood; }
-    .wrapper #capturing #div2 {
-      border: 3px solid black;
-      width: 300px;
-      margin: 20px auto; }
-    .wrapper #capturing #div3 {
-      border: 3px solid black;
-      width: 200px;
-      margin: 20px auto; }
-  .wrapper .lazyLoad .lazy {
-    width: 700px;
-    height: 467px;
-    display: block; }
-  .wrapper #footer {
-    background: #464545;
-    color: bisque;
-    font-size: 20px;
-    padding: 10px 20px; }
-    .wrapper #footer #btnX {
-      padding: 10px 20px;
-      color: #fff;
-      transition: all 1s ease-in-out; }
-  .wrapper .placeHolder {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    #capturing #div1:hover {
+      background: burlywood; }
+  #capturing #div2 {
+    border: 3px solid black;
     width: 300px;
-    padding: 20px 10px;
-    background: #2168a1;
+    margin: 20px auto; }
+  #capturing #div3 {
+    border: 3px solid black;
+    width: 200px;
+    margin: 20px auto; }
+
+.lazyLoad .lazy {
+  width: 700px;
+  height: 467px;
+  display: block; }
+
+#footer {
+  background: #464545;
+  color: bisque;
+  font-size: 20px;
+  padding: 10px 20px; }
+  #footer #btnX {
+    padding: 10px 20px;
     color: #fff;
-    text-align: center;
-    border-radius: 3px;
-    margin: 2px;
-    height: 50px;
-    box-shadow: 2px 2px 10px 0px #0000009e; }
-    .wrapper .placeHolder .number {
-      flex: 1; }
-    .wrapper .placeHolder .title {
-      flex: 9; }
+    transition: all 1s ease-in-out; }
+
+.placeHolder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  padding: 20px 10px;
+  background: #2168a1;
+  color: #fff;
+  text-align: center;
+  border-radius: 3px;
+  margin: 2px;
+  height: 50px;
+  box-shadow: 2px 2px 10px 0px #0000009e; }
+  .placeHolder .number {
+    flex: 1; }
+  .placeHolder .title {
+    flex: 9; }
 
 #mainForm {
   width: 500px;

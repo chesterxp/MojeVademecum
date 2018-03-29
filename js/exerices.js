@@ -418,6 +418,7 @@
         },10000)
     }
 //-----------------szerokość ---------wysokość-----offsetWidth
+    /*
     let box2 = document.getElementById('box2');
     //offsetTop;
     //offsetLeft;
@@ -436,8 +437,9 @@
         scrollTop : 100;
         console.log('klik btnX2')
     })
-
+    */
 //----------------zadania z DOM-------------------
+    /*
     let lapek = document.getElementsByName('klikk');
     // console.log(lapek);
 
@@ -482,7 +484,7 @@
     // console.log(window.getComutedStyle(btnX))
     // let a13 = window.getComputedStyle(btnX);
     // console.log(a13);
-
+    */
 
 //co to jest capturing 
     let div = document.getElementById('capturing');
@@ -531,15 +533,16 @@
 
 //lazyload
 
-    $('.lazy').lazy();
+    // $('.lazy').lazy();
 
 //------------------form validation------------------
+/*
     const patterns = {
         telephone: /^[0-9]{9}$/,
         username: /^[a-zA-Z0-9]{5,12}$/,
-        password:/^[\w@-]{8,20}$/,
+        password: /^[\w@-]{8,20}$/,
         email: /^([a-z\d\.-]+)@([a-z\d-\.]+)\.([a-z]{2,3})(\.[a-z])?$/,
-        slug:/^[a-z\d]{8,20}$/
+        slug: /^[a-z\d]{8,20}$/
     }
 
     const inputs = document.querySelectorAll('#mainForm input');
@@ -552,6 +555,7 @@
             field.parentElement.className = 'invalid';
         }
     }
+    
     inputs.forEach(function(input){
         input.addEventListener('keyup', function(e){
             let name = e.target.attributes.name.value;
@@ -561,4 +565,7 @@
             
         });
     })
+*/
+//------------
+
 

@@ -1,4 +1,4 @@
-/*-------SPIS---------------
+/*---------------------------------------------SPIS---------------------------------
 //Ajax JQ
 //load - html
 //getJSON
@@ -12,10 +12,10 @@
 //IntersectionObserver
 //PAINT
 //AUDIO
+//form + regEx
+//Geolocalisation
 
-
-
-*/
+-----------------------------------------------/SPIS-------------------------------*/
 
 //Czyszczenie 
     $('.buttons .btn5').on('click', function(){
@@ -509,5 +509,89 @@
         })
 
     }
+
+//form + regEx
+    let form1 = document.querySelector('#mainForm');
+
+    validForm(form1);
+
+    function validForm(forms){
+        const patterns = {
+            telephone: /^[0-9]{9}$/,
+            username: /^[a-zA-Z0-9]{5,12}$/,
+            password: /^[\w@-]{8,20}$/,
+            email: /^([a-z\d\.-]+)@([a-z\d-\.]+)\.([a-z]{2,3})(\.[a-z])?$/,
+            slug: /^[a-z\d]{8,20}$/
+        }
+        const inputs = forms.querySelectorAll('input');
+
+        function validation(field, regex){
+            if(regex.test(field.value)){
+                field.parentElement.className = 'valid';
+            }
+            else{
+                field.parentElement.className = 'invalid';
+            }
+        }
+
+        inputs.forEach(function(input){
+            input.addEventListener('keyup', function(e){
+                let name = e.target.attributes.name.value;
+                validation(e.target, patterns[e.target.attributes.name.value]);
+            });
+        })
+    }
+
+
+//Geolocalisation
+    function geoCheck(){
+        let czyWspiera = document.querySelector('.czyWspiera');
+        let twojeDane = document.querySelector('.twojeDane');
+        let geoBtn = document.querySelector('.geoBtn');
+
+        if(!navigator.geolocation){
+            czyWspiera.innerHTML = "Twoja przeglądarka nie wspiera Geolokalizacji";
+            czyWspiera.style.color = "red";
+        } else{
+            czyWspiera.innerHTML = "Twoja przeglądarka wspiera Geolokalizacje";
+        }
+
+        function geoSuccess(position){
+            twojeDane.innerHTML = `Twoja lokalizacja to: ${position.coords.latitude} , ${position.coords.longitude}.`
+        }
+
+        function geoError(errorObj) {
+            var errorMessage;
+            switch(errorObj.code) {
+                case errorObj.PERMISSION_DENIED :
+                    errorMessage = "Brak pozwolenia na znalezienie lokalizacji.";
+                    break;
+        
+                case errorObj.POSITION_UNAVAILABLE :
+                    errorMessage = "Brak dostępu do sieci.";
+                    break;
+        
+                case errorObj.TIMEOUT :
+                    errorMessage = "Przekroczono czas oczekiwania.";
+                    break;
+            }
+            twojeDane.innerHTML = "<strong>Wystąpił błąd: </strong>" + errorMessage;
+        }
+
+        let options ={
+            timeout: 5000
+        }
+
+        geoBtn.addEventListener('click', function(){
+            twojeDane.innerHTML = "Czekaj ...";
+            navigator.geolocation.getCurrentPosition(geoSuccess,geoError,options);
+        })
+    }
+    geoCheck();
+
+// inne
+
+
+
     
 

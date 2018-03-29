@@ -30,22 +30,6 @@ $colorGrey_1: #c4c2c2;
         font-weight: bold;
         overflow: hidden;
         cursor: pointer;
-
-            // &:before{
-            //     content: "";
-            //     width: 0px;
-            //     height: 55px;
-            //     background: #fff;
-            //     position: absolute;
-            //     top: 50%;
-            //     left: 50%;
-            //     transform: translate(-50%, -50%) skewX(-20deg);
-            //     transition: all 0.3s;
-            //     z-index: -1;
-
-            // }
-        
-        
     }
     .efect1{
         &:before{
@@ -82,5 +66,53 @@ $colorGrey_1: #c4c2c2;
         &:hover:before{
             width: 350px;
         }
+    }
+}
+.geo{
+    .czyWspiera, .twojeDane{
+        padding: 20px;
+        text-align: center;
+        background: #1c1c1c;
+        color: #fff;
+        width: 400px;
+        margin: 10px 0;
+    }
+    .geoBtn{
+        padding: 10px 30px;
+        background: rgb(216, 66, 66);
+        border: 1px solid rgb(216, 66, 66);
+        color: #fff;
+        border-radius: 3px;
+        display: inline-block;
+        margin: 10px 0;
+        transition: all 0.3s;
+        &:hover{
+            background: #fff;
+            color: rgb(216, 66, 66);
+        }
+    }
+}
+.wrapper4{
+    .text3{
+        transition: all 1s;
+    }
+    .pink{
+        transition: all 1s;
+        background: pink;
+    }
+    .green{
+        background: green;
+    }
+}
+.wrapper5{
+    padding: 20px;
+}
+.wrapper6{
+    padding: 20px;
+    input{
+        display: block;
+        padding: 5px 2px;
+        margin: 5px 0;
+        width: 50%;
     }
 }

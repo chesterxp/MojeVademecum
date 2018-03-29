@@ -52,4 +52,43 @@ body {
   .buttons2 .efect2:hover:before {
     width: 350px; }
 
+.geo .czyWspiera, .geo .twojeDane {
+  padding: 20px;
+  text-align: center;
+  background: #1c1c1c;
+  color: #fff;
+  width: 400px;
+  margin: 10px 0; }
+.geo .geoBtn {
+  padding: 10px 30px;
+  background: #d84242;
+  border: 1px solid #d84242;
+  color: #fff;
+  border-radius: 3px;
+  display: inline-block;
+  margin: 10px 0;
+  transition: all 0.3s; }
+  .geo .geoBtn:hover {
+    background: #fff;
+    color: #d84242; }
+
+.wrapper4 .text3 {
+  transition: all 1s; }
+.wrapper4 .pink {
+  transition: all 1s;
+  background: pink; }
+.wrapper4 .green {
+  background: green; }
+
+.wrapper5 {
+  padding: 20px; }
+
+.wrapper6 {
+  padding: 20px; }
+  .wrapper6 input {
+    display: block;
+    padding: 5px 2px;
+    margin: 5px 0;
+    width: 50%; }
+
 /*# sourceMappingURL=exercise.css.map */
