@@ -14,7 +14,7 @@
 //AUDIO
 //form + regEx
 //Geolocalisation
-
+//utworzenie funkcji przypominającej z jq funkcje css
 -----------------------------------------------/SPIS-------------------------------*/
 
 //Czyszczenie 
@@ -578,9 +578,9 @@
             twojeDane.innerHTML = "<strong>Wystąpił błąd: </strong>" + errorMessage;
         }
 
-        let options ={
+        let options = {
             timeout: 5000
-        }
+        };
 
         geoBtn.addEventListener('click', function(){
             twojeDane.innerHTML = "Czekaj ...";
@@ -589,7 +589,142 @@
     }
     geoCheck();
 
-// inne
+//utworzenie funkcji przypominającej z jq funkcje css
+    function myCss() {
+        NodeList.prototype.css = function(propertyOrObject, value) {
+            Array.prototype.forEach.call(this, function(elem) {
+                if(typeof propertyOrObject === "object") {
+                    var cssObject = propertyOrObject;
+                    for(var prop in cssObject) {
+                        elem.style[prop] = cssObject[prop];
+                    }
+                } else if(typeof propertyOrObject === "string" && value !== undefined) {
+                    var prop = propertyOrObject;
+                    elem.style[prop] = value;
+                } else {
+                    throw new Error("Podano złe parametry!");
+                }
+            });
+            return this;
+        } 
+    };
+    // let text = document.querySelector('.text1');
+    // text.css('background','red');
+//route determination via google maps
+    var map = {
+        init:function(){
+            try { google.maps.event.addDomListener(window, "load", this.makeMap.bind(this)); } catch(e) { return; };
+
+            //docelowe miejsce
+            this.location = "52.2398319,21.031668";
+            this.mapForm = document.querySelector("#mapOptions");
+            this.showRoadBTN = document.querySelector('.showRoadBTN');
+            this.fromInput = document.querySelector('#from');
+            this.path = new google.maps.DirectionsService(),
+            this.pathRender = new google.maps.DirectionsRenderer();
+
+            //zdarzenie na wysłąnie formularza
+            this.mapForm.addEventListener('submit', function(e){
+                e.preventDefault();
+                this.prepareRoute();
+            }.bind(this));
+
+            //zdarzenie na klikniecie spokaż trase
+            this.showRoadBTN.addEventListener('click', function(){
+                this.prepareRoute();
+            }.bind(this));
+
+            this.checkGeoSupport();
+        },
+        //tworzymy mape
+        makeMap: function(){
+            //wyciagamy wspolrzędne
+            let loc = this.location.split(','),
+                pos = new google.maps.LatLng(loc[0], loc[1]);
+            //opcje mapy
+            var mapOptions = {
+                zoom: 16,
+                center: pos,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            }
+            //tworzymy mape
+            this.mapObj = new google.maps.Map(document.querySelector("#map"), mapOptions);
+            this.destination = pos;
+            //tworzymy ikone pokazujaca nasz cel
+            var marker = new google.maps.Marker({
+                map: this.mapObj,
+                position: pos,
+                animation: google.maps.Animation.BOUNCE,
+                icon: "../img/map_marker.png"
+            });
+        },
+        //funkcja przygotowująca trase dojazdu doc celu
+        prepareRoute: function(coords){
+            var renderOptions = {
+                //dla jakiej mapy tworzymy element
+                map: this.mapObj,
+                //właściwości lini dojazdu
+                polylineOptions: {
+                    strokeColor: "#ff0000",
+                    strokeWeight: 4,
+                    strokeOpacity: 0.8
+                },
+                //usunięcie markerów poczatku i konca
+                suppressMarkers: true
+            }
+            //tworzymy linie wg właściości
+            this.pathRender.setOptions(renderOptions);
+
+            var pathData = {
+                origin: coords ? coords : this.fromInput.value,
+                destination: this.destination,
+                travelMode: google.maps.DirectionsTravelMode.DRIVING
+            }
+
+            this.path.route(pathData, this.handleRoute.bind(this));
+
+        },
+        //funkcja pokazująca trase dojazdu do naszego celu
+        handleRoute: function(result, status) {
+            //jeżeli wprowadzimy złe dane to wyświetli sie komunkat:
+            if(status != google.maps.DirectionsStatus.OK || !result.routes[0]) {
+                alert("Wprowadziłeś złe dane!");
+                return false;
+            }
+            this.pathRender.setDirections(result);
+            this.fromInput.value = result.routes[0].legs[0].start_address;
+        },
+        //sprawdzenie czy przeglądarka wspiera GeoLokalizacje i pokazanie guzika
+        checkGeoSupport: function(){
+            if(navigator.geolocation) {
+                var findPositionButton = document.querySelector(".whereAmI");
+                //pokazujemy guzik wyszukiwania naszej lokalizacji
+                findPositionButton.classList.remove("hidden");
+                findPositionButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    this.getGeoData();
+                }.bind(this));
+
+
+            }
+        },
+        //sprawdzenie gdzie sie znajdujemy i wyznaczenie trasy
+        getGeoData: function(){
+            //wyznaczenie wspolrzednych, funkcja przyjmuje 3 opcje: success, error i options
+            let successResult = function (position){
+                this.prepareRoute(position.coords.latitude + "," + position.coords.longitude);
+            }.bind(this);
+            let errorResult = function (errorObj){
+                alert("Wystąpił błąd! Odśwież stronę i spróbuj ponownie.");
+            };
+            let options = {
+                enableHighAccuracy: true
+            };
+            navigator.geolocation.getCurrentPosition(successResult,errorResult,options);
+        } 
+    }
+
+    map.init();
 
 
 

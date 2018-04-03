@@ -41,6 +41,43 @@ body {
       background: #fff;
       color: #be4545; }
 
+.showRoad {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 10px auto;
+  border: 2px solid black;
+  border-radius: 3px; }
+  .showRoad #map {
+    height: 400px; }
+  .showRoad #mapOptions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px; }
+    .showRoad #mapOptions input {
+      width: 200px;
+      text-align: center;
+      margin: 0 10px;
+      padding: 5px;
+      border-radius: 3px;
+      font-size: 14px; }
+    .showRoad #mapOptions .showRoadBTN, .showRoad #mapOptions .whereAmI {
+      background: #1a5d94;
+      color: #fff;
+      border-radius: 3px;
+      border: 1px solid #1a5d94;
+      transition: all 0.3s;
+      margin: 0 10px;
+      padding: 5px 5px;
+      font-size: 14px; }
+      .showRoad #mapOptions .showRoadBTN:hover, .showRoad #mapOptions .whereAmI:hover {
+        background: #fff;
+        color: #1a5d94; }
+    .showRoad #mapOptions .hidden {
+      display: none; }
+
 .wrapper {
   width: 100%; }
 

@@ -1,5 +1,6 @@
 //Animacja w js vs JQ
-    /*//btn1-----------------------------------
+    /*
+    //btn1-----------------------------------
     let btn1 = document.querySelector('.btn1'),
         box = document.querySelector('.box'),
         move = document.querySelector('.move1');
@@ -85,7 +86,7 @@
         var word2 = word.split('').reverse().join('');
         return word2 === word;
     }
-    const doo = isPalindrome('toot');
+    // const doo = isPalindrome('toot');
 
     function firstBigLetter(sent){
         // var newWord = sent.toLowerCase().split(' ');
@@ -487,29 +488,32 @@
     */
 
 //co to jest capturing 
-    let div = document.getElementById('capturing');
-    let divs = div.getElementsByTagName('div');
-
-    // console.log(divs);
-    // for (let i=0;i<divs.length;i++){
-    //     divs[i].addEventListener('click', clickHandler);
-    //     divs[i].addEventListener('click', click2);
-    // }
-    function clickHandler(e){
-        // e.stopPropagation();
-
-        alert(this.getAttribute('id'));
-        e.stopImmediatePropagation();
-        // alert('testy');
+    function capturing(){
+        let div = document.getElementById('capturing');
+        let divs = div.getElementsByTagName('div');
+    
+        // console.log(divs);
+        // for (let i=0;i<divs.length;i++){
+        //     divs[i].addEventListener('click', clickHandler);
+        //     divs[i].addEventListener('click', click2);
+        // }
+        function clickHandler(e){
+            // e.stopPropagation();
+    
+            alert(this.getAttribute('id'));
+            e.stopImmediatePropagation();
+            // alert('testy');
+        }
+        //false -> babling od 3 2 1
+        //true -> capturing od 1 2 3
+        //e.stopPropagation(); -> odpala sie tylko funkcja na konkretnym elemencie. Nie działa na rodzicach elementy.
+        //e.stopImmediatePropagation(); -> zatrzymuje działanie innych funkcji wywoływanych kliknięciem
+    
+        function click2(e){
+            alert('testy3');
+        }
     }
-    //false -> babling od 3 2 1
-    //true -> capturing od 1 2 3
-    //e.stopPropagation(); -> odpala sie tylko funkcja na konkretnym elemencie. Nie działa na rodzicach elementy.
-    //e.stopImmediatePropagation(); -> zatrzymuje działanie innych funkcji wywoływanych kliknięciem
-
-    function click2(e){
-        alert('testy3');
-    }
+   
 
 //kolejne
     //cwiczenia z repeat/match i regularne
@@ -535,37 +539,4 @@
 
     // $('.lazy').lazy();
 
-//------------------form validation------------------
-/*
-    const patterns = {
-        telephone: /^[0-9]{9}$/,
-        username: /^[a-zA-Z0-9]{5,12}$/,
-        password: /^[\w@-]{8,20}$/,
-        email: /^([a-z\d\.-]+)@([a-z\d-\.]+)\.([a-z]{2,3})(\.[a-z])?$/,
-        slug: /^[a-z\d]{8,20}$/
-    }
-
-    const inputs = document.querySelectorAll('#mainForm input');
-
-    function validation(field, regex){
-        if(regex.test(field.value)){
-            field.parentElement.className = 'valid';
-        }
-        else{
-            field.parentElement.className = 'invalid';
-        }
-    }
-    
-    inputs.forEach(function(input){
-        input.addEventListener('keyup', function(e){
-            let name = e.target.attributes.name.value;
-            // console.log('target',e.target.value);
-            // console.log('reg',name);
-            validation(e.target, patterns[e.target.attributes.name.value]);
-            
-        });
-    })
-*/
-//------------
-
-
+//------------------------------------

@@ -19,6 +19,15 @@
         <div class="geoBtn">Ustal moja pozycje</div>
     </div>
 
+    <div class="showRoad">
+        <div id="map"></div>
+        <form action="" id="mapOptions">
+                <input type="text" id="from" placeholder="Gdzie jesteś">
+                <div class="showRoadBTN">Pokaż trase</div>
+                <div class="whereAmI hidden" title="Wykryj moją lokalizacje">O</div>
+        </form>
+    </div>
+
     <form action="" id="mainForm">
         <h2>Formularz + regEx</h2>
         <div class="inputBox">
@@ -69,7 +78,7 @@
         </div>
 
     </div>
-
+    <h2>Capturing</h2>
     <div id="capturing">
         <div id="div1">div1
             <div id="div2">div2
@@ -102,15 +111,13 @@
     </div>
     
     
-
+<script src="http://maps.google.com/maps/api/js?sensor=false&language=pl"></script>
 <script
 src="https://code.jquery.com/jquery-3.3.1.min.js"
 integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 crossorigin="anonymous"></script>
 
-<script src="js/jquery.lazy.min.js"></script>
-
 <script src="js/total.js"></script>    
-<!-- <script src="js/exerices.js"></script>     -->
+
 </body>
 </html>

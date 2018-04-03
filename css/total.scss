@@ -44,6 +44,50 @@ body{
         }
     }
 }
+
+.showRoad{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 10px auto;
+    border: 2px solid black;
+    border-radius: 3px;
+    #map{
+        height: 400px;
+    }
+    #mapOptions{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 10px 20px;
+        input{
+            width: 200px;
+            text-align: center;
+            margin: 0 10px;
+            padding: 5px;
+            border-radius: 3px;
+            font-size: 14px
+        }
+        .showRoadBTN, .whereAmI{
+            background: rgb(26, 93, 148);
+            color: #fff;
+            border-radius: 3px;
+            border: 1px solid rgb(26, 93, 148);
+            transition: all 0.3s;
+            margin: 0 10px;
+            padding: 5px 5px;
+            font-size: 14px;
+            &:hover{
+                background: #fff;
+                color: rgb(26, 93, 148);
+            }
+        }
+        .hidden{
+            display: none;
+        }
+    }
+}
 .wrapper{
     width: 100%;
 }
