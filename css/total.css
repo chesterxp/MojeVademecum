@@ -13,6 +13,42 @@ body {
   text-align: center;
   font-size: 2rem; }
 
+.webStorage {
+  text-align: center;
+  border: 2px solid #000;
+  border-radius: 3px;
+  padding: 20px;
+  width: 40%;
+  margin: 20px auto;
+  background: linear-gradient(270deg, #ee1280, #f78c13); }
+  .webStorage #support {
+    padding: 20px 30px; }
+  .webStorage .wspiera {
+    background: #2b2a2a;
+    color: #f0f0f0; }
+  .webStorage .niewspiera {
+    background: #df9990;
+    color: #f0f0f0; }
+  .webStorage form input {
+    display: block;
+    width: 100%;
+    padding: 5px 10px;
+    margin: 5px 0;
+    background: #2b2a2a;
+    color: #f0f0f0;
+    border: none; }
+    .webStorage form input::placeholder {
+      /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: #fcfcfc;
+      opacity: 0.65;
+      /* Firefox */ }
+    .webStorage form input:focus {
+      outline: 1px solid rgba(230, 230, 230, 0.864);
+      border: none; }
+  .webStorage form [type=submit] {
+    display: inline-block;
+    width: 30%; }
+
 .geo {
   width: 50%;
   border: 2px solid black;
@@ -48,6 +84,8 @@ body {
   margin: 10px auto;
   border: 2px solid black;
   border-radius: 3px; }
+  .showRoad h1 {
+    text-align: center; }
   .showRoad #map {
     height: 400px; }
   .showRoad #mapOptions {
