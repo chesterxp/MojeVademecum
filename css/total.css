@@ -13,6 +13,128 @@ body {
   text-align: center;
   font-size: 2rem; }
 
+#myOwnVideoPlayer h1 {
+  text-align: center; }
+
+.videoPlayer {
+  background: #cacaca;
+  width: 80%;
+  margin: 0px auto;
+  position: relative; }
+  .videoPlayer .videoBox {
+    position: relative;
+    z-index: 1; }
+    .videoPlayer .videoBox .backgroundVideo {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url(../img/play2.png) no-repeat;
+      background-position: center center;
+      background-size: 13%;
+      transition: all 0.3s;
+      background-color: rgba(0, 0, 0, 0.53); }
+      .videoPlayer .videoBox .backgroundVideo:hover {
+        background-size: 17%;
+        cursor: pointer; }
+  .videoPlayer video {
+    display: block;
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0; }
+  .videoPlayer .controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0; }
+    .videoPlayer .controls .cont {
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+    .videoPlayer .controls .leftControls {
+      width: 70px; }
+      .videoPlayer .controls .leftControls .playPause {
+        font-size: 30px;
+        position: relative; }
+        .videoPlayer .controls .leftControls .playPause .fa-pause {
+          display: none;
+          position: absolute;
+          top: 0;
+          left: 0; }
+        .videoPlayer .controls .leftControls .playPause:hover {
+          cursor: pointer; }
+    .videoPlayer .controls .progressBar {
+      width: 60%;
+      background: #f7f4f4;
+      height: 20px;
+      position: relative;
+      z-index: 2; }
+      .videoPlayer .controls .progressBar .playbackBar {
+        width: 10%;
+        background: #ec3838;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 20px;
+        z-index: 4; }
+      .videoPlayer .controls .progressBar .loadedBar {
+        width: 50%;
+        height: 20px;
+        background: #030303;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 3; }
+      .videoPlayer .controls .progressBar:hover {
+        cursor: pointer; }
+    .videoPlayer .controls .rightControls {
+      width: 300px;
+      justify-content: flex-start;
+      padding: 0 10px;
+      font-size: 17px; }
+      .videoPlayer .controls .rightControls .fullScreen {
+        display: flex;
+        align-items: center;
+        padding: 0 10px;
+        color: black;
+        font-size: 15px; }
+      .videoPlayer .controls .rightControls .volume {
+        display: flex;
+        align-items: center; }
+        .videoPlayer .controls .rightControls .volume:hover {
+          cursor: pointer; }
+        .videoPlayer .controls .rightControls .volume .glyphicon-volume-up, .videoPlayer .controls .rightControls .volume .glyphicon-volume-off {
+          width: 20%;
+          margin: 0 10px; }
+        .videoPlayer .controls .rightControls .volume .fullVolume {
+          background: #ddd;
+          position: relative;
+          height: 10px;
+          width: 100px;
+          display: flex;
+          align-items: center; }
+          .videoPlayer .controls .rightControls .volume .fullVolume .currentVolume {
+            position: absolute;
+            background: black;
+            height: 10px;
+            width: 20%; }
+
+#mediaBox {
+  background: #d69c9c;
+  text-align: center; }
+  #mediaBox audio {
+    width: 50%; }
+  #mediaBox video {
+    width: 50%;
+    margin: 20px auto; }
+
+#myCanvas {
+  display: block;
+  margin: 20px auto;
+  border: 1px solid #969696; }
+
 .webStorage {
   text-align: center;
   border: 2px solid #000;

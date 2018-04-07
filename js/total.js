@@ -51,26 +51,26 @@
 //$.get - do zrobienia-------------------------------------------------------
 //$.post - do zrobienia-----------------------------------------------------
 //ajax-----------------------------------------------------------------------
-    $('.buttons .btn3').on('click', function(){
-        $.ajax({
-            url: "https://jsonplaceholder.typicode.com/albums",
-            type: "GET",
-            dataType: "json",
-            success: function(data){
-                console.log(data);
-                // $('.tresc').html(data);
-                $('#target').empty();
-                $.each(data,function(i, val){
-                    var htm2 =  `<div class="placeHolder">
-                                <div class="number">${val.id}</div>
-                                <div class="title">${val.title}</div>
-                            </div>`;
-                    $('#target').append(htm2);
-                })
+    // $('.buttons .btn3').on('click', function(){
+    //     $.ajax({
+    //         url: "https://jsonplaceholder.typicode.com/albums",
+    //         type: "GET",
+    //         dataType: "json",
+    //         success: function(data){
+    //             console.log(data);
+    //             // $('.tresc').html(data);
+    //             $('#target').empty();
+    //             $.each(data,function(i, val){
+    //                 var htm2 =  `<div class="placeHolder">
+    //                             <div class="number">${val.id}</div>
+    //                             <div class="title">${val.title}</div>
+    //                         </div>`;
+    //                 $('#target').append(htm2);
+    //             })
                 
-            }
-        })
-    })
+    //         }
+    //     })
+    // })
 
 
 //fetch
@@ -88,21 +88,21 @@
         })
     }
     //text from JSON
-    function getJson(){
-        fetch('js/users.json')
-        .then((res) => res.json())
-        .then((data) => {
-            var output = '';
-            data.forEach(function(user){
-                output += '<div class="person">'+
-                '<div class="firstName">'+user.name+'</div>'+
-                '<div class="lastName">'+user.username+'</div>'+
-                '<div class="email">'+user.email+'</div>'+
-                '</div>';
-            })
-            document.querySelector('.result2').innerHTML = output;
-        })
-    }
+    // function getJson(){
+    //     fetch('js/users.json')
+    //     .then((res) => res.json())
+    //     .then((data) => {
+    //         var output = '';
+    //         data.forEach(function(user){
+    //             output += '<div class="person">'+
+    //             '<div class="firstName">'+user.name+'</div>'+
+    //             '<div class="lastName">'+user.username+'</div>'+
+    //             '<div class="email">'+user.email+'</div>'+
+    //             '</div>';
+    //         })
+    //         document.querySelector('.result2').innerHTML = output;
+    //     })
+    // }
     //text from external API
     function getAPIData(){
         fetch('https://jsonplaceholder.typicode.com/posts')
@@ -534,12 +534,21 @@
             }
         }
 
-        inputs.forEach(function(input){
-            input.addEventListener('keyup', function(e){
+        // inputs.forEach(function(input){
+        //     input.addEventListener('keyup', function(e){
+        //         let name = e.target.attributes.name.value;
+        //         validation(e.target, patterns[e.target.attributes.name.value]);
+        //     });
+        // })
+
+        //for IE11
+
+        for(let i=0; i<inputs.length; i++){
+            inputs[i].addEventListener('keyup', function(e){
                 let name = e.target.attributes.name.value;
                 validation(e.target, patterns[e.target.attributes.name.value]);
             });
-        })
+        }
     }
 
 
@@ -557,7 +566,7 @@
         }
 
         function geoSuccess(position){
-            twojeDane.innerHTML = `Twoja lokalizacja to: ${position.coords.latitude} , ${position.coords.longitude}.`
+            twojeDane.innerHTML = "Twoja lokalizacja to:"+ position.coords.latitude + " , " + position.coords.longitude;
         }
 
         function geoError(errorObj) {
@@ -822,11 +831,320 @@
         let formToSave3 = new FormSaver(document.querySelector('#form3'));
     }
 
-//inne
+//CANVAS
+    //sprawdzamy czy przeglądarka obsługuje canvas
+    // if(!document.createElement("canvas").getContext) return;
+    /*
+    let canvas = document.querySelector('#myCanvas'),
+        ctx = canvas.getContext('2d');
+
+    // Ustawienia stylów
+    ctx.fillStyle = "#448af3"; //przypisanie koloru
+    ctx.strokeStyle = "#f344f1"; //kolor lini
+    ctx.lineWidth = 30; //szerokosc lini px
+
+    //zaokrąglenie lini łączących 
+    // ctx.lineJoin = "round";
+    // ctx.lineJoin = "bevel";
+    ctx.lineJoin = "miter";
+    // ctx.miterLimit = 1;
+
+    ctx.lineCap = "round";// butt, square 
 
 
+    // Rysowanie lini
+    ctx.moveTo(50,50); //przesuniecie do punktu
+    ctx.lineTo(50,150); //
+    ctx.stroke(); //rysowanie linii
+
+    ctx.lineTo(150, 150);
+    ctx.stroke(); //rysowanie linii
+
+    */
+
+//video and audio
+
+    /*
+    AUDIO
+    controls - kontrolki
+    autoplay - odpala sie na starcie // nie zawsze działa na mobile
+    loop - działanie w pętli
+    muted - odpalone audio działa bez głosu
+    preload(auto,metadata,none) - pobieranie danych o utworze z serwera 1-automatycznie ogarnia to przeglądarka, kiedy i ile pobrac, 2-tylko fragment danych, 3-nie pobiera nic
+
+    Video
+    to samo co w audio
+    poster - link do obrazka jako pierwsza klatka filmu
+    width 
+    height
+
+    odpalenie w konkretnym momencie 
+    video src="media/ollie.mp4#t=25,41" //od 25s do 41s
+    lub t=20 // od 20s
+    t=,120 //do 120s
+    t=,01:00:00 //do 1h odtwarzamy
 
 
+    Audio & Video API
+    //funkcje
+    .canPlayType() //sprawdzenie czy przeglądarka ogarnie okreslony typ nagrania np audio/ogg
+    .load() // pobranie pliku z serwera
+    .play() // start
+    .pause() 
 
+    //właściwości
+    .buffered //zwraca wartośc zbuforowanego pliku
+    .currentSrc //zwraca adres z którego jest pobierany plik
+    .currentTime //odczytanie aktualnego czasu otwarzania lub ustawienie od kiedy ma sie rozpocząć odtwarzanie
+    .duration //długość odtwarzanego pliku
+    .ended //true/false jeśli plik się zakończył
+    .muted // true/false wyciszenie
+    .paused // true/false
+    .volume //odczyt ustawienie 0.1 - 1.0
+    .videoWidth  //zwrócenie wartości width wideo
+    .videoHeight//zwrócenie wartości height wideo
+
+    //zdarzenia
+    .durationchange - zmiana czasu trwania(np po załadowaniu pliku)
+    .ended - wywołanie po zakończeniu pliku
+    .loadstart - zaczniemy wczytywac plik
+    .loadedmetadata - pobranie metadanych
+    .pasue - pausa
+    .play - 
+    .playing
+    .progress - 
+    .timeupdate - aktualizacja czasu odtwarzania
+    .volumechange - wywołuje sie pdoczas zmiany głośności
+    */
+    let numberOfPlayer = 0;
+        
+    //My own video player
+    function VideoPlayer(url,place){
+
+        //jesli przeglądarka nie wspiera video to ukryj individual controls
+        if(!document.createElement("video").canPlayType) {//sprawdzenie czy utworzone video jest obsługiwane przez przeglądarkę  
+            videoContainer.querySelector(".controls").style.display = "none";
+            return;
+        } 
+        //dane playera
+        this.nameOfplayer = "videoPlayer"+numberOfPlayer;
+        this.place = place;
+        this.url = url;
+        
+        //dodajemy playera w wyznaczone miejsce
+        this.place.append(this.makePlayer(this.nameOfplayer));
+        //targetujemy
+        this.videoContainer = document.querySelector('#'+this.nameOfplayer);
+        //poszczególne guziki playera
+        this.video = this.videoContainer.querySelector("video");
+        this.playPause = this.videoContainer.querySelector(".playPause");
+        this.progressBar = this.videoContainer.querySelector(".progressBar");
+        this.loadedBar = this.videoContainer.querySelector(".loadedBar");
+        this.playbackBar = this.videoContainer.querySelector(".playbackBar");
+        this.currentTime = this.videoContainer.querySelector(".currentTime");
+        this.totalTime = this.videoContainer.querySelector(".totalTime");
+        this.fullVolume = this.videoContainer.querySelector(".fullVolume");
+        this.currentVolume = this.videoContainer.querySelector(".currentVolume");
+        this.backgroundVideo = this.videoContainer.querySelector('.backgroundVideo');
+        this.muted = this.videoContainer.querySelector('.glyphicon-volume-up');
+        this.fullScreen = this.videoContainer.querySelector('.fullScreen');
+        
+        //zdarzenia
+        this.assignEventListeners();
+        this.setVolume();
+        numberOfPlayer++;
+    }
+    //dodajemy zdarzenia na poszczególne przyciski
+    VideoPlayer.prototype.assignEventListeners = function(){
+        this.playPause.onclick = this.play.bind(this);
+        this.video.onprogress = this.updateLoadingProgress.bind(this);
+        this.video.addEventListener("timeupdate", this.updatePlayingProgress.bind(this), false);
+        this.video.addEventListener("timeupdate", this.updateCurrentTime.bind(this), false);
+        this.video.ondurationchange = this.setDuration.bind(this);
+        this.progressBar.onclick = this.setCurrentPlayback.bind(this);
+        this.fullVolume.onclick = this.adjustVolume.bind(this);
+        this.video.onvolumechange = this.setVolume.bind(this);
+        this.video.onended = this.resetPlayer.bind(this);
+        this.backgroundVideo.onclick = this.playBig.bind(this);
+        this.video.onclick = this.pauseBig.bind(this);
+        this.muted.onclick = this.volumeMuted.bind(this);
+        this.fullScreen.onclick = this.fullScreenOn.bind(this);
+    }
+    //tworzymy playera
+    VideoPlayer.prototype.makePlayer = function(name){
+        let htm = `<div id="${name}" class="videoPlayer">
+                        <div class="videoBox">
+                            <video>
+                                <source src="${this.url}" type="video/mp4">
+                            </video>
+                            <div class="backgroundVideo"></div>
+                            
+                        </div>
+                        
+                        <div class="controls">
+                            <div class="leftControls cont">
+
+                                <div class="playPause glyphicon glyphicon-play">
+                                    <!-- <i class="fas fa-play"></i>
+                                    <i class="fas fa-pause"></i> -->
+                                </div>
+                                <!-- <div class="fas fa-pause dom"></div>
+                                <div class="fax">faxxx</div> -->
+                            </div>
+                            <div class="progressBar cont">
+                                <div class="playbackBar"></div>
+                                <div class="loadedBar"></div>
+                            </div>
+                            <div class="rightControls cont">
+                                <div class="fullScreen">
+                                    <div class="playPause glyphicon glyphicon-fullscreen"></div>
+                                </div>
+                                <div class="time">
+                                    <span class="currentTime">0:00</span>
+                                    /
+                                    <span class="totalTime">0:30</span>
+                                </div>
+                                <div class="volume">
+                                    <span class="glyphicon glyphicon-volume-up" aria-hidden="true"></span>
+                                    <div class="fullVolume">
+                                        <div class="currentVolume"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>`;
+        return htm;
+    }
+    //zdarzenie play
+    VideoPlayer.prototype.play = function(e) {
+        if(this.video.paused) {
+            this.video.play();
+            e.target.classList.remove("glyphicon-play");
+            e.target.classList.add("glyphicon-pause");
+            this.backgroundVideo.style.display = "none";
+        } else {
+            this.video.pause();
+            e.target.classList.remove("glyphicon-pause");
+            e.target.classList.add("glyphicon-play");
+            this.backgroundVideo.style.display = "block";
+        }
+    }
+    //zdarzenie playBig
+    VideoPlayer.prototype.playBig = function(e) {
+        if(this.video.pause){
+            this.backgroundVideo.style.display = "none";
+            this.playPause.classList.remove("glyphicon-play");
+            this.playPause.classList.add("glyphicon-pause");
+            this.video.play();
+        }
+        
+    }
+    //klikniec video podowuje zatrzymanie
+    VideoPlayer.prototype.pauseBig = function(e){
+        this.video.pause();
+        this.playPause.classList.remove("glyphicon-pause");
+        this.playPause.classList.add("glyphicon-play");
+        this.backgroundVideo.style.display = "block";
+    }
+    //pokazanie paska bufora
+    VideoPlayer.prototype.updateLoadingProgress = function() {
+        if(this.video.buffered.length > 0) {
+            let percentLoaded = (this.video.buffered.end(0) / this.video.duration) * 100;
+            this.loadedBar.style.width = percentLoaded + "%";
+        }
+    }
+    //pokazania paska czasu trwania
+    VideoPlayer.prototype.updatePlayingProgress = function(){
+        let procentPlayed = (this.video.currentTime / this.video.duration)*100;
+        this.playbackBar.style.width = procentPlayed+'%';
+    }
+    //pokaż łączny czas pliku
+    VideoPlayer.prototype.setDuration = function(){
+        this.totalTime.innerHTML = this.formatTime(this.video.duration);
+    }
+    //zmiana formaty czasu
+    VideoPlayer.prototype.formatTime = function(seconds){
+        var seconds = Math.round(seconds), //zaokrąglenie matematyczne
+        minutes = Math.floor(seconds / 60), //zaokrąglenie w dół
+        remainingSeconds = seconds - minutes * 60; //310 - 5*60
+
+        if(remainingSeconds == 0)
+            remainingSeconds = "00";
+        else if(remainingSeconds < 10)
+            remainingSeconds = "0" + remainingSeconds;
+
+        return minutes + ":" + remainingSeconds;
+    }
+    //pokazanie aktualnego momentu pliku
+    VideoPlayer.prototype.updateCurrentTime = function(){
+        this.currentTime.innerHTML =  this.formatTime(this.video.currentTime);
+    }
+    //przewiniecie materiału po kliknieciu na progressbar
+    VideoPlayer.prototype.setCurrentPlayback = function(e){
+        let leftPos = this.progressBar.getBoundingClientRect().left, //200
+            clickPos = e.pageX, //800
+            pixelsFromLeft = clickPos - leftPos, //800-200=600
+            percent = (pixelsFromLeft / this.progressBar.offsetWidth); //600/1200=0.5
+
+        let newTime = this.video.duration * percent; //310*0.5=155s
+        this.video.currentTime = newTime;//155s
+    }
+    //zmiana głośności
+    VideoPlayer.prototype.adjustVolume = function(e) {
+        var leftPos = this.fullVolume.getBoundingClientRect().left,
+            clickPos = e.pageX,
+            pixelsFromLeft = clickPos - leftPos,
+            percent = (pixelsFromLeft / this.fullVolume.offsetWidth);
+    
+        this.video.volume = percent;
+    
+        this.setVolume();
+    }
+    //zmiana wyglądu paska volume
+    VideoPlayer.prototype.setVolume = function() {
+        var percent = this.video.volume * 100;
+        this.currentVolume.style.width = percent + "%";
+    }
+    //reset plaera i zmiana button pasue na play
+    VideoPlayer.prototype.resetPlayer = function(){
+        this.playPause.classList.remove("glyphicon-pause");
+        this.playPause.classList.add("glyphicon-play");
+    }
+    //wyciszenie playera
+    VideoPlayer.prototype.volumeMuted = function(){
+        if(this.video.muted){
+            this.video.muted = false;
+            this.muted.classList.add('glyphicon-volume-up');
+            this.muted.classList.remove('glyphicon-volume-off');
+        }
+        else{
+            this.video.muted = true;
+            this.muted.classList.remove('glyphicon-volume-up');
+            this.muted.classList.add('glyphicon-volume-off');
+        }
+    }
+    VideoPlayer.prototype.fullScreenOn = function(){
+        console.log("fullscreen")
+        var elem = this.video;
+        if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+        } else if (elem.mozRequestFullScreen) {
+        elem.mozRequestFullScreen();
+        } else if (elem.webkitRequestFullscreen) {
+        elem.webkitRequestFullscreen();
+        }
+        
+    }
+    
+    let myOwnVideoPlayer = $('#myOwnVideoPlayer');
+    
+    let myUrl = 'media/ollie.mp4#t=3';
+    let myUrl2 = 'media/ollie.mp4#t=12';
+    let videoPlayer1 = new VideoPlayer(myUrl,myOwnVideoPlayer);
+    let videoPlayer2 = new VideoPlayer(myUrl2,myOwnVideoPlayer);
+
+    let url3 = 'media/ollie.mp4';
+    let place3 = $('.showRoad');
+    // let videoPlayer3 = new VideoPlayer(url3,place3);
     
 
