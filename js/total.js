@@ -933,8 +933,10 @@
         
         //dodajemy playera w wyznaczone miejsce
         this.place.append(this.makePlayer(this.nameOfplayer));
+
         //targetujemy
         this.videoContainer = document.querySelector('#'+this.nameOfplayer);
+        
         //poszczególne guziki playera
         this.video = this.videoContainer.querySelector("video");
         this.playPause = this.videoContainer.querySelector(".playPause");
@@ -1037,7 +1039,6 @@
             this.playPause.classList.add("glyphicon-pause");
             this.video.play();
         }
-        
     }
     //klikniec video podowuje zatrzymanie
     VideoPlayer.prototype.pauseBig = function(e){
@@ -1147,4 +1148,133 @@
     let place3 = $('.showRoad');
     // let videoPlayer3 = new VideoPlayer(url3,place3);
     
+//File API
+    /*
+    FileReader - odczytywanie informacji o pliku oraz ich zawartości
+    FileWriter - tworzenie w locie plików oraz możliwośc ich zapisywania
+    FileSystem - system plików dla domeny
 
+    Blob
+    size - wielkość danych
+    type - typ danych
+    slice() 
+
+    File
+    jw
+    name - nazwa pliku z rozszerzeniem
+    lastModifiedDate - ostatnia data modyfikacji
+
+    FileList
+    length - ilośc plików w tablicy
+    item() - wybór konkretnego elementu np item(0) pierwszy element
+
+    FileReader - interfejs za pomoca którego możemy tworzyc nowe obiekty
+    WŁAŚCIWOŚCI
+    readyState //0,1,2 czy dane są załadowane czy też nie
+    result - miesce przechpwywania wyniku naszych danych
+    error - błąd 
+
+    METODY
+    readAsText(file) - odczytany plik result bedzie miał forme textową
+    readAsDataURL(file) - zwróci zawartość pliku w formacie data URL (base64)
+    readAsArrayBuffer(file) - odczytanie pliku w sposób binarny
+    readAsBinaryString - oczytanie pliku w sposób binarny?
+    abort() - przerwanie wczytywania pliku(w przypadku duzych plików może to troche trwać, pliki sa wczytywane asynchronicznie)
+
+    EVENTY
+    loadstart - zdarzenie odpala sie na starcie
+    loadend - na zakońćzeniu 
+    load - po załadowaniu poprawnie danych
+    error - przy wystąpieniu błędu
+    progress - pasek postepu ładowanych danych
+    abort - przerwanie wczytywania pliku
+
+    */
+
+    //sprawdzenie czy przeglądarka obsługuje File API
+    (function checkFielAPI(){
+        if(!window.FileReader) return false
+    }());
+    
+    let fileInput = document.querySelector('#fileInput'),
+        start = document.querySelector('#startFile'),
+        stop = document.querySelector('#stopFile'),
+        progress = document.querySelector('progress');
+
+    //po załadowaniu pliku
+    fileInput.onchange = function(){
+        //nasz wczytany plik file
+        let file = this.files[0],
+        //tworzymy obiekt File Reader
+            reader = new FileReader();
+
+        reader.onload = function(){
+            console.log(this.result);
+        }
+
+        //pokazanie danych wczytanego pliku
+        document.querySelector("#fileName").innerHTML = "Nazwa: " + file.name;
+        document.querySelector("#fileSize").innerHTML = "Rozmiar: " + file.size;
+        document.querySelector("#fileType").innerHTML = "Typ: " + file.type;
+        document.querySelector("#fileLastModifiedDate").innerHTML = "Ostatnio zmodyfikowany: " + file.lastModifiedDate.toLocaleDateString();
+        
+        // reader.readAsText(file);
+        // reader.readAsBinaryString(file);
+
+        //dodanie zdjecia na stronie
+        // if(file.type.match("image.*")) {
+        //     reader.onload = function() {
+        //         var img = new Image();
+        //         img.src = this.result;
+        //         document.querySelector("#playground").appendChild(img);
+        //     }
+        //     reader.readAsDataURL(file);
+        // }
+      
+        reader.onloadstart = function() {
+            console.log("Start odczytywania. readyState: " + this.readyState);
+        }
+        reader.onload = function() {
+            console.log("Wczytywanie zakończone sukcesem. readyState: " + this.readyState);
+        }
+        reader.onloadend = function() {
+            console.log("Zakończono odczytywanie. readyState: " + this.readyState);
+        }
+        reader.onprogress = function(e) {
+            if(e.lengthComputable) {
+                var percent = (e.loaded / e.total) * 100;
+                progress.value = percent;
+            }
+        }
+        reader.onabort = function() {
+            console.log("Przerwano odczytywanie pliku. readyState: " + this.readyState);
+        }
+        reader.onerror = function() {
+            console.log("Wystąpił błąd" + "(" + this.error.code + "): " + this.error.message);
+        }
+        start.onclick = function() {
+            reader.readAsBinaryString(file);
+        }
+        stop.onclick = function() {
+            reader.abort(); // w FF nie zgłasza błędu
+        }
+        /*
+        //Tworzenie obiektów Blob
+        if(!window.FileReader) return;
+        var fileInput = document.querySelector("#fileInput");
+        fileInput.onchange = function() {
+            var file = this.files[0],
+                reader = new FileReader();
+            reader.onload = function() {
+                var blob = new Blob([this.result], {type: "image/jpeg"});
+                // var blob = blob.slice(0, 19131);
+                var fileURL = window.URL.createObjectURL(blob);
+                var img = new Image();
+                img.src = fileURL;
+                document.querySelector("#playground").appendChild(img);
+                window.URL.revokeObjectURL(fileURL);
+            }
+            reader.readAsArrayBuffer(file);
+        }
+        */
+   }

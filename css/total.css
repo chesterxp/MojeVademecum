@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  padding: 0;
+  padding: 10px;
   font-size: 16px;
   background: #e2e1e1;
   font-family: 'Roboto', sans-serif; }
@@ -12,6 +12,32 @@ body {
   padding: 10px 0;
   text-align: center;
   font-size: 2rem; }
+
+#fileAPI .propertiesBox {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0; }
+  #fileAPI .propertiesBox p {
+    padding: 10px 20px;
+    background: #e47676;
+    color: #fff;
+    margin: 3px 0;
+    width: 300px;
+    text-align: center;
+    border-radius: 3px; }
+#fileAPI .fileButtons {
+  display: flex;
+  flex-direction: column; }
+  #fileAPI .fileButtons div {
+    padding: 5px 10px;
+    margin: 5px 0;
+    width: 100px;
+    text-align: center;
+    color: #fff; }
+  #fileAPI .fileButtons #startFile {
+    background: #4edf22; }
+  #fileAPI .fileButtons #stopFile {
+    background: #dd4b46; }
 
 #myOwnVideoPlayer h1 {
   text-align: center; }

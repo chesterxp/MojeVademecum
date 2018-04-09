@@ -12,6 +12,29 @@
 <body>
 
     <h1 class="mainTitle">Moje Vademecum</h1>
+
+    <div id="fileAPI">
+        <form action="">
+            <label for="fileInput">Wybierz plik</label>
+            <input type="file" name="fileInput" id="fileInput">
+        </form>
+        <div class="propertiesBox">
+            <p id="fileName">Lorem, ipsum dolor.</p>
+            <p id="fileSize">Lorem, ipsum dolor.</p>
+            <p id="fileType">Lorem, ipsum dolor.</p>
+            <p id="fileLastModifiedDate">Lorem, ipsum dolor.</p>
+        </div>
+        
+        <div class="fileButtons">
+            <div id="startFile">START</div>
+            <div id="stopFile">STOP</div>
+            <progress id="progress" value="0" min="0" max="100"></progress>
+        </div>
+
+        <div id="playground"></div>
+        
+    </div>
+
     <div id="myOwnVideoPlayer">
         <h1>Mój player</h1>
         <!-- <div id="videoPlayer22" class="videoPlayer">
