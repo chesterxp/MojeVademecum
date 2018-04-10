@@ -24,7 +24,7 @@ body {
     margin: 3px 0;
     width: 300px;
     text-align: center;
-    border-radius: 3px; }
+    border-radius: 6px; }
 #fileAPI .fileButtons {
   display: flex;
   flex-direction: column; }
@@ -395,4 +395,10 @@ body {
   #mainForm .valid input {
     border: 1px solid #1fca44; }
 
-/*# sourceMappingURL=total.css.map */
+body {
+  background: green;
+  font-size: 20px;
+  margin: 20px 0;
+  padding: 10px; }
+
+/*# sourceMappingURL=main.css.map */
