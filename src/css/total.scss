@@ -1,6 +1,6 @@
 body{
     margin: 0;
-    padding: 10px;
+    padding: 0;
     font-size: 16px;
     background: rgb(226, 225, 225);
     font-family: 'Roboto', sans-serif;
@@ -12,6 +12,35 @@ body{
     padding: 10px 0;
     text-align: center;
     font-size: 2rem;
+}
+
+//--------------------------------------------
+
+//axios
+#axios{
+    background:linear-gradient(280deg, rgb(250, 74, 74), rgb(29, 138, 189));
+    text-align: center;
+    h1{
+        text-align: center;
+        padding: 10px 0;
+    }
+    .axios_btn{
+        background: black;
+        color: #fff;
+        padding: 5px 20px;
+        transition: all 0.3s;
+        margin: 20px 0;
+        display: inline-block;
+        &:hover{
+            background: #fff;
+            color: #000;
+        }
+    }
+    .axios_result{
+        padding: 20px;
+        background: #ddd;
+        line-height: 2;
+    }
 }
 #fileAPI{
     .propertiesBox{
