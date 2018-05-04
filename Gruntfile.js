@@ -16,17 +16,16 @@ module.exports = function (grunt) {
 		},
 		sass: {
 			dist: {
-				files: [{
-					expand: true,
-					cwd: 'src/css/', //gdzie szukac
-					src: ['*.scss'], //co szukac
-					dest: 'css/', //gdzie zapisac
-					ext: '.css' //z jakim skrotem
-				}]
-				//production
-				// files: {
-				// 	'css/main.css': 'src/css/all.scss'
-				//   }
+				// files: [{
+				// 	expand: true,
+				// 	cwd: 'src/css/', //gdzie szukac
+				// 	src: ['all.scss'], //co szukac
+				// 	dest: 'css/', //gdzie zapisac
+				// 	ext: '.css' //z jakim skrotem
+				// }]
+				files: {
+					'css/main.css': 'src/css/all.scss'
+				  }
 			}
 		},
 		cssmin: {
@@ -35,17 +34,16 @@ module.exports = function (grunt) {
 				roundingPrecision: -1
 			},
 			target: {
-				files: [{
-					expand: true,
-					cwd: 'css/', //gdzie szukac
-					src: ['*.css'], //co szukac
-					dest: 'css/', //gdzie zapisac
-					ext: '.min.css' //z jakim skrotem
-				}]
-				//production
-				// files: {
-				// 	'css/main.min.css': 'css/main.css'
-				// }
+				// files: [{
+				// 	expand: true,
+				// 	cwd: 'css/', //gdzie szukac
+				// 	src: ['*.css'], //co szukac
+				// 	dest: 'css/', //gdzie zapisac
+				// 	ext: '.min.css' //z jakim skrotem
+				// }]
+				files: {
+					'css/main.min.css': 'css/main.css'
+				}
 			}
 		},
 		babel: {
@@ -69,10 +67,8 @@ module.exports = function (grunt) {
 				mode: 'gzip'
 			  },
 			  expand: true,
-				cwd: 'css/',
-				//production
-				// src: ['main.min.css'],
-				src: ['*.css'],
+			  cwd: 'css/',
+			  src: ['main.min.css'],
 			  dest: 'css/',
 			  ext: '.cssgz' //z jakim skrotem
 			}
@@ -94,7 +90,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-compress');
-	grunt.loadNpmTasks('grunt-contrib-concat');
+	// grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.registerTask('default', ['watch']);
-	// grunt.registerTask('production', ['sass', 'cssmin','compress']);
+	grunt.registerTask('production', ['sass', 'cssmin','compress']);
 };

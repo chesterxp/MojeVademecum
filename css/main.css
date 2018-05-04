@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  padding: 0;
+  padding: 10px;
   font-size: 16px;
   background: #e2e1e1;
   font-family: 'Roboto', sans-serif; }
@@ -12,27 +12,6 @@ body {
   padding: 10px 0;
   text-align: center;
   font-size: 2rem; }
-
-#axios {
-  background: linear-gradient(280deg, #fa4a4a, #1d8abd);
-  text-align: center; }
-  #axios h1 {
-    text-align: center;
-    padding: 10px 0; }
-  #axios .axios_btn {
-    background: black;
-    color: #fff;
-    padding: 5px 20px;
-    transition: all 0.3s;
-    margin: 20px 0;
-    display: inline-block; }
-    #axios .axios_btn:hover {
-      background: #fff;
-      color: #000; }
-  #axios .axios_result {
-    padding: 20px;
-    background: #ddd;
-    line-height: 2; }
 
 #fileAPI .propertiesBox {
   display: flex;
@@ -416,4 +395,10 @@ body {
   #mainForm .valid input {
     border: 1px solid #1fca44; }
 
-/*# sourceMappingURL=total.css.map */
+body {
+  background: green;
+  font-size: 20px;
+  margin: 20px 0;
+  padding: 10px; }
+
+/*# sourceMappingURL=main.css.map */

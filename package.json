@@ -22,13 +22,5 @@
     "test": "vade"
   },
   "author": "chesterxp",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/chesterxp/MojeVademecum.git"
-  },
-  "bugs": {
-    "url": "https://github.com/chesterxp/MojeVademecum/issues"
-  },
-  "homepage": "https://github.com/chesterxp/MojeVademecum#readme"
+  "license": "MIT"
 }

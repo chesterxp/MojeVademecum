@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/exercise.css">
+</head>
+<body>
+    <div class="geo">
+        <div class="czyWspiera"></div>
+        <div class="twojeDane"></div>
+        <div class="geoBtn">Ustal moja pozycje</div>
+    </div>
+    
+    <div class="wraper3">
+        <div class="buttons2">
+            <div class="btnAnimate efect1">Animate</div>
+            <div class="btnAnimate efect2">Animate</div>
+        </div>
+        <div class="wrapper4">
+            <button id="btn3">zmien</button>  
+            <div class="text3 text1 text4" data-dom-big="domek">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus, ipsa?</div>
+            <div class="text3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus, ipsa?</div>
+            <div class="text3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus, ipsa?</div>
+            <div class="text3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus, ipsa?</div>
+        </div>
+
+        <div class="wrapper5">
+            <form action="">
+                <input type="text"  placeholder="zwykły tekst" required id="pierwszePole">Jakiś tekst </br>
+                <input type="text"  pattern="[0-9]{2}-[0-9]{3}" value="-">kod pocztowy </br>
+                <input type="number" min=0 max=20 step=5 placeholder="zwykły tekst">Number </br>
+                <input type="date"  placeholder="zwykły tekst" autofocus>data </br>
+                <input type="datetime"  placeholder="zwykły tekst">datetime </br>
+                <input type="month"  placeholder="zwykły tekst">Jakiś tekst </br>
+                <input type="week"  placeholder="zwykły tekst">Jakiś tekst </br>
+                <input type="time"  placeholder="zwykły tekst">Jakiś tekst </br>
+                <input type="color"  placeholder="zwykły tekst" id="inputColor">Jakiś tekst </br>
+                <output class="form-control" id="outputColor"></output>  <br>
+                <input type="range"  placeholder="zwykły tekst" id="range">range</br>
+                <!-- <output type="text" id="outRange">jakies pole z range</output> -->
+                <output class="form-control" id="outRange"></output></br>
+                <input type="email"  placeholder="zwykły tekst">email </br>
+                <input type="tel"  placeholder="zwykły tekst" required>tel </br>
+                <input type="url"  placeholder="zwykły tekst">url </br>
+                <input type="text" list='cities'>
+                <datalist id='cities'>
+                    <option value="Warszawa">
+                    <option value="Krakow">
+                    <option value="Gdańsk">
+                    <option value="Zakopane">
+                </datalist> <br>
+                <progress min=0 value=50 max=100></progress><br>
+                <keygen>co to jest?<br>
+                <input type="submit" value="wyslij"><br>
+            </form>
+        </div>
+
+        <div class="wrapper6">
+            <h3>form 1</h3>
+            <form action="" id="form1" novalidate>
+                <input type="text" name="name" placeholder="Imie i nazwisko" required>
+                <input type="text" name="name" placeholder="Adres (ulica nr mieszkania)" required>
+                <input type="email" name="email" placeholder="Adres email" required>
+                <input type="text" name="name" placeholder="Miejscowość" required>
+                <input type="number" name="age" placeholder="Wiek" required>
+                <input type="submit" value="wyślij" id="sub1">
+            </form>
+            <h3>form 2</h3>
+            <form action="" id="form2" novalidate>
+                <input type="text" name="name" placeholder="Imie i nazwisko" required>
+                <input type="text" name="name" placeholder="Adres (ulica nr mieszkania)" required>
+                <input type="email" name="email" placeholder="Adres email" required>
+                <input type="text" name="name" placeholder="Miejscowość" required>
+                <input type="number" name="age" placeholder="Wiek" required>
+                <input type="submit" value="wyślij" id="sub2">
+            </form>
+        </div>
+
+        
+        
+    </div>
+    <script src="js/exerices2.js"></script>
+</body>
+</html>
