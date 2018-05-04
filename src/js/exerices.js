@@ -555,17 +555,37 @@
             first = document.getElementById('first');
 
         htm2.innerHTML = `I have car: ${obj.mark} ${obj.model} with engine ${obj.engine} from ${obj.year} year!`;
-        first.appendChild(htm2);   
+        first.prepend(htm2);
+
+        let htm3 = 'akapit z prepend';
+        let htm4 = 'akapit z before';
     }
 
-    firstFunInBabel(car);
+    // firstFunInBabel(car);
+    //ie11 nie wspiera after
+    // let first2 = document.querySelector('#first');
+    // let htm3 = 'akapit z prepend';
+    // let htm4 = 'akapit z before';
 
-    console.log('zmiany')
+    // first2.prepend(htm3);
+    // first2.after(htm4);
 
+    let element1 = document.querySelector('.element1');
+    let dad = element1.parentNode;
 
-    const nowa =    `Nowy fajny tekst
-                    który zajmuje klika lini
-                    kodu pisanego na lapku!`;
+    console.log(dad)
 
+//data set
+    let ele1 = document.querySelector('.ele1');
+    let dataEle1 = ele1.dataset.lap;
+    // ele1.classList.add('nowa');
+    let dodajeKlase = document.querySelector('#dodajKlase');
+    dodajeKlase.classList.add('nowa1')
+    dodajeKlase.addEventListener('click', function(){
+        ele1.classList.toggle('nowa');
+    })
 
-    console.log(nowa);                
+    let ele2 = document.querySelector('.ele2');
+    ele2.dataset.lap = "Nowe dodane dane do drugiego elementu";
+    let dataEle2 = ele2.dataset.lap;
+    console.log(dataEle2);
