@@ -1,69 +1,216 @@
 html {
-    box-sizing: border-box;
-    font-size: 10px;
-    background: #ffc600;
-  }
-  
-  *, *:before, *:after {
-    box-sizing: inherit;
-  }
-  
-  body {
-    padding: 0;
-    margin:0;
-    font-family: 'Amatic SC', cursive;
-  }
-  
-  h1 {
-    text-align: center;
-    font-size: 10rem;
-    line-height:1;
-    margin-bottom: 0;
-  }
-  
-  .score {
-    background:rgba(255,255,255,0.2);
-    padding:0 3rem;
-    line-height:1;
-    border-radius:1rem;
-  }
-  
-  .game {
-    width:600px;
-    height:400px;
-    display:flex;
-    flex-wrap:wrap;
-    margin:0 auto;
-  }
-  
-  .hole {
-    flex: 1 0 33.33%;
-    overflow: hidden;
-    position: relative;
-  }
-  
-  .hole:after {
-    display: block;
-    background: url(../../src/img/dirt.svg) bottom center no-repeat;
-    background-size:contain;
-    content:'';
-    width: 100%;
-    height:70px;
-    position: absolute;
-    z-index: 2;
-    bottom:-30px;
-  }
-  
-  .mole {
-    background:url(../../src/img/mole.svg) bottom center no-repeat;
-    background-size:60%;
-    position: absolute;
-    top: 100%;
-    width: 100%;
-    height: 100%;
-    transition:all 0.4s;
-  }
-  
-  .hole.up .mole {
-    top:0;
-  }
+	box-sizing: border-box;
+	font-size: 10px;
+	background: #375cd3;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	font-family: 'Lato', sans-serif;
+	position: relative;
+}
+
+h1 {
+	text-align: center;
+	font-size: 30px;
+	line-height: 1;
+	margin-bottom: 0;
+}
+
+.score {
+	background: rgba(255, 255, 255, 0.2);
+	padding: 0 3rem;
+	line-height: 1;
+	border-radius: 1rem;
+}
+
+.loginBox{
+	text-align: center;
+	
+	margin: 10px auto;
+	width: 200px;
+	#login{
+		display: block;
+		padding: 10px 20px;
+		font-size: 20px;
+		width: 100%;
+		margin-bottom: 5px;
+	}
+	.errorInput{
+		color: red;
+		font-size: 14px;
+		display: none;
+	}
+	.showError{
+		display: block;
+	}
+}
+
+.level{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	.btn{
+		background: #201899;
+		padding: 7px 10px;
+		margin: 3px 0;
+		border-radius: 5px;
+		border: 1px solid #201899;
+		transition: all 0.4s;
+		display: block;
+		text-align: center;
+		font-size: 20px;
+		color: #fff;
+		&:hover:not(.active){
+			background: rgb(255, 255, 255);
+			color: #201899;
+			cursor: pointer;
+		}
+	}
+	.active{
+		background: rgb(230, 68, 68);
+		border: 1px solid rgb(230, 68, 68);
+	}
+}
+
+#startGame {
+	background: #000;
+	color: #fff;
+	padding: 10px 20px;
+	border: 1px solid #000;
+	border-radius: 5px;
+	margin: 30px auto;
+	display: block;
+	transition: all 0.4s;
+	&:hover {
+		background: #fff;
+		color: #000;
+		border: 1px solid #000;
+		cursor: pointer;
+	}
+}
+
+#timer {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	background: rgb(223, 72, 72);
+	color: rgb(255, 255, 255);
+	font-size: 30px;
+	width: 120px;
+	height: 120px;
+	border: 5px solid rgb(255, 255, 255);
+	border-radius: 50%;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gameOver {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.53);
+	z-index: 10;
+	display: none;
+	.text {
+		font-size: 50px;
+		text-align: center;
+		padding: 100px;
+		position: relative;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background: #fff;
+		width: 80%;
+		border-radius: 5px;
+	}
+}
+
+.showGO{
+	display: block;
+	transition: all 0.4s;
+}
+
+.game {
+	width: 620px;
+	height: 530px;
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 auto;
+	box-shadow: 0px 0px 3px 3px #00000054;
+    background: #ddd;
+    border-radius: 5px;
+}
+
+.hole {
+	flex: 1 0 33.33%;
+	overflow: hidden;
+	position: relative;
+	&:after{
+		display: block;
+		background: url(../../src/img/dirt.svg) bottom center no-repeat;
+		background-size: contain;
+		content: '';
+		width: 100%;
+		height: 70px;
+		position: absolute;
+		z-index: 2;
+		bottom: -30px;
+	}
+}
+
+.mole {
+	background: url(../../src/img/mole.svg) bottom center no-repeat;
+	background-size: 60%;
+	position: absolute;
+	top: 100%;
+	width: 100%;
+	height: 100%;
+	transition: all 0.4s;
+}
+
+.hole.up .mole {
+	top: 0;
+}
+
+.rankingList{
+	width: 400px;
+	margin: 100px auto 20px auto;
+	border: 3px solid #ddd;
+	border-radius: 5px;
+	background: linear-gradient(80deg, rgb(245, 52, 52),rgb(2, 0, 0));
+	h2{
+		color: #fff;
+		text-align: center;
+	}
+	.player{
+		display: flex;
+		justify-content: space-between;
+		padding: 5px 0;
+		margin: 5px 0;
+		font-size: 20px;
+		border-bottom: 1px solid #ddd;
+		color: #fff;
+		&:last-child{
+			border-bottom: none;
+		}
+		.numberOfranking{
+			padding-left: 10px;
+		}
+		.resultOfgame{
+			padding-right: 30px;
+		}
+
+	}
+}

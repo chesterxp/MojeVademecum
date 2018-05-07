@@ -7,8 +7,9 @@ module.exports = function (grunt) {
 	grunt.initConfig({
 		watch: {
 			sass: {
-				files: ['src/css/*.scss', 'src/js/*.js'],
-				tasks: ['sass', 'babel']
+				// files: ['src/css/*.scss', 'src/js/*.js'],
+				files: ['src/css/*.scss'],
+				tasks: ['sass']
 			},
 			options: {
 				livereload: true

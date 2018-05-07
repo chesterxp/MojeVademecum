@@ -494,34 +494,34 @@ function audio() {
 /**
 FORMULARZE W HTML5
 input: 
-    data - data,
-    datatime - data i czas strefowy,
-    datatime-local - data i czas bez strefy czasowej,
-    month -
-    week - 
-    time - wybór godziny;
-    color - wybór koloru,
-    searcg - pole z lupą,
-    number
-    range - suwak,
-    email -
-    tel -
-    url
-    min/max - 
-    step - co ile,
-    autofocus,
-    autocomplete - on, off - autouzupełnienie,
-    list
-    placeholder
-    required
-    pattern - wyrażenie regEx, <input type="text" pattern="[0-9]{2}-[0-9]{2-3}">,
-    formnovalidate - wysłanie formularza bez sprawdzenia (w tagu submit),
-    novalidation - wysłanie formularza bez sprawdzenia (w tagu form),
-    keygen
-    progress
-    output
-    datalist
- */
+data - data,
+datatime - data i czas strefowy,
+datatime-local - data i czas bez strefy czasowej,
+month -
+week - 
+time - wybór godziny;
+color - wybór koloru,
+searcg - pole z lupą,
+number
+range - suwak,
+email -
+tel -
+url
+min/max - 
+step - co ile,
+autofocus,
+autocomplete - on, off - autouzupełnienie,
+list
+placeholder
+required
+pattern - wyrażenie regEx, <input type="text" pattern="[0-9]{2}-[0-9]{2-3}">,
+formnovalidate - wysłanie formularza bez sprawdzenia (w tagu submit),
+novalidation - wysłanie formularza bez sprawdzenia (w tagu form),
+keygen
+progress
+output
+datalist
+*/
 var form1 = document.querySelector('#mainForm');
 
 validForm(form1);
@@ -574,16 +574,14 @@ function geoSuccsess(position){
     position.coords.speed - prętkość;
     position.timestamp  - czas danych;
 }
-
-function geoError(errorObject){
+  function geoError(errorObject){
     errorObject.code = rodzaj błędu,;
     errorObject.message = ;
     errorObject.PERMISSION_DENIED - odmowa ustalenia pozycji;
     errorObject.POSITION_UNAVAILABLE - brak możliwości ustalenia pozycji;
     errorObject.TIMEOUT - upłynął maxymalny czas oczekiwania na sprawdzenie;
 }
-
-let options = {
+  let options = {
         timeout: 5000 - max czas na sprawdzenie;
         enableHighAccuracy: true - 
     };
@@ -863,39 +861,7 @@ if ('localStorage' in window) {
     var formToSave3 = new FormSaver(document.querySelector('#form3'));
 }
 
-//CANVAS
-//sprawdzamy czy przeglądarka obsługuje canvas
-// if(!document.createElement("canvas").getContext) return;
-/*
-let canvas = document.querySelector('#myCanvas'),
-    ctx = canvas.getContext('2d');
-
-// Ustawienia stylów
-ctx.fillStyle = "#448af3"; //przypisanie koloru
-ctx.strokeStyle = "#f344f1"; //kolor lini
-ctx.lineWidth = 30; //szerokosc lini px
-
-//zaokrąglenie lini łączących 
-// ctx.lineJoin = "round";
-// ctx.lineJoin = "bevel";
-ctx.lineJoin = "miter";
-// ctx.miterLimit = 1;
-
-ctx.lineCap = "round";// butt, square 
-
-
-// Rysowanie lini
-ctx.moveTo(50,50); //przesuniecie do punktu
-ctx.lineTo(50,150); //
-ctx.stroke(); //rysowanie linii
-
-ctx.lineTo(150, 150);
-ctx.stroke(); //rysowanie linii
-
-*/
-
 //video and audio
-
 /*
 AUDIO
 controls - kontrolki
@@ -903,28 +869,23 @@ autoplay - odpala sie na starcie // nie zawsze działa na mobile
 loop - działanie w pętli
 muted - odpalone audio działa bez głosu
 preload(auto,metadata,none) - pobieranie danych o utworze z serwera 1-automatycznie ogarnia to przeglądarka, kiedy i ile pobrac, 2-tylko fragment danych, 3-nie pobiera nic
-
-Video
+  Video
 to samo co w audio
 poster - link do obrazka jako pierwsza klatka filmu
 width 
 height
-
-odpalenie w konkretnym momencie 
+  odpalenie w konkretnym momencie 
 video src="media/ollie.mp4#t=25,41" //od 25s do 41s
 lub t=20 // od 20s
 t=,120 //do 120s
 t=,01:00:00 //do 1h odtwarzamy
-
-
-Audio & Video API
+    Audio & Video API
 //funkcje
 .canPlayType() //sprawdzenie czy przeglądarka ogarnie okreslony typ nagrania np audio/ogg
 .load() // pobranie pliku z serwera
 .play() // start
 .pause() 
-
-//właściwości
+  //właściwości
 .buffered //zwraca wartośc zbuforowanego pliku
 .currentSrc //zwraca adres z którego jest pobierany plik
 .currentTime //odczytanie aktualnego czasu otwarzania lub ustawienie od kiedy ma sie rozpocząć odtwarzanie
@@ -935,8 +896,7 @@ Audio & Video API
 .volume //odczyt ustawienie 0.1 - 1.0
 .videoWidth  //zwrócenie wartości width wideo
 .videoHeight//zwrócenie wartości height wideo
-
-//zdarzenia
+  //zdarzenia
 .durationchange - zmiana czasu trwania(np po załadowaniu pliku)
 .ended - wywołanie po zakończeniu pliku
 .loadstart - zaczniemy wczytywac plik
@@ -1007,7 +967,7 @@ VideoPlayer.prototype.assignEventListeners = function () {
 };
 //tworzymy playera
 VideoPlayer.prototype.makePlayer = function (name) {
-    var htm = '<div id="' + name + '" class="videoPlayer">\n                        <div class="videoBox">\n                            <video>\n                                <source src="' + this.url + '" type="video/mp4">\n                            </video>\n                            <div class="backgroundVideo"></div>\n                            \n                        </div>\n                        \n                        <div class="controls">\n                            <div class="leftControls cont">\n\n                                <div class="playPause glyphicon glyphicon-play">\n                                    <!-- <i class="fas fa-play"></i>\n                                    <i class="fas fa-pause"></i> -->\n                                </div>\n                                <!-- <div class="fas fa-pause dom"></div>\n                                <div class="fax">faxxx</div> -->\n                            </div>\n                            <div class="progressBar cont">\n                                <div class="playbackBar"></div>\n                                <div class="loadedBar"></div>\n                            </div>\n                            <div class="rightControls cont">\n                                <div class="fullScreen">\n                                    <div class="playPause glyphicon glyphicon-fullscreen"></div>\n                                </div>\n                                <div class="time">\n                                    <span class="currentTime">0:00</span>\n                                    /\n                                    <span class="totalTime">0:30</span>\n                                </div>\n                                <div class="volume">\n                                    <span class="glyphicon glyphicon-volume-up" aria-hidden="true"></span>\n                                    <div class="fullVolume">\n                                        <div class="currentVolume"></div>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>';
+    var htm = '<div id="' + name + '" class="videoPlayer">\n                            <div class="videoBox">\n                                <video>\n                                    <source src="' + this.url + '" type="video/mp4">\n                                </video>\n                                <div class="backgroundVideo"></div>\n                                \n                            </div>\n                            \n                            <div class="controls">\n                                <div class="leftControls cont">\n\n                                    <div class="playPause glyphicon glyphicon-play">\n                                        <!-- <i class="fas fa-play"></i>\n                                        <i class="fas fa-pause"></i> -->\n                                    </div>\n                                    <!-- <div class="fas fa-pause dom"></div>\n                                    <div class="fax">faxxx</div> -->\n                                </div>\n                                <div class="progressBar cont">\n                                    <div class="playbackBar"></div>\n                                    <div class="loadedBar"></div>\n                                </div>\n                                <div class="rightControls cont">\n                                    <div class="fullScreen">\n                                        <div class="playPause glyphicon glyphicon-fullscreen"></div>\n                                    </div>\n                                    <div class="time">\n                                        <span class="currentTime">0:00</span>\n                                        /\n                                        <span class="totalTime">0:30</span>\n                                    </div>\n                                    <div class="volume">\n                                        <span class="glyphicon glyphicon-volume-up" aria-hidden="true"></span>\n                                        <div class="fullVolume">\n                                            <div class="currentVolume"></div>\n                                        </div>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>';
     return htm;
 };
 //zdarzenie play
@@ -1146,43 +1106,36 @@ var place3 = $('.showRoad');
 FileReader - odczytywanie informacji o pliku oraz ich zawartości
 FileWriter - tworzenie w locie plików oraz możliwośc ich zapisywania
 FileSystem - system plików dla domeny
-
-Blob
+  Blob
 size - wielkość danych
 type - typ danych
 slice() 
-
-File
+  File
 jw
 name - nazwa pliku z rozszerzeniem
 lastModifiedDate - ostatnia data modyfikacji
-
-FileList
+  FileList
 length - ilośc plików w tablicy
 item() - wybór konkretnego elementu np item(0) pierwszy element
-
-FileReader - interfejs za pomoca którego możemy tworzyc nowe obiekty
+  FileReader - interfejs za pomoca którego możemy tworzyc nowe obiekty
 WŁAŚCIWOŚCI
 readyState //0,1,2 czy dane są załadowane czy też nie
 result - miesce przechpwywania wyniku naszych danych
 error - błąd 
-
-METODY
+  METODY
 readAsText(file) - odczytany plik result bedzie miał forme textową
 readAsDataURL(file) - zwróci zawartość pliku w formacie data URL (base64)
 readAsArrayBuffer(file) - odczytanie pliku w sposób binarny
 readAsBinaryString - oczytanie pliku w sposób binarny?
 abort() - przerwanie wczytywania pliku(w przypadku duzych plików może to troche trwać, pliki sa wczytywane asynchronicznie)
-
-EVENTY
+  EVENTY
 loadstart - zdarzenie odpala sie na starcie
 loadend - na zakońćzeniu 
 load - po załadowaniu poprawnie danych
 error - przy wystąpieniu błędu
 progress - pasek postepu ładowanych danych
 abort - przerwanie wczytywania pliku
-
-*/
+  */
 
 //sprawdzenie czy przeglądarka obsługuje File API
 (function checkFielAPI() {
@@ -1274,8 +1227,6 @@ fileInput.onchange = function () {
 };
 
 //axios
-
-
 var axios_btn = document.querySelector('.axios_btn');
 axios_btn.addEventListener('click', showAxiosData);
 
@@ -1288,8 +1239,10 @@ function showAxiosData() {
 }
 
 function addAxiosData(data) {
-    var html = '<div class="userr">\n    <div class="id">' + data.id + '</div>\n    <div class="name">' + data.name + '</div>\n    <div class="email">' + data.email + '</div>\n    <div class="phone">' + data.phone + '</div>\n    <div class="website">' + data.website + '</div>\n    </div>';
+    var html = '<div class="userr">\n        <div class="id">' + data.id + '</div>\n        <div class="name">' + data.name + '</div>\n        <div class="email">' + data.email + '</div>\n        <div class="phone">' + data.phone + '</div>\n        <div class="website">' + data.website + '</div>\n        </div>';
 
     var axios_result = document.querySelector('.axios_result');
     axios_result.innerHTML = html;
 }
+
+//

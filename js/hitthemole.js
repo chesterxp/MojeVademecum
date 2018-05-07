@@ -1,18 +1,18 @@
 'use strict';
 
-console.log('hit the mole');
+console.log('GAME - Hit the mole');
 var hitTheMole = {
     holes: document.querySelectorAll('.hole'),
     scoreBoard: document.querySelector('.score'),
     moles: document.querySelectorAll('.mole'),
+    second: document.querySelector('.second'),
     lastHole: "",
     timeUp: true,
     score: 0,
+    gameTime: 11,
     init: function init() {
         hitTheMole.addBonkEvent();
-    },
-    poka: function poka() {
-        console.log(this.holes);
+        hitTheMole.second.textContent = this.gameTime;
     },
     randomTime: function randomTime(min, max) {
         return Math.round(Math.random() * (max - min) + min);
@@ -28,7 +28,7 @@ var hitTheMole = {
         return hole;
     },
     showMole: function showMole() {
-        var time = this.randomTime(200, 1000);
+        var time = this.randomTime(500, 1000);
         var hole = this.randomHole(this.holes);
         hole.classList.add('up');
         setTimeout(function () {
@@ -37,33 +37,61 @@ var hitTheMole = {
                 hitTheMole.showMole();
             }
         }, time);
-        console.log(time, hole);
     },
     startGame: function startGame() {
+        if (!hitTheMole.timeUp) return;
+
         hitTheMole.scoreBoard.textContent = 0;
         hitTheMole.timeUp = false;
         hitTheMole.showMole();
         hitTheMole.score = 0;
-        setTimeout(function () {
-            hitTheMole.timeUp = true;
-        }, 10000);
+        hitTheMole.timer();
+    },
+    timer: function timer() {
+        var time = this.gameTime;
+        hitTheMole.second.textContent = time;
+        var czas = setInterval(minus, 1000);
+
+        function minus() {
+            time--;
+            console.log(time);
+            if (time < 10) {
+                time = '0' + time;
+            }
+            hitTheMole.second.textContent = time;
+            if (time == 0) {
+                hitTheMole.timeUp = true;
+                document.querySelector('#timer').innerHTML = 'GAME OVER';
+                clearInterval(czas);
+            }
+        }
     },
     bonk: function bonk(e) {
-        if (!e.isTrusted) {
-            return;
+        var self = e.target;
+        if (!e.isTrusted) return;
+        if (!self.classList.contains('hit')) {
+            hitTheMole.score++;
         }
-        hitTheMole.score++;
-        this.classList.remove('up');
+
+        self.classList.remove('up');
+        self.classList.add('hit');
+        setTimeout(function () {
+            self.classList.remove('hit');
+        }, 400);
         hitTheMole.scoreBoard.textContent = hitTheMole.score;
+    },
+    resetHit: function resetHit() {
+        this.moles.forEach(function (mole) {
+            mole.classList.remove('hit');
+        });
     },
     addBonkEvent: function addBonkEvent() {
         hitTheMole.moles.forEach(function (mole) {
             mole.addEventListener('click', hitTheMole.bonk);
         });
     }
-
 };
 hitTheMole.init();
+
 var startGame = document.querySelector('#startGame');
 startGame.addEventListener('click', hitTheMole.startGame);
-console.log(hitTheMole.randomTime(200, 3000));
