@@ -13,6 +13,18 @@ body {
   text-align: center;
   font-size: 2rem; }
 
+.lazyLoad .lazy_text {
+  padding: 20px;
+  line-height: 30px;
+  font-size: 30px; }
+.lazyLoad .my_lazy {
+  opacity: 0;
+  transform: scale(3);
+  transition: all 500ms; }
+.lazyLoad .my_loaded {
+  opacity: 1;
+  transform: scale(1); }
+
 #axios {
   background: linear-gradient(280deg, #fa4a4a, #1d8abd);
   text-align: center; }

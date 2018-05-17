@@ -15,6 +15,24 @@ body{
 }
 
 //--------------------------------------------
+//lazyLoad
+.lazyLoad{
+    .lazy_text{
+        padding: 20px;
+        line-height: 30px;
+        font-size: 30px;
+    }
+    .my_lazy {
+        opacity:0;
+        transform: scale(3);
+        transition: all 500ms;
+    }
+    .my_loaded {
+        opacity:1;
+        transform: scale(1);
+    }
+}
+
 
 //axios
 #axios{
