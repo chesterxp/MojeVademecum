@@ -1,4 +1,4 @@
 node_modules/
 .sass-cache/
-src/image
-src/media
+img/image
+media

@@ -4,6 +4,7 @@ html {
 	background: #375cd3;
 }
 
+
 *, *:before, *:after {
 	box-sizing: inherit;
 }
@@ -159,7 +160,7 @@ h1 {
 	position: relative;
 	&:after{
 		display: block;
-		background: url(../../src/img/dirt.svg) bottom center no-repeat;
+		background: url(../img/dirt.svg) bottom center no-repeat;
 		background-size: contain;
 		content: '';
 		width: 100%;
@@ -171,7 +172,7 @@ h1 {
 }
 
 .mole {
-	background: url(../../src/img/mole.svg) bottom center no-repeat;
+	background: url(../img/mole.svg) bottom center no-repeat;
 	background-size: 60%;
 	position: absolute;
 	top: 100%;

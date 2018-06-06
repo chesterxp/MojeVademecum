@@ -60,6 +60,7 @@ body {
   color: #fff;
   width: 400px;
   margin: 10px 0; }
+
 .geo .geoBtn {
   padding: 10px 30px;
   background: #d84242;
@@ -75,9 +76,11 @@ body {
 
 .wrapper4 .text3 {
   transition: all 1s; }
+
 .wrapper4 .pink {
   transition: all 1s;
   background: pink; }
+
 .wrapper4 .green {
   background: green; }
 
@@ -116,6 +119,7 @@ body {
 @keyframes spinner {
   to {
     transform: rotate(360deg); } }
+
 .spinner-2:before {
   content: "";
   box-sizing: border-box;
@@ -146,5 +150,3 @@ body {
   border-top: 2px solid coral;
   border-right: 2px solid transparent;
   animation: spinner 0.7s linear infinite; }
-
-/*# sourceMappingURL=exercise.css.map */

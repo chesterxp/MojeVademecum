@@ -138,7 +138,7 @@ h1 {
   position: relative; }
   .hole:after {
     display: block;
-    background: url(../../src/img/dirt.svg) bottom center no-repeat;
+    background: url(../img/dirt.svg) bottom center no-repeat;
     background-size: contain;
     content: '';
     width: 100%;
@@ -148,7 +148,7 @@ h1 {
     bottom: -30px; }
 
 .mole {
-  background: url(../../src/img/mole.svg) bottom center no-repeat;
+  background: url(../img/mole.svg) bottom center no-repeat;
   background-size: 60%;
   position: absolute;
   top: 100%;
@@ -182,5 +182,3 @@ h1 {
       padding-left: 10px; }
     .rankingList .player .resultOfgame {
       padding-right: 30px; }
-
-/*# sourceMappingURL=hitthemole.css.map */
