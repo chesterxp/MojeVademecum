@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #ddd;
+    padding: 20px 10px;
+}
+.memory_box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    
+}
+.card{
+    border: 3px solid rgb(255, 255, 255);
+    width: 16%;
+    height: 33.3vh;
+    transition: all 0.4s ease;
+    &:hover{
+        opacity: 0.8;
+    }
+    &.red{
+        background: rgb(230, 74, 13);
+    }
+    &.blue{
+        background: rgb(16, 108, 161);
+    }
+    &.yellow{
+        background: rgb(236, 236, 13);
+    }
+    &.green{
+        background: rgb(7, 212, 7);
+    }
+    &.pink{
+        background: rgb(226, 14, 191);
+    }
+    &.orange{
+        background: rgb(228, 153, 14);
+    }
+    &.brown{
+        background: brown;
+    }
+    &.light_blue{
+        background: rgb(0, 204, 255);
+    }
+    &.violet{
+        background: rgb(162, 0, 255);
+    }
+    &.hide{
+        background: #222;
+    }
+    &.get{
+        background: #ddd;
+    }
+}
+
+@media all and (orientation: portrait){
+    .card{
+        width: 33.3%;
+        height: 16vh;
+    }
+}

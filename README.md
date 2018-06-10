@@ -344,14 +344,24 @@ gulp.task('scripts', function() {
 ```npm install --save-dev gulp-imagemin```
 ```npm install --save imagemin-jpeg-recompress```
 
-```
+```javascript
 const imagemin = require('gulp-imagemin');
  
-gulp.task('images', function() {
-  return gulp.src('src/images/**/*')
-    .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
-    .pipe(gulp.dest('dist/images'));
-});
+gulp.task('optimize', function () {
+        return gulp.src('./images/*')
+            .pipe(imagemin([
+            imagemin.gifsicle(),
+            imageminJpegRecompress({
+                loops:4,
+                min: 50,
+                max: 95,
+                quality:'low' 
+            }),
+            imagemin.optipng(),
+            imagemin.svgo()
+            ]))
+            .pipe(gulp.dest('./dist/'))
+    });
 ```
 
 
