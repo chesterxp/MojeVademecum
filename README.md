@@ -1,141 +1,3 @@
-# MojeVademecum
-Przykładowe rozwiązania niektórych case-ów
-
-Markdown Crash Curse
-
-# HEADINGS
-**use: #**
-## heading 2
-### heading 3
-#### heading 4
-
-# Italics
-**use: * or _**  
-i love *javascript*    
-i love _javascript_    
-
-# Strong
-
-**use:\*\***  
-i love **javascript**  
-
-# Strakethrought
-use ~~   
-i love ~~javascript~~
-
-# Horizontal Rule
-use ___   
-___
-
-# Blockquote
-use >
->i love javascript
-
-# Links
-use \[name of links](url)   \n   
-"description of link"
-
-[www.google.com](www.google.com
-"desctiption of link")
-
-# UL
-use \n *   
-tab and next *
-* item 1
-* item 2
-* item 3
-    * item 3 part 1
-    * item 3 part 2
-    * item 3 part 3
-
-# OL
-use \n 1.   
-tab and next 1.
-1. item 1
-1. item 2
-1. item 3
-    1. item 3 part 1
-    1. item 3 part 2
-    1. item 3 part 3
-
-
-# Inline code block
-
-use \`code`
-
-`<div class="header> Block 1 </div>`
-
-# Images
-
-use \![name of images]\(link)
-   
-![Markdown Logo](https://markdown-here.com/img/logo-2015/austin.png)
-
-
-# Github Markdown
-
-## use \``` code```
-```
-    npm instal gulp
-
-```
-
-after ``` write language eq bash, javascript, python
-     
-bash:   
-```bask
-    npm instal gulp-sass
-    npm start
-    
-```
-javascript
-```
-```javascript
-    function add(num1, num2){
-        return num1 + num2;
-    }
-```
-
-```javascript
-    function add(num1, num2){
-        return num1 + num2;
-    }
-```
-
-# Tables
-
-```
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | www.google.com|   $12 |
-| zebra stripes | are neat      |    $1 |
-```
-
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | www.google.com|   $12 |
-| zebra stripes | are neat      |    $1 |
-
-| Changes                               | DOM Load      | Full Load     |
-| -------------                         |:------------  | -----:        |
-| Start                                 | 12,54         | 22.80         |
-| MinCSS i JS                           | 11,94         | 22.89         |
-| Delate Jquery UI                      | 6,13          | 20.47         |
-| Optimize images                       | 6.56          | 12.12         |
-| Remove smoothScroll and add LazyLoad  | 3:56          | 10.69         |
-
-# Task list
-use \* []
-
-* [x] Task 1
-* [x] Task 2
-* [ ] Task 3
-* [] Task 4
-
-
-
 # Gulp guide
 
 ## STYLES
@@ -475,5 +337,137 @@ gulp.task('watch', function () {
   ```
 
 
+Markdown Crash Curse
+
+# HEADINGS
+**use: #**
+## heading 2
+### heading 3
+#### heading 4
+
+# Italics
+**use: * or _**  
+i love *javascript*    
+i love _javascript_    
+
+# Strong
+
+**use:\*\***  
+i love **javascript**  
+
+# Strakethrought
+use ~~   
+i love ~~javascript~~
+
+# Horizontal Rule
+use ___   
+___
+
+# Blockquote
+use >
+>i love javascript
+
+# Links
+use \[name of links](url)   \n   
+"description of link"
+
+[www.google.com](www.google.com
+"desctiption of link")
+
+# UL
+use \n *   
+tab and next *
+* item 1
+* item 2
+* item 3
+    * item 3 part 1
+    * item 3 part 2
+    * item 3 part 3
+
+# OL
+use \n 1.   
+tab and next 1.
+1. item 1
+1. item 2
+1. item 3
+    1. item 3 part 1
+    1. item 3 part 2
+    1. item 3 part 3
+
+
+# Inline code block
+
+use \`code`
+
+`<div class="header> Block 1 </div>`
+
+# Images
+
+use \![name of images]\(link)
+   
+![Markdown Logo](https://markdown-here.com/img/logo-2015/austin.png)
+
+
+# Github Markdown
+
+## use \``` code```
+```
+    npm instal gulp
+
+```
+
+after ``` write language eq bash, javascript, python
+     
+bash:   
+```bask
+    npm instal gulp-sass
+    npm start
+    
+```
+javascript
+```
+```javascript
+    function add(num1, num2){
+        return num1 + num2;
+    }
+```
+
+```javascript
+    function add(num1, num2){
+        return num1 + num2;
+    }
+```
+
+# Tables
+
+```
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | www.google.com|   $12 |
+| zebra stripes | are neat      |    $1 |
+```
+
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | www.google.com|   $12 |
+| zebra stripes | are neat      |    $1 |
+
+| Changes                               | DOM Load      | Full Load     |
+| -------------                         |:------------  | -----:        |
+| Start                                 | 12,54         | 22.80         |
+| MinCSS i JS                           | 11,94         | 22.89         |
+| Delate Jquery UI                      | 6,13          | 20.47         |
+| Optimize images                       | 6.56          | 12.12         |
+| Remove smoothScroll and add LazyLoad  | 3:56          | 10.69         |
+
+# Task list
+use \* []
+
+* [x] Task 1
+* [x] Task 2
+* [ ] Task 3
+* [] Task 4
 
 
