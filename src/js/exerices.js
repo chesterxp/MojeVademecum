@@ -109,10 +109,10 @@ function longestWord(sen) {
     let newArr = sen.toLowerCase().split(' ');
     newArr.sort(function (a, b) {
         return b.length - a.length;
-    })
+    });
     let manyWord = newArr.filter(function (word) {
         return word.length === newArr[0].length;
-    })
+    });
     console.log(manyWord);
 }
 // console.log(longestWord('lubie jezdzic rowerem pod górke!'));
@@ -180,7 +180,7 @@ var osoba = {
     zmiana: function () {
         console.log(`Witam!! Jestem ${this.imie} ${this.nazwisko} i mam ${this.wiek}lat`);
     }
-}
+};
 // delete osoba.wiek;
 // for( var char in osoba){
 //     console.log(osoba[char]);
@@ -195,7 +195,7 @@ var tablica = ['dom', 'rower', 'auto', 'samolot', 'komputer'];
 function dodaj(tab) {
     return tab.map(function (el) {
         return el + 2;
-    })
+    });
 }
 
 let xx = dodaj(tablica);
@@ -278,7 +278,7 @@ function polacz(arr) {
 function polacz2(arr) {
     return arr.reduce(function (a, b) {
         return a.concat(b);
-    })
+    });
 }
 
 // console.log('2 opcja',polacz2(tablica4));
@@ -345,7 +345,7 @@ function letterChanges(str) {
     });
     newStr = newStr.replace(/a|e|i|o|u/gi, function (vowel) {
         return vowel.toUpperCase();
-    })
+    });
     return newStr;
 }
 
@@ -423,12 +423,12 @@ function timer() {
     function pokazLog() {
         console.log('setInterval działa: ', liczbaa);
         liczbaa++;
-    };
+    }
 
     setTimeout(function () {
         console.log('koniec');
-        clearInterval(timer)
-    }, 10000)
+        clearInterval(timer);
+    }, 10000);
 }
 //-----------------szerokość ---------wysokość-----offsetWidth
 /*
@@ -606,7 +606,7 @@ console.log('exerices');
 
 function exericesWithCss() {
     let first = document.querySelector('#dodajKlase');
-    first.style['background'] = '#222';
+    first.style.background = '#222';
     first.style.color = '#fff';
     first.style['border-radius'] = '5px';
     // first.setProperty("font-size", "1.5rem");
@@ -614,7 +614,7 @@ function exericesWithCss() {
     // console.log(first['background'])
 
 
-    const style = window.getComputedStyle(first, null)
+    const style = window.getComputedStyle(first, null);
     console.log(style.getPropertyValue('height'));
     console.log(style.width);
     console.log(style['background-color']);
@@ -624,7 +624,7 @@ function exericesWithCss() {
 
 function funWithPhoto() {
     const img = document.querySelector('.tomato');
-    img.style['transition'] = 'all 0.5s';
+    img.style.transition = 'all 0.5s';
     console.dir(img);
 
     const obr = document.getElementById('obrazek');
