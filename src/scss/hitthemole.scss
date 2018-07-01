@@ -4,8 +4,9 @@ html {
 	background: #375cd3;
 }
 
-
-*, *:before, *:after {
+*,
+*:before,
+*:after {
 	box-sizing: inherit;
 }
 
@@ -30,36 +31,35 @@ h1 {
 	border-radius: 1rem;
 }
 
-.loginBox{
+.loginBox {
 	text-align: center;
-	
 	margin: 10px auto;
 	width: 200px;
-	#login{
+	#login {
 		display: block;
 		padding: 10px 20px;
 		font-size: 20px;
 		width: 100%;
 		margin-bottom: 5px;
 	}
-	.errorInput{
+	.errorInput {
 		color: red;
 		font-size: 14px;
 		display: none;
 	}
-	.showError{
+	.showError {
 		display: block;
 	}
 }
 
-.level{
+.level {
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
 	position: absolute;
 	top: 20px;
 	left: 20px;
-	.btn{
+	.btn {
 		background: #201899;
 		padding: 7px 10px;
 		margin: 3px 0;
@@ -70,13 +70,13 @@ h1 {
 		text-align: center;
 		font-size: 20px;
 		color: #fff;
-		&:hover:not(.active){
+		&:hover:not(.active) {
 			background: rgb(255, 255, 255);
 			color: #201899;
 			cursor: pointer;
 		}
 	}
-	.active{
+	.active {
 		background: rgb(230, 68, 68);
 		border: 1px solid rgb(230, 68, 68);
 	}
@@ -111,8 +111,8 @@ h1 {
 	border: 5px solid rgb(255, 255, 255);
 	border-radius: 50%;
 	display: flex;
-    justify-content: center;
-    align-items: center;
+	justify-content: center;
+	align-items: center;
 }
 
 .gameOver {
@@ -138,7 +138,7 @@ h1 {
 	}
 }
 
-.showGO{
+.showGO {
 	display: block;
 	transition: all 0.4s;
 }
@@ -150,17 +150,17 @@ h1 {
 	flex-wrap: wrap;
 	margin: 0 auto;
 	box-shadow: 0px 0px 3px 3px #00000054;
-    background: #ddd;
-    border-radius: 5px;
+	background: #ddd;
+	border-radius: 5px;
 }
 
 .hole {
 	flex: 1 0 33.33%;
 	overflow: hidden;
 	position: relative;
-	&:after{
+	&:after {
 		display: block;
-		background: url(../img/dirt.svg) bottom center no-repeat;
+		background: url(../../img/dirt.svg) bottom center no-repeat;
 		background-size: contain;
 		content: '';
 		width: 100%;
@@ -172,7 +172,7 @@ h1 {
 }
 
 .mole {
-	background: url(../img/mole.svg) bottom center no-repeat;
+	background: url(../../img/mole.svg) bottom center no-repeat;
 	background-size: 60%;
 	position: absolute;
 	top: 100%;
@@ -185,17 +185,17 @@ h1 {
 	top: 0;
 }
 
-.rankingList{
+.rankingList {
 	width: 400px;
 	margin: 100px auto 20px auto;
 	border: 3px solid #ddd;
 	border-radius: 5px;
-	background: linear-gradient(80deg, rgb(245, 52, 52),rgb(2, 0, 0));
-	h2{
+	background: linear-gradient(80deg, rgb(245, 52, 52), rgb(2, 0, 0));
+	h2 {
 		color: #fff;
 		text-align: center;
 	}
-	.player{
+	.player {
 		display: flex;
 		justify-content: space-between;
 		padding: 5px 0;
@@ -203,15 +203,14 @@ h1 {
 		font-size: 20px;
 		border-bottom: 1px solid #ddd;
 		color: #fff;
-		&:last-child{
+		&:last-child {
 			border-bottom: none;
 		}
-		.numberOfranking{
+		.numberOfranking {
 			padding-left: 10px;
 		}
-		.resultOfgame{
+		.resultOfgame {
 			padding-right: 30px;
 		}
-
 	}
 }

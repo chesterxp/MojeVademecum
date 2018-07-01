@@ -1,0 +1,94 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Kurs Javascript - Zadanie funkcja strzałkowa</title></head><style>body {
+    max-width:900px;
+    margin:0 auto;
+    font-size:2rem;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 400;
+    color:#444;
+}
+h1 {
+    color:#F15C5C;
+}</style><body><h1>Zadanie funkcja strzałkowa</h1><p>Zadanie wykonuj wraz z otwartą konstola debugera</p><script>fetch('http://kursjs.pl/kurs/es6/zadanie-userzy.json')
+            .then(response => response.json())
+            .then(response => {
+                // console.log(response);
+                //tutaj zacznij wykonywać zadania
+
+                function show(data, parametr, name){
+                    console.log('--------', name, '--------');
+                    data.forEach(function(ele){
+                        console.log(ele[parametr]);
+                    })
+                }
+                //  Wypisz w konsoli:
+                // -----------------
+                
+                // - tekst: "Wszyscy użytkownicy"
+                // console.log("Wszyscy użytkownicy");
+                // console.log(response.users);
+                var arr = [...response.users];
+                console.log('tablica', arr)
+                // - tablicę z wszystkimi użytkownikami
+
+                // - tekst: "Wszyscy użytkownicy pełnoletni:"
+                var zad1 = "Wszyscy użytkownicy pełnoletni:";
+                // console.log(zad1);
+                var adult = arr.filter(function(per){
+                    return (per.age < 18);
+                })
+                // show(adult,'name',zad1);
+                // adult.forEach(function(el){
+                //     console.log(el.name)
+                // })
+
+                // console.log(adult);
+                
+                
+                // - tablicę z wszystkimi użytkownikami pełnoletnimi
+
+                // - tekst: "Użytkownicy z tagiem "dolor":
+                let zad2 = "Użytkownicy z tagiem 'dolor'";
+                let dolar = arr.filter(function(el){
+                    return el.tags.indexOf('dolor') !==-1;
+                });
+                
+                // let dolar = arr.find(function(el){
+                //     return el.tags.indexOf('dolor') > -1;
+                // })
+                // var x = arr[arr.length-3].tags;
+                // var y = x.indexOf('dolor');
+                // console.log(x);
+                // console.log(y);
+
+                // if(x.indexOf('dolor') > -1){
+                //     console.log('jest dolar')
+                // }
+                // else{
+                //     console.log('nie ma dolara')
+                // }
+                console.log(dolar);
+                // - tablicę użytkowników którzy mają tag "dolor"
+
+                // - tekst: "Wszyscy użytkownicy są pełnoletni:"
+                let zad3 = 'Wszyscy użytkownicy są pełnoletni';
+
+                function adultFunc(){
+                    return arr.every(function(el){
+                        return el.age > 17;
+                    })
+                }
+
+                // console.log(adultFunc())
+                // - prawda/falsz
+                
+                // - tekst: "Niektórzy użytkownicy są pełnoletni:"
+                function adultFunc2(){
+                    return arr.some((el) => el.age > 17)
+                }
+                console.log(adultFunc2())
+                // - prawda/falsz
+
+                // - tekst: "Użytkownicy pisane dużymi literami:"
+                // - tablicę TYLKO z nazwami użytkowników pisanymi dużymi literami
+                
+            })</script></body></html>

@@ -53,7 +53,8 @@ body {
   .buttons2 .efect2:hover:before {
     width: 350px; }
 
-.geo .czyWspiera, .geo .twojeDane {
+.geo .czyWspiera,
+.geo .twojeDane {
   padding: 20px;
   text-align: center;
   background: #1c1c1c;
