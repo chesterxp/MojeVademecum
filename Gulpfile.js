@@ -121,7 +121,7 @@ gulp.task('scripts', function () {
 });
 
 //production
-gulp.task('production', ['clean'], function () {
+gulp.task('build', ['clean'], function () {
 	gulp.start('styles', 'scripts', 'minhtml');
 });
 

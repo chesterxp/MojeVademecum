@@ -653,27 +653,27 @@ function geoCheck() {
         navigator.geolocation.getCurrentPosition(geoSuccess, geoError, options);
     })
 }
-geoCheck();
+// geoCheck();
 
 //utworzenie funkcji przypominającej z jq funkcje css
-function myCss() {
-    NodeList.prototype.css = function (propertyOrObject, value) {
-        Array.prototype.forEach.call(this, function (elem) {
-            if (typeof propertyOrObject === "object") {
-                var cssObject = propertyOrObject;
-                for (var prop in cssObject) {
-                    elem.style[prop] = cssObject[prop];
-                }
-            } else if (typeof propertyOrObject === "string" && value !== undefined) {
-                var prop = propertyOrObject;
-                elem.style[prop] = value;
-            } else {
-                throw new Error("Podano złe parametry!");
-            }
-        });
-        return this;
-    }
-};
+// function myCss() {
+//     NodeList.prototype.css = function (propertyOrObject, value) {
+//         Array.prototype.forEach.call(this, function (elem) {
+//             if (typeof propertyOrObject === "object") {
+//                 var cssObject = propertyOrObject;
+//                 for (var prop in cssObject) {
+//                     elem.style[prop] = cssObject[prop];
+//                 }
+//             } else if (typeof propertyOrObject === "string" && value !== undefined) {
+//                 var prop = propertyOrObject;
+//                 elem.style[prop] = value;
+//             } else {
+//                 throw new Error("Podano złe parametry!");
+//             }
+//         });
+//         return this;
+//     }
+// };
 // let text = document.querySelector('.text1');
 // text.css('background','red');
 //route determination via google maps

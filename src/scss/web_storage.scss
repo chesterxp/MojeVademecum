@@ -1,0 +1,45 @@
+.webStorage {
+    text-align: center;
+    border: 2px solid #000;
+    border-radius: 3px;
+    padding: 20px;
+    width: 40%;
+    margin: 20px auto;
+    background: linear-gradient(270deg, rgb(238, 18, 128), rgb(247, 140, 19));
+    #support {
+        padding: 20px 30px;
+    }
+    .wspiera {
+        background: rgb(43, 42, 42);
+        color: rgb(240, 240, 240);
+    }
+    .niewspiera {
+        background: rgb(223, 153, 144);
+        color: rgb(240, 240, 240);
+    }
+    form {
+        input {
+            display: block;
+            width: 100%;
+            padding: 5px 10px;
+            margin: 5px 0;
+            background: rgb(43, 42, 42);
+            color: rgb(240, 240, 240);
+            border: none;
+            &::placeholder {
+                /* Chrome, Firefox, Opera, Safari 10.1+ */
+                color: rgb(252, 252, 252);
+                opacity: 0.65;
+                /* Firefox */
+            }
+            &:focus {
+                outline: 1px solid rgba(230, 230, 230, 0.864);
+                border: none;
+            }
+        }
+        [type=submit] {
+            display: inline-block;
+            width: 30%;
+        }
+    }
+}

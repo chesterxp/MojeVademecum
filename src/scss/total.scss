@@ -1,14 +1,16 @@
-body{
+body {
     margin: 0;
     padding: 0;
     font-size: 16px;
     background: rgb(226, 225, 225);
     font-family: 'Roboto', sans-serif;
 }
-*{
+
+* {
     box-sizing: border-box;
 }
-.mainTitle{
+
+.mainTitle {
     padding: 10px 0;
     text-align: center;
     font-size: 2rem;
@@ -16,56 +18,56 @@ body{
 
 //--------------------------------------------
 //lazyLoad
-.lazyLoad{
-    .lazy_text{
+.lazyLoad {
+    .lazy_text {
         padding: 20px;
         line-height: 30px;
         font-size: 30px;
     }
     .my_lazy {
-        opacity:0;
+        opacity: 0;
         transform: scale(3);
         transition: all 500ms;
     }
     .my_loaded {
-        opacity:1;
+        opacity: 1;
         transform: scale(1);
     }
 }
 
-
 //axios
-#axios{
-    background:linear-gradient(280deg, rgb(250, 74, 74), rgb(29, 138, 189));
+#axios {
+    background: linear-gradient(280deg, rgb(250, 74, 74), rgb(29, 138, 189));
     text-align: center;
-    h1{
+    h1 {
         text-align: center;
         padding: 10px 0;
     }
-    .axios_btn{
+    .axios_btn {
         background: black;
         color: #fff;
         padding: 5px 20px;
         transition: all 0.3s;
         margin: 20px 0;
         display: inline-block;
-        &:hover{
+        &:hover {
             background: #fff;
             color: #000;
         }
     }
-    .axios_result{
+    .axios_result {
         padding: 20px;
         background: #ddd;
         line-height: 2;
     }
 }
-#fileAPI{
-    .propertiesBox{
+
+#fileAPI {
+    .propertiesBox {
         display: flex;
         flex-direction: column;
         margin: 20px 0;
-        p{
+        p {
             padding: 10px 20px;
             background: rgb(228, 118, 118);
             color: #fff;
@@ -73,41 +75,42 @@ body{
             width: 300px;
             text-align: center;
             border-radius: 6px;
-
         }
     }
-    .fileButtons{
+    .fileButtons {
         display: flex;
         flex-direction: column;
-        div{
+        div {
             padding: 5px 10px;
             margin: 5px 0;
             width: 100px;
             text-align: center;
             color: #fff;
         }
-        #startFile{
+        #startFile {
             background: rgb(78, 223, 34);
         }
-        #stopFile{
+        #stopFile {
             background: rgb(221, 75, 70);
         }
     }
 }
-#myOwnVideoPlayer{
-    h1{
+
+#myOwnVideoPlayer {
+    h1 {
         text-align: center;
     }
 }
-.videoPlayer{
+
+.videoPlayer {
     background: rgb(202, 202, 202);
     width: 80%;
     margin: 0px auto;
     position: relative;
-    .videoBox{
+    .videoBox {
         position: relative;
         z-index: 1;
-        .backgroundVideo{
+        .backgroundVideo {
             position: absolute;
             top: 0;
             left: 0;
@@ -118,52 +121,52 @@ body{
             background-size: 13%;
             transition: all 0.3s;
             background-color: rgba(0, 0, 0, 0.53);
-            &:hover{
+            &:hover {
                 background-size: 17%;
                 cursor: pointer;
             }
         }
     }
-    video{
+    video {
         display: block;
         width: 100%;
         position: relative;
         top: 0;
         left: 0;
     }
-    .controls{
+    .controls {
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding: 10px 0;
-        .cont{
+        .cont {
             display: flex;
             justify-content: center;
             align-items: center;
         }
-        .leftControls{
+        .leftControls {
             width: 70px;
-            .playPause{
+            .playPause {
                 font-size: 30px;
                 position: relative;
-                .fa-pause{
+                .fa-pause {
                     display: none;
                     position: absolute;
                     top: 0;
                     left: 0;
                 }
-                &:hover{
+                &:hover {
                     cursor: pointer;
                 }
             }
         }
-        .progressBar{
+        .progressBar {
             width: 60%;
             background: rgb(247, 244, 244);
             height: 20px;
             position: relative;
             z-index: 2;
-            .playbackBar{
+            .playbackBar {
                 width: 10%;
                 background: rgb(236, 56, 56);
                 position: absolute;
@@ -172,7 +175,7 @@ body{
                 height: 20px;
                 z-index: 4;
             }
-            .loadedBar{
+            .loadedBar {
                 width: 50%;
                 height: 20px;
                 background: rgb(3, 3, 3);
@@ -181,40 +184,41 @@ body{
                 left: 0;
                 z-index: 3;
             }
-            &:hover{
+            &:hover {
                 cursor: pointer;
             }
         }
-        .rightControls{
+        .rightControls {
             width: 300px;
             justify-content: flex-start;
             padding: 0 10px;
             font-size: 17px;
-            .fullScreen{
+            .fullScreen {
                 display: flex;
                 align-items: center;
                 padding: 0 10px;
                 color: rgb(0, 0, 0);
                 font-size: 15px;
             }
-            .volume{
+            .volume {
                 display: flex;
                 align-items: center;
-                &:hover{
+                &:hover {
                     cursor: pointer;
                 }
-                .glyphicon-volume-up, .glyphicon-volume-off{
+                .glyphicon-volume-up,
+                .glyphicon-volume-off {
                     width: 20%;
                     margin: 0 10px;
                 }
-                .fullVolume{
+                .fullVolume {
                     background: #ddd;
                     position: relative;
                     height: 10px;
                     width: 100px;
                     display: flex;
                     align-items: center;
-                    .currentVolume{
+                    .currentVolume {
                         position: absolute;
                         background: black;
                         height: 10px;
@@ -222,73 +226,72 @@ body{
                     }
                 }
             }
-            
         }
     }
 }
-#mediaBox{
+
+#mediaBox {
     background: rgb(214, 156, 156);
     text-align: center;
-    audio{
+    audio {
         width: 50%;
     }
-    video{
+    video {
         width: 50%;
         margin: 20px auto;
     }
 }
-#myCanvas{
+
+#myCanvas {
     display: block;
     margin: 20px auto;
     border: 1px solid rgb(150, 150, 150);
-
 }
-.webStorage{
-    text-align: center;
-    border: 2px solid #000;
-    border-radius: 3px;
-    padding: 20px;
-    width: 40%;
-    margin: 20px auto;
-    background: linear-gradient(270deg, rgb(238, 18, 128),rgb(247, 140, 19));
-    #support{
-        padding: 20px 30px;
 
-    }
-    .wspiera{
-        background: rgb(43, 42, 42);
-        color: rgb(240, 240, 240);
-    }
-    .niewspiera{
-        background: rgb(223, 153, 144);
-        color: rgb(240, 240, 240);
-    }
-    form{
-        input{
-            display: block;
-            width: 100%;
-            padding: 5px 10px;
-            margin: 5px 0;
-            background: rgb(43, 42, 42);
-            color: rgb(240, 240, 240);
-            border: none;
-            &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-                color: rgb(252, 252, 252);
-                opacity: 0.65; /* Firefox */
-            }
-            &:focus{
-                outline: 1px solid rgba(230, 230, 230, 0.864);
-                border: none;
-            }
-            
-        }
-        [type=submit]{
-            display: inline-block;
-            width: 30%;
-        }
-    }
-}
-.geo{
+// .webStorage{
+//     text-align: center;
+//     border: 2px solid #000;
+//     border-radius: 3px;
+//     padding: 20px;
+//     width: 40%;
+//     margin: 20px auto;
+//     background: linear-gradient(270deg, rgb(238, 18, 128),rgb(247, 140, 19));
+//     #support{
+//         padding: 20px 30px;
+//     }
+//     .wspiera{
+//         background: rgb(43, 42, 42);
+//         color: rgb(240, 240, 240);
+//     }
+//     .niewspiera{
+//         background: rgb(223, 153, 144);
+//         color: rgb(240, 240, 240);
+//     }
+//     form{
+//         input{
+//             display: block;
+//             width: 100%;
+//             padding: 5px 10px;
+//             margin: 5px 0;
+//             background: rgb(43, 42, 42);
+//             color: rgb(240, 240, 240);
+//             border: none;
+//             &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+//                 color: rgb(252, 252, 252);
+//                 opacity: 0.65; /* Firefox */
+//             }
+//             &:focus{
+//                 outline: 1px solid rgba(230, 230, 230, 0.864);
+//                 border: none;
+//             }
+//         }
+//         [type=submit]{
+//             display: inline-block;
+//             width: 30%;
+//         }
+//     }
+// }
+.geo {
     width: 50%;
     border: 2px solid black;
     text-align: center;
@@ -296,14 +299,15 @@ body{
     padding: 10px 20px;
     background: rgb(243, 243, 243);
     margin: 10px auto;
-    .czyWspiera, .twojeDane{
+    .czyWspiera,
+    .twojeDane {
         padding: 5px 10px;
         background: #fff;
         border-radius: 3px;
         margin: 10px 0;
         color: #000;
     }
-    .geoBtn{
+    .geoBtn {
         padding: 3px 10px;
         background: rgb(190, 69, 69);
         color: rgb(255, 255, 255);
@@ -313,32 +317,33 @@ body{
         font-size: 12px;
         display: inline-block;
         transition: all 0.3s;
-        &:hover{
+        &:hover {
             background: #fff;
             color: rgb(190, 69, 69);
         }
     }
 }
-.showRoad{
+
+.showRoad {
     display: flex;
     flex-direction: column;
     width: 80%;
     margin: 10px auto;
     border: 2px solid black;
     border-radius: 3px;
-    h1{
+    h1 {
         text-align: center;
     }
-    #map{
+    #map {
         height: 400px;
     }
-    #mapOptions{
+    #mapOptions {
         display: flex;
         justify-content: center;
         align-items: center;
         width: 100%;
         padding: 10px 20px;
-        input{
+        input {
             width: 200px;
             text-align: center;
             margin: 0 10px;
@@ -346,7 +351,8 @@ body{
             border-radius: 3px;
             font-size: 14px
         }
-        .showRoadBTN, .whereAmI{
+        .showRoadBTN,
+        .whereAmI {
             background: rgb(26, 93, 148);
             color: #fff;
             border-radius: 3px;
@@ -355,38 +361,41 @@ body{
             margin: 0 10px;
             padding: 5px 5px;
             font-size: 14px;
-            &:hover{
+            &:hover {
                 background: #fff;
                 color: rgb(26, 93, 148);
             }
         }
-        .hidden{
+        .hidden {
             display: none;
         }
     }
 }
-.wrapper{
+
+.wrapper {
     width: 100%;
 }
-.buttons{
+
+.buttons {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    .btn{
+    .btn {
         background: rgb(40, 111, 192);
         color: #ddd;
         transition: all 0.3s ease-in-out;
         padding: 10px;
         flex: 1;
         text-align: center;
-        &:hover{
+        &:hover {
             background: #ddd;
-            color: rgb(40, 111, 192); 
+            color: rgb(40, 111, 192);
         }
     }
 }
-.box2{
+
+.box2 {
     width: 300px;
     height: 100px;
     background: rgb(22, 82, 172);
@@ -400,7 +409,8 @@ body{
     padding: 20px 40px;
     border: 20px solid black;
 }
-#btnX2{
+
+#btnX2 {
     padding: 20px;
     position: fixed;
     top: 30px;
@@ -408,11 +418,13 @@ body{
     background: pink;
     color: black;
 }
-.nextTitle{
+
+.nextTitle {
     text-align: center;
     padding: 10px 0;
 }
-#target{
+
+#target {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -420,53 +432,54 @@ body{
     background: #ddd;
     color: rgb(7, 7, 7);
     line-height: 2;
-
 }
-#capturing{
+
+#capturing {
     border: 3px solid black;
     text-align: center;
     width: 500px;
     margin: 20px auto;
-    #div1{
+    #div1 {
         border: 3px solid black;
         width: 400px;
         margin: 20px auto;
-        &:hover{
+        &:hover {
             background: burlywood;
         }
     }
-    #div2{
+    #div2 {
         border: 3px solid black;
         width: 300px;
         margin: 20px auto;
     }
-    #div3{
+    #div3 {
         border: 3px solid black;
         width: 200px;
         margin: 20px auto;
     }
 }
-.lazyLoad{
-    .lazy{
-    width: 700px; 
-    height: 467px; 
-    display: block;
-    } 
+
+.lazyLoad {
+    .lazy {
+        width: 700px;
+        height: 467px;
+        display: block;
+    }
 }
-#footer{
+
+#footer {
     background: rgb(70, 69, 69);
     color: bisque;
     font-size: 20px;
     padding: 10px 20px;
-    #btnX{
-        padding: 10px 20px;
-        // background: #000;
+    #btnX {
+        padding: 10px 20px; // background: #000;
         color: #fff;
         transition: all 1s ease-in-out;
-        
     }
 }
-.placeHolder{
+
+.placeHolder {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -479,51 +492,45 @@ body{
     margin: 2px;
     height: 50px;
     box-shadow: 2px 2px 10px 0px #0000009e;
-    .number{
+    .number {
         flex: 1;
     }
-    .title{
+    .title {
         flex: 9;
     }
 }
-#mainForm{
+
+#mainForm {
     width: 500px;
-    margin: 10px auto;
-    // border: 2px solid rgba(3, 3, 3, 0.288);
+    margin: 10px auto; // border: 2px solid rgba(3, 3, 3, 0.288);
     border-radius: 3px;
     padding: 20px 20px;
     background: #fff;
-    input{
+    input {
         width: 100%;
         padding: 10px 20px;
         border-radius: 5px;
         border: 1px solid rgba(199, 199, 199, 0.589);
         transition: all 0.2s ease-in-out;
-
     }
-    p{
+    p {
         font-size: 10px;
         opacity: 0;
-        transition: all 0.2s;
-        // padding: 0px 20px;
+        transition: all 0.2s; // padding: 0px 20px;
     }
-    .invalid{
-        input{
+    .invalid {
+        input {
             border: 1px solid red;
         }
-        p{
+        p {
             color: red;
             opacity: 1;
-
         }
     }
-    .valid{
-        input{
+    .valid {
+        input {
             border: 1px solid rgb(31, 202, 68);
-        }
-
-        
-        // p{
+        } // p{
         //     color: rgb(31, 202, 68);
         // }
     }
