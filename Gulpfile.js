@@ -190,12 +190,12 @@ gulp.task('scripts-dev', function () {
 	return gulp.src('./src/js/*.js')
 		// .pipe(concat('all.js'))
 		// .pipe(gulp.dest('./dist'))
-		// .pipe(babel({
-		// 	presets: ['env']
-		// }))
+		.pipe(babel({
+				presets: ['env']
+		 	}))
 		.pipe(rename({
 			suffix: '.min'
 		}))
 		// .pipe(uglify())
 		.pipe(gulp.dest('./dist/js'));
-});
+})

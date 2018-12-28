@@ -16,8 +16,8 @@
         <div class="nav">
             <div class="tab">Config
                 <ul>
-                    <a href="https://bitbucket.org/chesterxp/gulp_guide/src/master/" target="_blank">
-                        <li>Gulp Guide</li>
+                    <a href="https://github.com/chesterxp/MojeVademecum" target="_blank">
+                        <li>Moje Vademecum</li>
                     </a>
                     <a href="https://bitbucket.org/chesterxp/markdown-course/src/master/" target="_blank">
                         <li>Markdown Syntax</li>
@@ -177,7 +177,7 @@
                         console.log('pierwsze dwa to: ',a1, a2);//1,2
                         console.log('pozostałe argumenty to: ', ...rest);//3,4,5,6,7
                     }
-            5.	Nowa forma zapisywania funkcji 
+            5.	Nowa forma zapisywania funkcji
                     a.	old -> function wypisz(wyraz){console.log('Twój wyraz to:', wyraz);}
                     b.	new -> var wypisz2 = (wyraz) => {console.log('Twój wyraz to:', wyraz);}
             6.	Możliwośc przypisywania wartości domyślnej w funkcji
@@ -188,7 +188,6 @@
                     def('dom');//dom
             </pre>
         </section>
-
 
         <section class="scrollBarCSS">
             <h3 class="h3_line">ScrollBar</h3>
@@ -247,8 +246,218 @@
                 <li>przykłady playerów http://freefrontend.com/css-music-players/</li>
             </ul>
         </section>
-    </div>
 
+        <section class="sass">
+            <div class="h3_line">SASS</div>
+            <pre>
+                    Zagnieżdżanie
+                    .container {
+                    width: 100%;
+                    height: auto;
+                    text-align: center;
+                    .foto{
+                        margin-right: auto;
+                        margin-left: auto;
+                        background: #4ccc47;
+                        width: 90%;
+                        height: auto;}}
+                    Zmienne
+                    w pliku zmienne
+                    $link-color:#e05555;
+                    $link-size:70px;
+                    $hover-color:#0d1545;
+                    $hover-background:#15a815;
+
+                    wykorzystanie:
+                    .link {
+                        clear:both;
+                        background: #293fbc;
+                        display: block;
+                        color: aliceblue;
+                        width: 300px;
+                        border-radius: 5px;
+                        padding: 20px;
+                        font-size: $link-size;
+                        margin-top: 10px;
+                        text-align: center;
+                    &:hover{
+                        background: $hover-background;
+                        color:$hover-color;
+                        border:2px solid #293fbc;
+
+                    }
+                    }
+                    Mixiny
+
+                    @mixin button($width, $height, $background, $color, $border-radius) {
+                      width: $width;
+                      height: $height;
+                      line-height: $height;
+                      text-align: center;
+                      background: $background;
+                      color: $color;
+                      border-radius: $border-radius;
+                    }
+                    zastosowanie
+
+                    button {
+                      @include button(150px, 50px, #000, #fff, 8px);
+                    }
+                    Operacje matematyczne
+
+                    w sass
+                    div {
+                      height: (50px + 50);
+                      width: (200px - 50);
+                      margin-top: (10px * 5);
+                      padding-bottom: (50px / 5);
+                      border-radius: (101px % 51);
+                    }
+                    w css
+                    div {
+                      height: 100px;
+                      width: 150px ;
+                      margin-top: 50px
+                      padding-bottom: 10px;
+                      border-radius:50px;
+                    }
+                    Możemy też wykonywać te operacje na kolorach:
+
+                    div {background: (#c4da1a / 2);}
+                    Powstały kod CSS:
+                    div { background: #626d0d; }
+                    Pętle
+                    @for $i from 1 through 5 {
+                     .div-#{$i} { background: url('images/image-#{$i}.jpg');  } }}
+                    w css
+                    .div-1 { background: url('images/image-1.jpg');}
+
+                    .div-2 {  background: url('images/image-2.jpg');}
+
+                    .div-3 {  background: url('images/image-3.jpg');}
+
+                    .div-4 {  background: url('images/image-4.jpg');}
+
+                    .div-5 { background: url('images/image-5.jpg');}
+                    inna pętla
+                    @each $element in about, portfolio, contact {
+                      .#{$element} {background-image: url('/images/#{$element}-bg.jpg');}}
+                    WHILE
+                    $i: 6;
+                    @while $i > 0 {
+                      .size-#{$i} { font-size: 2em * $i; }
+                      $i: $i - 2;}
+                    EFEKT
+                    .size-6 {  font-size: 12em; }
+                    .size-4 {  font-size: 8em; }
+                    .size-2 { font-size: 4em; }
+                    DZIEDZICZENIE
+                    .input {
+                      border: 1px solid #ccc;
+                      padding: 20px;
+                      color: #000;}
+                    .correct {
+                      @extend .input;
+                      border-color: green;}
+                    .incorrect {
+                      @extend .input;
+                      border-color: red;}
+                    Wynikowy CSS:
+                    .input, .correct, .incorrect {
+                      border: 1px solid #ccc;
+                      padding: 20px;
+                      color: #000; }
+                    .correct {border-color: green; }
+                    .incorrect { border-color: red;
+                    Lighten:
+                    .before {background: #00405d;}
+                     .after {background: lighten(#00405d, 20);}
+
+                    Darken:
+                    .before2 {  background: #95cea4;}
+                     .after2 { background: darken(#95cea4, 50);}
+
+                    Saturate:
+                    .before2 {background: #be4ad9;}
+                    .after2 {background: saturate(#be4ad9, 30);}
+
+
+                    Desaturate odwrotność ww.
+
+            </pre>
+        </section>
+
+        <section class="test">
+            <h3 class="h3_line">Fetch</h3>
+            <div class="acecode" ace-mode="javascript">
+            <pre>
+            //text from document
+            function getText() {
+                fetch('js/simple.txt')
+                    .then(function (res) {
+                        return res.text();
+                    })
+                    .then(function (data) {
+                        document.querySelector('.result2').innerHTML = data;
+                    })
+                    .catch(function (err) {
+                        console.log(err);
+                    })
+            }
+            //text from JSON
+            function getJson(){
+                fetch('js/users.json')
+                .then((res) => res.json())
+                .then((data) => {
+                    var output = '';
+                    data.forEach(function(user){
+                        output += '<div class="person">'+
+                        '<div class="firstName">'+user.name+'</div>'+
+                        '<div class="lastName">'+user.username+'</div>'+
+                        '<div class="email">'+user.email+'</div>'+
+                        '</div>';
+                    })
+                    document.querySelector('.result2').innerHTML = output;
+                })
+            }
+            //text from external API
+            function getAPIData() {
+                fetch('https://jsonplaceholder.typicode.com/posts')
+                    .then(function (res) {
+                        return res.json();
+                    })
+                    .then(function (data) {
+                        console.log(data);
+                    })
+            }
+            //send text using fetch
+            function addPost(e) {
+                e.preventDefault();
+                let title = document.getElementById('text').value;
+                let body = document.getElementById('textBody').value;
+
+                fetch('https://jsonplaceholder.typicode.com/posts', {
+                        method: 'POST',
+                        headers: {
+                            'Accept': 'application/json, text/plain, */*',
+                            "Content-type": 'application/json'
+                        },
+                        body: JSON.stringify({
+                            title: title,
+                            body: body
+                        })
+                    })
+                    .then(function (res) {
+                        return res.json();
+                    })
+                    .then(function (data) {
+                        console.log(data);
+                    })
+            }
+            </pre>
+            </div>
+        </section>
+    </div>
 </body>
 
 </html>

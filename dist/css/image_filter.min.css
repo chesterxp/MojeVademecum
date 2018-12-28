@@ -1,1 +1,14 @@
-body{margin:0;padding:0}#canvas{margin:auto;background:#ececec;width:100%}.btn-disabled{color:#fff!important}.klasa1{color:#ddd}
+body {
+  margin: 0;
+  padding: 0; }
+
+#canvas {
+  margin: auto;
+  background: #ececec;
+  width: 100%; }
+
+.btn-disabled {
+  color: #fff !important; }
+
+.klasa1 {
+  color: #ddd; }

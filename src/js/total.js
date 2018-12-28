@@ -1,4 +1,9 @@
 /*---------------------------------------------SPIS---------------------------------
+
+//Pokazywanie się calych sekcji z intersection observer
+//Set
+//Map
+//Animowane przejscie do linka
 //Ajax JQ
 //load - html
 //getJSON
@@ -17,8 +22,164 @@
 //utworzenie funkcji przypominającej z jq funkcje css
 -----------------------------------------------/SPIS-------------------------------*/
 
+
+//Animowane przejscie do linka
+function moveLinkJS() {
+    var all = document.querySelectorAll('a[href^="#"]');
+    all.forEach(function (a) {
+        a.addEventListener('click', function (e) {
+            console.log('click');
+            e.preventDefault();
+            var href = this.getAttribute('href');
+            var destination = document.querySelector(href).offsetTop-50;
+            var currentPosition = window.pageYOffset;
+            var body = document.querySelector('body,html');
+
+            animate(body, "scrollTop", "", currentPosition, destination, 600, true);
+        });
+    })
+}
+function animate(elem, style, unit, from, to, time, prop) {
+    if (!elem) return;
+    var start = new Date().getTime(),
+        timer = setInterval(function () {
+            var step = Math.min(1, (new Date().getTime() - start) / time);
+            if (prop) {
+                elem[style] = (from + step * (to - from)) + unit;
+            } else {
+                elem.style[style] = (from + step * (to - from)) + unit;
+            }
+            if (step == 1) clearInterval(timer);
+        }, 25);
+    elem.style[style] = from + unit;
+}
+
+moveLinkJS();
+
+//Pokazywanie się calych sekcji z intersection observer
+function showBoxies(elements) {
+    var boxies = document.querySelectorAll('.'+elements);
+    var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function(entry) {
+            if(entry.intersectionRatio > 0) {
+                // console.log('lazyLoad')
+                // load(entry.target);
+                entry.target.classList.add('fadeIn');
+                observer.unobserve(entry.target);
+            }
+        });
+    }
+    , {
+        rootMargin: '5px',
+        threshold: 0.01
+    }
+    );
+    boxies.forEach(function (el) {
+        observer.observe(el);
+    });
+}
+showBoxies('boxx');
+
+//SET
+const tab = [1,2,3,4,56,2,3,4,3,2,1,1,2,3,4,5,6];
+console.log('tab.length: ',tab.length);
+//Przykład
+const tab2 = new Set(tab);
+    tab2.add(31);
+    console.log('tab2',tab2);
+    tab2.delete(56);
+    console.log(tab2.has(4));
+
+
+//Map
+const komputer = [
+    {name:'pierwszy komp',rok: 2010,number: 1},
+    {name:'drugi komp',rok: 2013,number: 2},
+    {name:'trzeci komp',rok: 2016,number: 3}
+]
+const oprogramowanie = [
+    {system: 'Windows',oprogramowanie : 'legalne',number: 1},
+    {system: 'Linux',oprogramowanie : 'legalne',number: 2},
+    {system: 'IOS',oprogramowanie : 'legalne',number: 3}
+]
+const mapa = new Map();
+
+komputer.forEach(function(komp){
+    mapa.set(komp, oprogramowanie.find(function(o){
+        if(o.number === komp.number){
+            return true;
+        }
+    }));
+})
+var x = mapa.get(komputer[0]);//wyciągam wartości z mapy po keyu
+var y = mapa.has(komputer[0])//sprawdzenie czy w mapie jest klucz -> true/false
+
+console.log('x',x)
+console.log('y',y)
+console.log(mapa);
+
+
+class Order {
+    constructor(id, dishes) {
+        this.id = id
+        this.name = `Order ${id}`
+        this.dishes = new Set(dishes)
+    }
+    removeDish(dish) {
+        this.dishes.delete(dish)
+    }
+    addDish(dish) {
+        this.dishes.add(dish)
+    }
+    static getErrors(dish) {
+        const errors = {}
+        if (!dish.name) {
+            errors.name = 'Required'
+        }
+        if (dish.quantity === null) {
+            errors.quantity = 'Required'
+        } else if (dish.quantity <= 0) {
+            errors.quantity = 'Value too small'
+        }
+        return errors
+    }
+}
+const orders = [
+    new Order(1, [
+        {name: 'Steak', quantity: 1, details: 'Well done'},
+        {name: 'Fish', quantity: 1}
+    ]
+    ),
+    new Order(2, [
+        {name: 'Halloumi salad', quantity: 1},
+        {name: 'Greek salad', quantity: 1},
+        {name: 'Espresso', quantity: 2}
+    ]
+    )
+];
+const tables = [
+    {
+        tableName: 'Table 1',
+        capacity: 4,
+        orderId: 1
+    },
+    {
+        tableName: 'Table 2',
+        capacity: 2,
+        orderId: 2
+    }
+]
+
+const tablesToOrders = new Map();
+
+tables.forEach(table => {
+    tablesToOrders.set(table, orders.find(o => o.id === table.orderId))
+})
+
+console.log('tablesToOrders',tablesToOrders);
+
 //NAv
-//Czyszczenie 
+//Czyszczenie
 $('.buttons .btn5').on('click', function () {
     $('#target').empty();
 })
@@ -89,21 +250,21 @@ function getText() {
         })
 }
 //text from JSON
-// function getJson(){
-//     fetch('js/users.json')
-//     .then((res) => res.json())
-//     .then((data) => {
-//         var output = '';
-//         data.forEach(function(user){
-//             output += '<div class="person">'+
-//             '<div class="firstName">'+user.name+'</div>'+
-//             '<div class="lastName">'+user.username+'</div>'+
-//             '<div class="email">'+user.email+'</div>'+
-//             '</div>';
-//         })
-//         document.querySelector('.result2').innerHTML = output;
-//     })
-// }
+function getJson(){
+    fetch('js/users.json')
+    .then((res) => res.json())
+    .then((data) => {
+        var output = '';
+        data.forEach(function(user){
+            output += '<div class="person">'+
+            '<div class="firstName">'+user.name+'</div>'+
+            '<div class="lastName">'+user.username+'</div>'+
+            '<div class="email">'+user.email+'</div>'+
+            '</div>';
+        })
+        document.querySelector('.result2').innerHTML = output;
+    })
+}
 //text from external API
 function getAPIData() {
     fetch('https://jsonplaceholder.typicode.com/posts')
@@ -514,12 +675,12 @@ function audio() {
 //form + regEx
 /**
     FORMULARZE W HTML5
-    input: 
+    input:
     data - data,
     datatime - data i czas strefowy,
     datatime-local - data i czas bez strefy czasowej,
     month -
-    week - 
+    week -
     time - wybór godziny;
     color - wybór koloru,
     searcg - pole z lupą,
@@ -528,7 +689,7 @@ function audio() {
     email -
     tel -
     url
-    min/max - 
+    min/max -
     step - co ile,
     autofocus,
     autocomplete - on, off - autouzupełnienie,
@@ -607,7 +768,7 @@ function geoError(errorObject){
 
 let options = {
         timeout: 5000 - max czas na sprawdzenie;
-        enableHighAccuracy: true - 
+        enableHighAccuracy: true -
     };
 */
 function geoCheck() {
@@ -794,7 +955,7 @@ var map = {
     }
 }
 
-map.init();
+// map.init();
 
 //WEBSTORAGE
 /*
@@ -802,8 +963,8 @@ map.init();
     window.sessionStorage -> przechowywanie danych do moementu zamknięcia przeglądarki
     .setItem(key, value); //utworzenie (imie: "basia");
     .getItem(key); //odczytanie (imie)
-    .removeItem(key) //usunięcie 
-    .clear()  //wyczyszczenie loacl lub session Storage  
+    .removeItem(key) //usunięcie
+    .clear()  //wyczyszczenie loacl lub session Storage
     window.onstorage = function(e){}
     e.key // imie,
     e.oldValue  // stara wartośc przed napisaniem basia -> michal //basia
@@ -839,7 +1000,7 @@ function FormSaver(form) {
     this.formID = this.form.getAttribute('id');
     this.fieldsValues = {};
 
-    //przypisanie wszytkim imputom zdarzenia onchange 
+    //przypisanie wszytkim imputom zdarzenia onchange
     this.addSavingToFields = function () {
         for (let i = 0; i < this.fields.length; i++) {
             this.fields[i].onchange = this.saveField.bind(this);
@@ -905,10 +1066,10 @@ preload(auto,metadata,none) - pobieranie danych o utworze z serwera 1-automatycz
 Video
 to samo co w audio
 poster - link do obrazka jako pierwsza klatka filmu
-width 
+width
 height
 
-odpalenie w konkretnym momencie 
+odpalenie w konkretnym momencie
 video src="media/ollie.mp4#t=25,41" //od 25s do 41s
 lub t=20 // od 20s
 t=,120 //do 120s
@@ -920,7 +1081,7 @@ Audio & Video API
 .canPlayType() //sprawdzenie czy przeglądarka ogarnie okreslony typ nagrania np audio/ogg
 .load() // pobranie pliku z serwera
 .play() // start
-.pause() 
+.pause()
 
 //właściwości
 .buffered //zwraca wartośc zbuforowanego pliku
@@ -940,9 +1101,9 @@ Audio & Video API
 .loadstart - zaczniemy wczytywac plik
 .loadedmetadata - pobranie metadanych
 .pasue - pausa
-.play - 
+.play -
 .playing
-.progress - 
+.progress -
 .timeupdate - aktualizacja czasu odtwarzania
 .volumechange - wywołuje sie pdoczas zmiany głośności
 */
@@ -952,7 +1113,7 @@ let numberOfPlayer = 0;
 function VideoPlayer(url, place) {
 
     //jesli przeglądarka nie wspiera video to ukryj individual controls
-    if (!document.createElement("video").canPlayType) { //sprawdzenie czy utworzone video jest obsługiwane przez przeglądarkę  
+    if (!document.createElement("video").canPlayType) { //sprawdzenie czy utworzone video jest obsługiwane przez przeglądarkę
         videoContainer.querySelector(".controls").style.display = "none";
         return;
     }
@@ -1186,7 +1347,7 @@ FileSystem - system plików dla domeny
 Blob
 size - wielkość danych
 type - typ danych
-slice() 
+slice()
 
 File
 jw
@@ -1201,7 +1362,7 @@ FileReader - interfejs za pomoca którego możemy tworzyc nowe obiekty
 WŁAŚCIWOŚCI
 readyState //0,1,2 czy dane są załadowane czy też nie
 result - miesce przechpwywania wyniku naszych danych
-error - błąd 
+error - błąd
 
 METODY
 readAsText(file) - odczytany plik result bedzie miał forme textową
@@ -1212,7 +1373,7 @@ abort() - przerwanie wczytywania pliku(w przypadku duzych plików może to troch
 
 EVENTY
 loadstart - zdarzenie odpala sie na starcie
-loadend - na zakońćzeniu 
+loadend - na zakońćzeniu
 load - po załadowaniu poprawnie danych
 error - przy wystąpieniu błędu
 progress - pasek postepu ładowanych danych
@@ -1347,7 +1508,7 @@ function load(el) {
     el.classList.add('my_loaded');
     el.classList.remove('my_lazy');
 }
-console.log('lazy')
+// console.log('lazy');
 
 function createObserver(elements) {
     var observer = new IntersectionObserver(function (entries) {
@@ -1366,35 +1527,33 @@ function createObserver(elements) {
     });
 }
 
-
-
-createObserver(targets);
+// createObserver(targets);
 //OOP JS syntax
-function Book(title, author, year) {
-    this.title = title;
-    this.author = author;
-    this.year = year;
-}
+// function Book(title, author, year) {
+//     this.title = title;
+//     this.author = author;
+//     this.year = year;
+// }
 
-Book.prototype.getSummary = function () {
-    return `${this.title} was written by ${this.author} in ${this.year}`;
-}
+// Book.prototype.getSummary = function () {
+//     return `${this.title} was written by ${this.author} in ${this.year}`;
+// }
 
-let book1 = new Book('Book1', 'James Bond', '2015');
+// let book1 = new Book('Book1', 'James Bond', '2015');
 
-console.log(book1.getSummary());
+// console.log(book1.getSummary());
 
-//inherit 
-Magazine.prototype = Object.create(Book.prototype); //inherit function which are prototype to Book
-function Magazine(title, author, year, month) {
-    Book.call(this, title, author, year);
-    this.month = month;
-}
+// //inherit
+// Magazine.prototype = Object.create(Book.prototype); //inherit function which are prototype to Book
+// function Magazine(title, author, year, month) {
+//     Book.call(this, title, author, year);
+//     this.month = month;
+// }
 
-let mag1 = new Magazine('Mag1', 'Rihana', '2017', 'Januar');
+// let mag1 = new Magazine('Mag1', 'Rihana', '2017', 'Januar');
 
-console.log(mag1.getSummary());
-console.log(mag1);
-//use Magazine constructor
-Magazine.prototype.constructor = Magazine;
-console.log(mag1);
+// console.log(mag1.getSummary());
+// console.log(mag1);
+// //use Magazine constructor
+// Magazine.prototype.constructor = Magazine;
+// console.log(mag1);

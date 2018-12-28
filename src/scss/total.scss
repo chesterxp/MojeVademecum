@@ -15,8 +15,69 @@ body {
     text-align: center;
     font-size: 2rem;
 }
+//Animowane przejscie do linka
+.nav{
+    display: flex;
+}
+a.nav_link{
+    background: #000;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 5px 10px;
+    text-decoration: none;
+    transition: all 0.3s;
+    border: 1px solid #000;
+    border-radius: 3px;
+    &:hover{
+        background: #fff;
+        color: #000;
+    }
+}
 
-//--------------------------------------------
+//Pokazywanie się calych sekcji z intersection observer
+.boxx{
+    padding: 20px 10px;
+    font-size: 16px;
+    line-height: 22px;
+    transition: all 1s;
+    opacity: 0;
+    h2, p{
+        transform: translateY(100%);
+        transition: all 1s;
+    }
+}
+#box1{
+    background: rgb(228, 24, 24);
+}
+#box2{
+    background: rgb(193, 206, 10);
+}
+#box3{
+    background: rgb(56, 238, 10);
+}
+#box4{
+    background: rgb(250, 12, 179);
+}
+#box5{
+    background: rgb(11, 53, 245);
+}
+#box6{
+    background: rgb(218, 125, 20);
+}
+#box7{
+    background: rgb(12, 243, 231);
+}
+#box8{
+    background: rgb(7, 6, 6);
+    color: #fff;
+}
+.fadeIn{
+    opacity: 1;
+    h2, p{
+        transform: translateY(0)
+    }
+}
+
 //lazyLoad
 .lazyLoad {
     .lazy_text {
