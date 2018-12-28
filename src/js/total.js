@@ -1,5 +1,6 @@
 /*---------------------------------------------SPIS---------------------------------
 
+//Promise
 //Pokazywanie się calych sekcji z intersection observer
 //Set
 //Map
@@ -21,6 +22,167 @@
 //Geolocalisation
 //utworzenie funkcji przypominającej z jq funkcje css
 -----------------------------------------------/SPIS-------------------------------*/
+
+//Promise-------------------------------------------------------------------------
+//Podstawowa struktura Promise
+function prom(good, bad){
+    const x = -10;
+    if(x > 0){
+        good('jest większe od 0')
+    }
+    else{
+        bad('jest mniejsze od 0')
+    }
+}
+
+const prom2 = new Promise(prom);
+
+function ok(a){
+    console.log(a, 'pozytywne rozwiązanie obietnicy');
+}
+function no_ok(b){
+    console.log(b,'negatywne rozwiązanie obietnicy');
+}
+
+prom2
+    .then(ok)
+    .catch(no_ok);
+
+console.log(prom2);
+
+//Przykłady------------------------------------------
+const store = {
+    sunglasses: {
+        inventory: 817,
+        cost: 9.99
+    },
+    pants: {
+        inventory: 236,
+        cost: 7.99
+    },
+    bags: {
+        inventory: 17,
+        cost: 12.99
+    }
+};
+const order = {
+    items: [
+        ['sunglasses', 4],
+        ['bags', 2]
+    ],
+    giftcardBalance: 79.82
+};
+const checkInventory = (order) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const itemsArr = order.items;
+            let inStock = itemsArr.every(item => store[item[0]].inventory >= item[1]);
+            if (inStock) {
+                let total = 0;
+                itemsArr.forEach(item => {
+                    total += item[1] * store[item[0]].cost
+                });
+                console.log(`All of the items are in stock. The total cost of the order is ${total}.`);
+                resolve([order, total]);
+            } else {
+                reject(`The order could not be completed because some items are sold out.`);
+            }
+        }, generateRandomDelay());
+    });
+};
+const processPayment = (responseArray) => {
+    const order = responseArray[0]; //tablica z zamówieniem
+    const total = responseArray[1]; //pełna kwota zamówienia
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            let hasEnoughMoney = order.giftcardBalance >= total;
+            // For simplicity we've omited a lot of functionality
+            // If we were making more realistic code, we would want to update the giftcardBalance and the inventory
+            if (hasEnoughMoney) {
+                console.log(`Payment processed with giftcard. Generating shipping label.`);
+                let trackingNum = generateTrackingNumber();
+                resolve([order, trackingNum]);
+            } else {
+                reject(`Cannot process order: giftcard balance was insufficient.`);
+            }
+
+        }, generateRandomDelay());
+    });
+};
+const shipOrder = (responseArray) => {
+    const order = responseArray[0];
+    let myOrder = "";
+    order.items.forEach(function (item) {
+        var x = `${item[0]} : ${item[1]} \n`;
+        myOrder += x;
+    });
+
+    const trackingNum = responseArray[1];
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(`The order has been shipped. You ordered: \n${myOrder}The tracking number is: ${trackingNum}.`);
+        }, generateRandomDelay());
+    });
+};
+function generateTrackingNumber() {
+    return Math.floor(Math.random() * 1000000);
+}
+function generateRandomDelay() {
+    return Math.floor(Math.random() * 2000);
+}
+checkInventory(order) //sprawdza czy wszytskie elementy zamówienia sa w magazynie i zwraca tablice rzeczy i ich cały koszt
+    .then(function (promise1) {
+        return processPayment(promise1); //sprawdza czy mamy wystarczająca liczbe środków na karcie i zwraca tablice rzeczy oraz numer zamówienia
+    })
+    .then(function (resolvedValueArray) { //
+        return shipOrder(resolvedValueArray);
+    })
+    .then(function (successMessage) {
+        console.log(successMessage);
+    })
+    .catch(function (errorMessage) {
+        console.log(errorMessage);
+    });
+
+console.log('koniec');
+
+
+//promise ALL-----------------------------------------------
+const checkAvailability = (itemName, distributorName) => {
+    console.log(`Checking availability of ${itemName} at ${distributorName}...`);
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (restockSuccess()) {
+                console.log(`${itemName} are in stock at ${distributorName}`)
+                resolve(itemName);
+            } else {
+                reject(`Error: ${itemName} is unavailable from ${distributorName} at this time.`);
+            }
+        }, 1000);
+    });
+};
+
+function restockSuccess() {
+    return (Math.random() > .2);
+}
+
+const onFulfill = (itemsArray) => {
+    console.log(`Items checked: ${itemsArray}`);
+    console.log(`Every item was available from the distributor. Placing order now.`);
+};
+
+const onReject = (rejectionReason) => {
+    console.log(rejectionReason);
+};
+
+const checkSunglasses = checkAvailability('sunglasses', 'Favorite Supply Co.');
+const checkPants = checkAvailability('pants', 'Favorite Supply Co.');
+const checkBags = checkAvailability('bags', 'Favorite Supply Co.');
+
+Promise.all([checkSunglasses, checkPants, checkBags])
+    .then(onFulfill)
+    .catch(onReject);
+//---------------------/Promise--------------------------------------
 
 
 //Animowane przejscie do linka
