@@ -1,45 +1,38 @@
-const buttons_list = document.querySelector('.buttons_list');
-const buttons = document.querySelectorAll('.buttons_list .btn');
+function buttons_list(){
+    const buttons_list = document.querySelector('.buttons_list');
+    const buttons = document.querySelectorAll('.buttons_list .btn');
 
 
-buttons.forEach(function(btn){
-    btn.addEventListener('click', function(){
-
-        buttons.forEach(function(btn2){
-            btn2.classList.remove('active');
+    buttons.forEach(function(btn){
+        btn.addEventListener('click', function(){
+            buttons.forEach(function(btn2){
+                btn2.classList.remove('active');
+            })
+            btn.classList.add('active');
         })
-        btn.classList.add('active');
     })
-})
-
-const overlay = document.querySelector('.overlay');
-
-document.querySelector('.postcard').addEventListener('click', function(e){
-    overlay.classList.add('show');
-})
-
-overlay.addEventListener('click', function(e){
-    if(e.target.classList.contains('overlay')){
-        this.classList.add('hide');
-        setTimeout(hideBackground, 500);
-    }
-})
-
-function hideBackground(){
-    overlay.classList.remove('show');
-    overlay.classList.remove('hide');
 }
+function overlay(){
+    const overlay = document.querySelector('.overlay');
 
-const test = 'dom';
-
-console.log(`Jakis tekst ${test}`);
-
-
-//formularze
-const modal_boxs = document.querySelector('.modal-bodies ');
+    document.querySelector('.postcard').addEventListener('click', function(e){
+        overlay.classList.add('show');
+    })
+    overlay.addEventListener('click', function(e){
+        if(e.target.classList.contains('overlay')){
+            this.classList.add('hide');
+            setTimeout(hideBackground, 500);
+        }
+    })
+    function hideBackground(){
+        overlay.classList.remove('show');
+        overlay.classList.remove('hide');
+    }
+}
+function form() {
+    const modal_boxs = document.querySelector('.modal-bodies');
 const button_next = document.querySelector('.text-center .button');
 let next_modal_body_step = 1;
-
 
 button_next.addEventListener('click', function(){
     // console.log('next_modal_body_step',next_modal_body_step);
@@ -60,7 +53,6 @@ button_next.addEventListener('click', function(){
 
 var modal_header = document.querySelectorAll('.modal-header span');
 let btn = document.querySelector('.modal-bodies');
-console.log(modal_header);
 
 btn.addEventListener('click', function(e){
     let x = e.target.offsetParent.classList[1];
@@ -79,3 +71,106 @@ btn.addEventListener('click', function(e){
         document.querySelector('.rerun-button').style.display = 'block';
     }
 })
+}
+function myObserver(target,startFunction, stopFunction) {
+    var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.intersectionRatio > 0) {
+                startFunction();
+                if(stopFunction == false){
+                    observer.unobserve(entry.target);
+                }
+            }
+            else{
+                if(stopFunction != false){
+                    stopFunction();
+                }
+                return true;
+            }
+        });
+    }, {
+        rootMargin: '5px',
+        threshold: 0.01
+    });
+
+    if([target].length == 1){
+        observer.observe(target)
+    }
+    else{
+        target.forEach(function (el) {
+            observer.observe(el);
+        });
+    }
+}
+var parallax = {
+    init: function() {
+        var parallax__gallery = document.querySelector('.parallax__gallery');
+        var parallax_background = document.querySelector('.parallax__background');
+
+        myObserver(parallax__gallery, parallax.showPhoto, false);
+        myObserver(parallax_background, parallax.initHeroes,parallax.stopHeroes);
+
+        // parallax.showHeroes();
+    },
+    initHeroes: function(){
+        var scroll_window = window.addEventListener('scroll', parallax.startHeroes);
+
+        // checkScroll();
+        // setInterval(move, 50);
+
+        // function checkScroll(){
+        //     window.addEventListener('scroll', function(){
+        //         wScroll = scrollY;
+        //         console.log('wScroll',wScroll);
+        //     });
+        // };
+        // function move(){
+        //     diffrents = wScroll - off;
+        //     console.log('move', diffrents);
+        //     if( diffrents + 200 > 0 ){
+        //         parallax_capitan.style.transform = "translateY("+(diffrents/6)+"%)";
+        //         parallax_hulk.style.transform = "translate("+(diffrents/8)+"%, -"+(diffrents/20)+"%)";
+        //         parallax_spiderman.style.transform = "translate(-"+(diffrents/7)+"%, "+(diffrents/2)+"%)";
+        //     }
+        // };
+    },
+    startHeroes: function() {
+        var parallax_background = document.querySelector('.parallax__background');
+        var off = parallax_background.offsetTop;
+        var wScroll = 0;
+        var diffrents = 0;
+        var parallax_capitan = document.querySelector('.parallax__capitan');
+        var parallax_hulk = document.querySelector('.parallax__hulk');
+        var parallax_spiderman = document.querySelector('.parallax__spiderman');
+
+        wScroll = scrollY;
+        console.log('wScroll',wScroll);
+
+        diffrents = wScroll - off;
+        console.log('move', diffrents);
+        if( diffrents + 200 > 0 ){
+            parallax_capitan.style.transform = "translateY("+(diffrents/6)+"%)";
+            parallax_hulk.style.transform = "translate("+(diffrents/8)+"%, -"+(diffrents/20)+"%)";
+            parallax_spiderman.style.transform = "translate(-"+(diffrents/7)+"%, "+(diffrents/2)+"%)";
+        }
+    },
+    stopHeroes: function() {
+        window.removeEventListener('scroll', parallax.startHeroes);
+    },
+    showPhoto: function(){
+        var photos = document.querySelectorAll('.parallax__row img');
+        photos.forEach(function(photo, index){
+            setTimeout(function(){
+                photo.classList.add('is-show');
+            }, 200 * index)
+
+        })
+    }
+}
+
+
+//Function - start
+buttons_list();
+overlay();
+form();
+parallax.init();

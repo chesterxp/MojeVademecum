@@ -3,7 +3,10 @@ body {
   padding: 0;
   margin: 0; }
 
-*, *:after, *:before, ul {
+*,
+*:after,
+*:before,
+ul {
   box-sizing: border-box;
   margin: 0;
   padding: 0; }
@@ -42,7 +45,9 @@ body {
   margin: 20px auto;
   display: flex;
   justify-content: space-between;
-  border-radius: 5px; }
+  border-radius: 5px;
+  position: relative;
+  z-index: 11; }
   .main_list .main_li {
     flex: 1;
     text-align: center;
@@ -469,3 +474,101 @@ body {
     transform-origin: top left; }
   .form_box .modal-body.is-showing {
     display: block; }
+
+.parallax .parallax__background {
+  position: relative;
+  height: 600px;
+  background-image: url(../../img/marvel.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: top center;
+  background-size: cover;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh; }
+
+.parallax .parallax__hulk, .parallax .parallax__capitan, .parallax .parallax__spiderman {
+  position: absolute;
+  bottom: 0;
+  background-repeat: no-repeat; }
+
+.parallax .parallax__hulk {
+  background-image: url(../../img/hulk.png);
+  left: 0px;
+  width: 250px;
+  height: 341px;
+  bottom: -300px; }
+
+.parallax .parallax__capitan {
+  background-image: url(../../img/capitan.png);
+  right: 10%;
+  width: 250px;
+  height: 390px;
+  top: 25%;
+  left: 40%; }
+
+.parallax .parallax__spiderman {
+  background-image: url(../../img/spiderman.png);
+  right: 40px;
+  top: 0;
+  width: 250px;
+  height: 190px; }
+
+.parallax .parallax__start, .parallax .parallax__end {
+  font-size: 60px;
+  text-align: center;
+  padding: 30px 50px; }
+
+.parallax .parallax__end {
+  font-size: 32px;
+  padding: 30px 220px; }
+
+.parallax .parallax__periscope {
+  width: 500px;
+  height: 500px;
+  background-image: url(../../img/Wonder_Woman.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-attachment: fixed;
+  position: relative;
+  background-size: contain;
+  border-radius: 50%;
+  margin: 0 auto; }
+
+.parallax .parallax__row {
+  width: 670px;
+  margin: 0 auto; }
+  .parallax .parallax__row img {
+    width: 100%;
+    height: 320px;
+    opacity: 0;
+    transform: translateX(30px);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.36);
+    transition: all 0.3s ease-in-out; }
+    .parallax .parallax__row img.is-show {
+      transform: translateX(0px);
+      opacity: 1; }
+
+.parallax .parallax__picture {
+  position: relative;
+  margin: 10px;
+  width: 200px;
+  display: inline-block;
+  overflow: hidden; }
+  .parallax .parallax__picture:hover {
+    cursor: pointer; }
+    .parallax .parallax__picture:hover .parallax__caption {
+      transform: translateX(0px); }
+    .parallax .parallax__picture:hover img {
+      transform: scale(1.2); }
+
+.parallax .parallax__caption {
+  position: absolute;
+  bottom: 30px;
+  background: #131313;
+  padding: 5px 10px;
+  color: #fff;
+  width: 102px;
+  left: 0;
+  transform: translateX(-110px);
+  transition: all 0.3s ease-in-out; }
