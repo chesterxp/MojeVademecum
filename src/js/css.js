@@ -1,3 +1,4 @@
+//animatedNavigation
 function buttons_list(){
     const buttons_list = document.querySelector('.buttons_list');
     const buttons = document.querySelectorAll('.buttons_list .btn');
@@ -12,6 +13,8 @@ function buttons_list(){
         })
     })
 }
+buttons_list();
+//samplePopup
 function overlay(){
     const overlay = document.querySelector('.overlay');
 
@@ -29,6 +32,9 @@ function overlay(){
         overlay.classList.remove('hide');
     }
 }
+overlay();
+
+//animatedForms
 function form() {
     const modal_boxs = document.querySelector('.modal-bodies');
 const button_next = document.querySelector('.text-center .button');
@@ -72,6 +78,8 @@ btn.addEventListener('click', function(e){
     }
 })
 }
+form();
+
 function myObserver(target,startFunction, stopFunction) {
     var observer = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
@@ -102,6 +110,8 @@ function myObserver(target,startFunction, stopFunction) {
         });
     }
 }
+
+//parallaxEffect-----------------------------------------------------------
 var parallax = {
     init: function() {
         var parallax__gallery = document.querySelector('.parallax__gallery');
@@ -144,10 +154,10 @@ var parallax = {
         var parallax_spiderman = document.querySelector('.parallax__spiderman');
 
         wScroll = scrollY;
-        console.log('wScroll',wScroll);
+        // console.log('wScroll',wScroll);
 
         diffrents = wScroll - off;
-        console.log('move', diffrents);
+        // console.log('move', diffrents);
         if( diffrents + 200 > 0 ){
             parallax_capitan.style.transform = "translateY("+(diffrents/6)+"%)";
             parallax_hulk.style.transform = "translate("+(diffrents/8)+"%, -"+(diffrents/20)+"%)";
@@ -167,10 +177,24 @@ var parallax = {
         })
     }
 }
-
-
-//Function - start
-buttons_list();
-overlay();
-form();
 parallax.init();
+
+///css custom property
+window.CSS.registerProperty({
+    name: '--colorLuki',
+    syntax: '<color>',
+    inherits: true,
+    initialValue: '#c0ffc5'
+})
+
+document.querySelector('.customPropertyCsssBtn').addEventListener('click', showCustomPropertyCss);
+
+function showCustomPropertyCss(){
+    const lukiExample = document.querySelector('.customPropertyCsss__text');
+
+    const result1 = window.getComputedStyle(lukiExample).getPropertyValue('font-size');
+    console.log("window.getComputedStyle(lukiExample).getPropertyValue('font-size'):    ", result1);
+
+    const result2 = lukiExample.computedStyleMap().get('font-size');
+    console.log('lukiExample.computedStyleMap().get("font-size"):    ', result2)
+}

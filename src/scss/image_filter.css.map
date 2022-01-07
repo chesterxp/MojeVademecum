@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,IAAI,CAAA;EACA,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;CAGb;;AAED,AAAA,OAAO,CAAA;EACH,MAAM,EAAE,IAAI;EACZ,UAAU,EAAE,OAAO;EACnB,KAAK,EAAE,IAAI;CACd;;AACD,AAAA,aAAa,CAAA;EACT,KAAK,EAAE,eAAe;CACzB;;AACD,AAAA,OAAO,CAAA;EACH,KAAK,EAAE,IAAI;CACd",
+    "sources": [
+        "image_filter.scss"
+    ],
+    "names": [],
+    "file": "image_filter.css"
+}

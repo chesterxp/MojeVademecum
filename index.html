@@ -8,11 +8,11 @@
     <title>Document</title>
     <link rel="stylesheet" href="./dist/css/main.min.css">
     <script defer src="./dist/js/main.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-
-    <div class="main_container">
+    <!-- <nav>
         <div class="nav">
             <div class="tab">Config
                 <ul>
@@ -54,7 +54,8 @@
             </div>
             <div class="tab">Appki
                 <ul>
-                    <a href="https://anetapp.netlify.com/?_ga=2.148373171.525437620.1528555382-1000584420.1526734287" target="_blank">
+                    <a href="https://anetapp.netlify.com/?_ga=2.148373171.525437620.1528555382-1000584420.1526734287"
+                        target="_blank">
                         <li>Hity z satelity</li>
                     </a>
                     <a href="./dist/image_filter.html" target="_blank">
@@ -110,354 +111,462 @@
                 </ul>
             </div>
         </div>
+    </nav> -->
+    <!-- <div class="listOfCases">
+        <div class="listOfCases__mainTitle">List of cases</div>
+        <div class="listOfCases__lists">
+            <a href="#link5">link5</a>
+        </div>
+    </div>
+    <div class="main__title">Luki Vademecum</div>
+    <div class="main__smallTilte">Documentation</div> -->
+    <div class="nav">
+        <div class="nav__logo">Luki Vademecum</div>
+        <div class="nav__links">
+            <div class="nav__link">
+                <div class="nav__linkName">JS Case</div>
+                <div class="nav__linkDropdown">
+                    <a href="#convertTextToArray" class="nav__smallLink">Array Converter</a>
+                    <a href="#customEvent" class="nav__smallLink">Add costum event at JS</a>
+                    <a href="#findItemAtArray" class="nav__smallLink">Find item at array</a>
+                    <a href="#containFunction" class="nav__smallLink">contain and closest function</a>
+                    <a href="#intersectionObserver" class="nav__smallLink">Intersection observer</a>
+                    <a href="#escapeNewLine" class="nav__smallLink">Escape newline breaks</a>
+                    <a href="#useStrict" class="nav__smallLink">Escape newline breaks</a>
+                    <a href="#es6Tips" class="nav__smallLink">Use Strict</a>
+                    <a href="#fetchcase" class="nav__smallLink">Fetch</a>
+                    <a href="#tasks" class="nav__smallLink">Tasks</a>
+                </div>
+            </div>
+            <div class="nav__link">
+                <div class="nav__linkName">CSS Case</div>
+                <div class="nav__linkDropdown">
+                    <a href="#scrolBarCss" class="nav__smallLink">ScrollBar style</a>
+                    <a href="./subpage/css.html" class="nav__smallLink">CssY</a>
+                    <a href="#scssRules" class="nav__smallLink">Scss Rules</a>
+                    <a href="#converter" class="nav__smallLink">Array Converter</a>
+                    <a href="#converter" class="nav__smallLink">Array Converter</a>
+                    <a href="#converter" class="nav__smallLink">Array Converter</a>
+                </div>
+            </div>
+            <div class="nav__link">
+                <div class="nav__linkName">Documentation</div>
+                <div class="nav__linkDropdown">
+                    <a href="https://bitbucket.org/chesterxp/gulp_guide/src/master/" class="nav__smallLink">Gulp - github</a>
+                    <a href="https://bitbucket.org/chesterxp/markdown-course/src/master/" class="nav__smallLink">Markdown Course - github</a>
+                    <a href="https://app.netlify.com/teams/chesterxp-clnulhi/overview" class="nav__smallLink">Netlify</a>
+                    <a href="https://github.com/chesterxp/MojeVademecum" class="nav__smallLink">Vademecum GITHUB</a>
+                    <a href="#converter" class="nav__smallLink">Array Converter</a>
+                </div>
+            </div>
+            <div class="nav__link">
+                <div class="nav__linkName">Games</div>
+                <div class="nav__linkDropdown">
+                    <a href="https://chesterxp.netlify.app/dist/hitthemole" class="nav__smallLink">Hit the mole</a>
+                    <a href="https://chesterxp.netlify.app/dist/memory.html" class="nav__smallLink">Memory</a>
+                    <a href="#converter" class="nav__smallLink">Array Converter</a>
+                    <a href="#converter" class="nav__smallLink">Array Converter</a>
+                    <a href="#converter" class="nav__smallLink">Array Converter</a>
+                </div>
+            </div>
+            <div class="nav__link">
+                <div class="nav__linkName">Apps</div>
+                <div class="nav__linkDropdown">
+                    <a href="https://anetapp.netlify.app/?_ga=2.148373171.525437620.1528555382-1000584420.1526734287" class="nav__smallLink">Hity z satelity</a>
+                    <a href="./subpage/image_filter.html" class="nav__smallLink">Image Filter</a>
+                    <a href="./subpage/breaking_news.html" class="nav__smallLink">Breaking NEws</a>
+                    <a href="./subpage/web_storage.html" class="nav__smallLink">Web storage</a>
+                    <a href="./subpage/geo_api.html" class="nav__smallLink">GeoAPI</a>
+                </div>
+            </div>
+            <div class="nav__link">
+                <div class="nav__linkName">Website</div>
+                <div class="nav__linkDropdown">
+                    <a href="https://lukasz.netlify.app/" class="nav__smallLink">Moje Portfolio</a>
+                    <a href="#converter" class="nav__smallLink">Array Converter</a>
+                    <a href="#converter" class="nav__smallLink">Array Converter</a>
+                    <a href="#converter" class="nav__smallLink">Array Converter</a>
+                    <a href="#converter" class="nav__smallLink">Array Converter</a>
+                </div>
+            </div>
+            <!-- <div class="nav__link">
+                <div class="nav__linkName">Website2</div>
+            </div> -->
+        </div>
+    </div>
 
-        <h1>Moje Vademecum z Frontu !</h1>
+    <div class="case ab" id="animateBackground">
+        <div class="ab__background"></div>
+        <div class="ab__box">
+            <div class="ab__logo">Luki Vademecum</div>
+            <!-- <div class="ab__menu">
+                <div class="ab__menu1">Work</div>
+                <div class="ab__menu2">About</div>
+                <div class="ab__menu3">Contact</div>
+            </div> -->
+            <div class="ab__word">Luki    Vademecum</div>
+            <div class="ab__card"></div>
+            <div class="ab__btn" data-active="true">OFF/ON</div>
+        </div>
+    </div>
 
-        <section class="use-strict">
-            <h3 class="h3_line">Co daje Use strict</h3>
+    <div class="case convertTextToArray" id="convertTextToArray">
+        <div class="case__title">Convert Text to Array</div>
+        <div class="case__box">
+            <div class="case__code">
+                <iframe
+                src="https://carbon.now.sh/embed?bg=rgba(22%2C22%2C22%2C1)&t=base16-dark&wt=bw&l=auto&ds=false&dsyoff=0px&dsblur=0px&wc=false&wa=true&pv=0px&ph=0px&ln=false&fl=1&fm=Hack&fs=13px&lh=150%25&si=false&es=2x&wm=false&code=const%2520inputTextBox%2520%253D%2520document.querySelector(%27.inputText%27)%250Aconst%2520convertResult%2520%253D%2520document.querySelector(%27.convertResult%27)%250Aconst%2520btn%2520%253D%2520document.querySelector(%27.btn%27)%250Aconst%2520text%2520%253D%2520document.querySelector(%27.text%27)%250A%250Abtn.addEventListener(%27click%27%252C%2520showText)%250A%250A%250Afunction%2520showText(e)%2520%257B%250A%2520%2520const%2520inputText%2520%253D%2520inputTextBox.value.split(%252F%255Cn%252Fg)%250A%2520%2520convertResult.innerHTML%2520%253D%2520JSON.stringify(inputText)%250A%257D%250A%250AconvertResult.addEventListener(%27click%27%252C%2520function%2520()%2520%257B%250A%2520%2520var%2520range%2520%253D%2520document.createRange()%250A%2520%2520var%2520selection%2520%253D%2520window.getSelection()%250A%2520%2520text.innerHTML%2520%253D%2520selection%250A%2520%2520range.selectNodeContents(convertResult)%250A%2520%2520selection.removeAllRanges()%250A%2520%2520selection.addRange(range)%250A%257D)"
+                style="width: 527px; height: 447px; border:0; transform: scale(1); overflow:hidden;"
+                sandbox="allow-scripts allow-same-origin">
+              </iframe>
+            </div>
+            <div class="case__smallTitle">Example</div>
+            <div class="case__example">
+                <textarea class="convert__inputText" name="" id="" cols="30" rows="10" value=""></textarea>
+                <div class="convert__btn">Make list</div>
+                <div class="convert__result"></div>
+                <div class="convert__text"></div>
+                <!-- <div class="convertTextToArray"></div> -->
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="case" id="customEvent">
+        <div class="case__title">Add costum event at JS</div>
+        <div class="case__box">
+            <iframe
+                    src="https://carbon.now.sh/embed?bg=rgba(22%2C22%2C22%2C1)&t=base16-dark&wt=bw&l=auto&ds=false&dsyoff=0px&dsblur=0px&wc=false&wa=false&pv=0px&ph=0px&ln=false&fl=1&fm=Hack&fs=13px&lh=150%25&si=false&es=2x&wm=false&code=%252F%252Fcreate%2520and%2520send%2520event%250Aconst%2520lukiOBJ%2520%253D%2520%2520%257B%250A%2520%2520%2520%2520name%253A%2520%27luki%27%252C%250A%2520%2520%2520%2520age%253A%252030%252C%250A%2520%2520%2520%2520hobby%253A%2520%255B%27cars%27%252C%27js%27%252C%2520%27games%27%255D%252C%250A%2520%2520%2520%2520married%253A%2520true%250A%257D%250Afunction%2520sendEventWithData()%257B%250A%2520%2520%2520%2520console.log(%27Create%2520event%27)%250A%2520%2520%2520%2520var%2520event%2520%253D%2520new%2520CustomEvent(%2522lukiEvent%2522%252C%2520%257B%2520%2522detail%2522%253A%2520lukiOBJ%2520%257D)%253B%250A%2520%2520%2520%2520console.log(%27Send%2520Event%27)%250A%2520%2520%2520%2520document.dispatchEvent(event)%253B%250A%257D%250A%250A%252F%252Fwhen%2520event%2520come%250Afunction%2520runFunctionaAfterReceivingEvent()%257B%250A%2520%2520%2520%2520document.addEventListener(%2522lukiEvent%2522%252C%2520function(e)%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520const%2520detailOfEvent%2520%253D%2520e.detail%253B%250A%250A%2520%2520%2520%2520%2520%2520%2520%2520if(detailOfEvent)%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520console.log(detailOfEvent)%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520if(detailOfEvent.hobby)%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520const%2520hobby%2520%253D%2520getHobby(detailOfEvent)%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520changeResult(hobby%252C%2520%27orange%27)%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%257D)%253B%250A%257D%250A%250A%252F%252Ftypical%2520function%250Afunction%2520getHobby(data)%257B%253B%250A%2520%2520%2520%2520const%2520hobby%2520%253D%2520data.hobby.join(%27%252C%2520%27)%253B%250A%2520%2520%2520%2520return%2520%2560Luki%2520hobbys%27%2520%253A%2520%2524%257Bhobby%257D.%2560%253B%250A%257D%250Afunction%2520changeResult(text%252C%2520color)%257B%250A%2520%2520%2520%2520const%2520result%2520%253D%2520document.querySelector(%27.result__value%27)%253B%250A%2520%2520%2520%2520result.innerText%2520%253D%2520text%253B%250A%2520%2520%2520%2520result.style.backgroundColor%2520%253D%2520color%253B%250A%257D%250Afunction%2520sendDelayEvent()%257B%250A%2520%2520%2520%2520setTimeout(sendEventWithData%252C%25203000)%253B%250A%257D%250A%250AsendDelayEvent()%253B%250ArunFunctionaAfterReceivingEvent()%253B"
+                    style="width: 800px; height: 903px; border:0; transform: scale(1); overflow:hidden;"
+                    sandbox="allow-scripts allow-same-origin">
+            </iframe>
+        </div>
+    </div>
+
+    <div class="case" id="findItemAtArray">
+        <div class="case__title">Find item at array</div>
+        <div class="case__box">
+            <iframe
+                        src="https://carbon.now.sh/embed?bg=rgba(22%2C22%2C22%2C1)&t=base16-dark&wt=bw&l=auto&ds=false&dsyoff=0px&dsblur=0px&wc=false&wa=false&pv=0px&ph=0px&ln=false&fl=1&fm=Hack&fs=13px&lh=150%25&si=false&es=2x&wm=false&code=var%2520wizards%2520%253D%2520%255B%250A%2509%257B%250A%2509%2509name%253A%2520%27Saruman%27%252C%250A%2509%2509color%253A%2520%27white%27%250A%2509%257D%252C%250A%2509%257B%250A%2509%2509name%253A%2520%27Gandalf%27%252C%250A%2509%2509color%253A%2520%27gray%27%250A%2509%257D%252C%250A%2509%257B%250A%2509%2509name%253A%2520%27Radagast%27%252C%250A%2509%2509color%253A%2520%27brown%27%250A%2509%257D%252C%250A%2509%257B%250A%2509%2509name%253A%2520%27Alatar%27%252C%250A%2509%2509color%253A%2520%27blue%27%250A%2509%257D%252C%250A%2509%257B%250A%2509%2509name%253A%2520%27Pallando%27%252C%250A%2509%2509color%253A%2520%27blue%27%250A%2509%257D%250A%255D%253B%250A%250A%250Avar%2520blueWizards%2520%253D%2520wizards.filter(function%2520(item)%2520%257B%250A%2509return%2520item.color%2520%253D%253D%253D%2520%27blue%27%253B%250A%257D)%253B%250A%250Aconsole.log(%27blueWizards%253A%2520%27%252C%2520blueWizards)%253B"
+                        style="width: 800px; height: 599px; border:0; transform: scale(1); overflow:hidden;"
+                        sandbox="allow-scripts allow-same-origin">
+                    </iframe>
+        </div>
+    </div>
+
+    <div class="case" id="containFunction">
+        <div class="case__title">contain and closest function</div>
+        <div class="case__box">
+            <div class="contain__box">
+                <main>
+                    <h1>MAIN: Hi, friend</h1>
+                    <p>MAIN:How are you today?</p>
+                    <ul id="list">
+                        <li>List:Eat</li>
+                        <li>List:Sleep</li>
+                        <li>List:Be Merry</li>
+                    </ul>
+                </main>
+                <footer>
+                    <p id="copyright">FOOTER: Copyright Me.</p>
+                </footer>
+                
+            </div>
+            <div class="case__btn conatinClosest">Show result (console log)</div>
+        </div>
+    </div>
+
+    <div class="case" id="intersectionObserver">
+        <div class="case__title">Intersection observer</div>
+        <div class="case__box">
+            <iframe
+                    src="https://carbon.now.sh/embed?bg=rgba(22%2C22%2C22%2C1)&t=base16-dark&wt=bw&l=auto&ds=false&dsyoff=0px&dsblur=0px&wc=false&wa=true&pv=0px&ph=0px&ln=false&fl=1&fm=Hack&fs=13px&lh=150%25&si=false&es=2x&wm=false&code=function%2520myObserver(targets%252C%2520rootMargin%2520%253D%2520%271px%27)%2520%257B%250A%2520%2520var%2520observer%2520%253D%2520new%2520IntersectionObserver(function%2520(entries)%2520%257B%250A%2520%2520%2520%2520%2520%2520entries.forEach(function%2520(entry)%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520if%2520(entry.intersectionRatio%2520%253E%25200)%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520console.log(%27viewPortIn%27)%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520observer.unobserve(entry.target)%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520else%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520console.log(%27viewPortOut%27)%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%257D)%253B%250A%2520%2520%257D%252C%2520%257B%250A%2520%2520%2520%2520%2520%2520rootMargin%253A%2520rootMargin%252C%250A%2520%2520%2520%2520%2520%2520threshold%253A%25200.01%250A%2520%2520%257D)%253B%250A%250A%2520%2520targets.forEach(function%2520(el)%2520%257B%250A%2520%2520%2520%2520%2520%2520observer.observe(el)%253B%250A%2520%2520%257D)%253B%250A%257D"
+                    style="width: 527px; height: 428px; border:0; transform: scale(1); overflow:hidden;"
+                    sandbox="allow-scripts allow-same-origin">
+                    </iframe>
+        </div>
+    </div>
+
+    <div class="case" id="escapeNewLine">
+        <div class="case__title">Escape newline breaks</div>
+        <div class="case__box">
+            <div class="newLineBreaks"></div>
+            <div class="case__btn newLineBreaksBtn">Show result (console log)</div>
+        </div>
+    </div>
+
+    <div class="case" id="useStrict">
+        <div class="case__title">Use Strict</div>
+        <div class="case__box">
             <pre>
+                1.	Usunięcie właściwości WITH
+                2.	nie można wyświetlić wartości zmiennej jesli nie jest ona zaadeklarowana:
+                    a.	zmienna = "Samochód"; console.log(zmienna) //ReferenceError: zmienna is not defined
+                3.	ograniczenie możliwości nadpisania zmiennych globalnych
+                    a.	NaN = 3; // TypeError: Cannot assign to read only property 'NaN' of object '#<Window>'
+                    b.	 Infinity = 3; // TypeError:
+                4.	ograniczenie możliwości zadeklarowania tej samej zmiennej
+                    var test = {
+                            a: 1,
+                            b: 2,
+                            a: 3 // error
+                        };
+                5.	ograniczenie możliwości zadeklarowania tej samej zmiennej w funkcji
+                a.	function overrideParameters(a, b, a) { // SyntaxError: Duplicate parameter name not allowed in this context
+                6.	Nie można również nadpisywać zmiennej „arguments”. Taka próba prowadzi do błędu
+                    function argumentsExample1(a, b, c) {
+                        "use strict";
+                        arguments = 1; //  SyntaxError: Unexpected eval or arguments in strict mode
+                    }
+                7.	nie można nadpisać zmiennej "arguments:
+                    argumentsExample2(1, 2, 3);
+                    function argumentsExample2(a, b, c) {
+                        "use strict";
+                        a = -1;
+                        console.log(arguments); // 1, 2, 3
+                    }
+                8.	Tryb ścisły nie pozwala używać słów, które będą (lub już są) uznane za słowa kluczowe standardu. Do tych słów należą:
+                    a.	implements
+                    b.	interface
+                    c.	let
+                    d.	package
+                    e.	private
+                    f.	protected
+                    g.	public
+                    h.	static
+                    i.	yield
+                9.	kasowanie zmiennej lub funkcji za pomocą „delete”
+                10.	używanie składni ósemkowej (var x = 010)
+                11.	nadpisywanie właściwości tylko do odczytu
+                12.	użycie zmiennej „eval” jako zmiennej (var eval = „test”)
+                13.	Na koniec warto podać jakie wersje wspierają tryb ścisły:
+                    a.	IE od wersji 10.
+                    b.	Firefox od wersji 4.
+                    c.	Chrome od wersji 13.
+                    d.	Safari od wersji 5.1.
+                    e.	Opera od wersji 12.
+            </pre>
+        </div>
+    </div>
 
-        1.	Usunięcie właściwości WITH
-        2.	nie można wyświetlić wartości zmiennej jesli nie jest ona zaadeklarowana:
-            a.	zmienna = "Samochód"; console.log(zmienna) //ReferenceError: zmienna is not defined
-        3.	ograniczenie możliwości nadpisania zmiennych globalnych
-            a.	NaN = 3; // TypeError: Cannot assign to read only property 'NaN' of object '#<Window>'
-            b.	 Infinity = 3; // TypeError:
-        4.	ograniczenie możliwości zadeklarowania tej samej zmiennej
-            var test = {
-                    a: 1,
-                    b: 2,
-                    a: 3 // error
-                };
-        5.	ograniczenie możliwości zadeklarowania tej samej zmiennej w funkcji
-        a.	function overrideParameters(a, b, a) { // SyntaxError: Duplicate parameter name not allowed in this context
-        6.	Nie można również nadpisywać zmiennej „arguments”. Taka próba prowadzi do błędu
-            function argumentsExample1(a, b, c) {
-                "use strict";
-                arguments = 1; //  SyntaxError: Unexpected eval or arguments in strict mode
-            }
-        7.	nie można nadpisać zmiennej "arguments:
-            argumentsExample2(1, 2, 3);
-            function argumentsExample2(a, b, c) {
-                "use strict";
-                a = -1;
-                console.log(arguments); // 1, 2, 3
-            }
-        8.	Tryb ścisły nie pozwala używać słów, które będą (lub już są) uznane za słowa kluczowe standardu. Do tych słów należą:
-            a.	implements
-            b.	interface
-            c.	let
-            d.	package
-            e.	private
-            f.	protected
-            g.	public
-            h.	static
-            i.	yield
-        9.	kasowanie zmiennej lub funkcji za pomocą „delete”
-        10.	używanie składni ósemkowej (var x = 010)
-        11.	nadpisywanie właściwości tylko do odczytu
-        12.	użycie zmiennej „eval” jako zmiennej (var eval = „test”)
-        13.	Na koniec warto podać jakie wersje wspierają tryb ścisły:
-            a.	IE od wersji 10.
-            b.	Firefox od wersji 4.
-            c.	Chrome od wersji 13.
-            d.	Safari od wersji 5.1.
-            e.	Opera od wersji 12.
-    </pre>
-        </section>
-
-        <section class="es6">
-            <h3 class="h3_line">ES6</h3>
+    <div class="case" id="es6Tips">
+        <div class="case__title">ES6</div>
+        <div class="case__box">
             <pre>
-            1.	Wykorzystanie let, const. Działają tylko wewnątrz bloku a nie poza nim.
-            2.	template string. Mozliwośc zapisywania ciągów znaków w róznych liniach za pomocą: ``
-            3.	dodstanie sie do elementów tablicy za pomoca skróconego zapisu ...arr(3 kropki i nazwa tablicy)
-            4.	wypisanie pozostałych argumentów z funkcji:
+                1.	Wykorzystanie let, const. Działają tylko wewnątrz bloku a nie poza nim.
+                2.	template string. Mozliwośc zapisywania ciągów znaków w róznych liniach za pomocą: ``
+                3.	dodstanie sie do elementów tablicy za pomoca skróconego zapisu ...arr(3 kropki i nazwa tablicy)
+                4.	wypisanie pozostałych argumentów z funkcji:
                     function argumenty(a1,a2, ...rest){//1,2,3,4,5,6,7
                         console.log('pierwsze dwa to: ',a1, a2);//1,2
                         console.log('pozostałe argumenty to: ', ...rest);//3,4,5,6,7
                     }
-            5.	Nowa forma zapisywania funkcji
+                5.	Nowa forma zapisywania funkcji
                     a.	old -> function wypisz(wyraz){console.log('Twój wyraz to:', wyraz);}
                     b.	new -> var wypisz2 = (wyraz) => {console.log('Twój wyraz to:', wyraz);}
-            6.	Możliwośc przypisywania wartości domyślnej w funkcji
+                6.	Możliwośc przypisywania wartości domyślnej w funkcji
                     function def(parm = "Auto"){
                         console.log(parm);
                     }
                     def()//auto
                     def('dom');//dom
             </pre>
-        </section>
+        </div>
+    </div>
 
-        <section class="scrollBarCSS">
-            <h3 class="h3_line">ScrollBar</h3>
-
+    <div class="case" id="scrolBarCss">
+        <div class="case__title">ScrollBar style</div>
+        <div class="case__box">
             <pre>
-            //szerokość i wysokość scrolbarów
-            body::-webkit-scrollbar {
-                width: 13px;
-                height: 13px;
-            }
+                1.	Wykorzystanie let, const. Działają tylko wewnątrz bloku a nie poza nim.
+                2.	template string. Mozliwośc zapisywania ciągów znaków w róznych liniach za pomocą: ``
+                3.	dodstanie sie do elementów tablicy za pomoca skróconego zapisu ...arr(3 kropki i nazwa tablicy)
+                4.	wypisanie pozostałych argumentów z funkcji:
+                    function argumenty(a1,a2, ...rest){//1,2,3,4,5,6,7
+                        console.log('pierwsze dwa to: ',a1, a2);//1,2
+                        console.log('pozostałe argumenty to: ', ...rest);//3,4,5,6,7
+                    }
+                5.	Nowa forma zapisywania funkcji
+                    a.	old -> function wypisz(wyraz){console.log('Twój wyraz to:', wyraz);}
+                    b.	new -> var wypisz2 = (wyraz) => {console.log('Twój wyraz to:', wyraz);}
+                6.	Możliwośc przypisywania wartości domyślnej w funkcji
+                    function def(parm = "Auto"){
+                        console.log(parm);
+                    }
+                    def()//auto
+                    def('dom');//dom
+                </pre>
+        </div>
+    </div>
 
-            //kolor paska
-            body::-webkit-scrollbar-track {
-                background-color: #2F3336;
-                -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.8);
-            }
-
-            //kolor suwaka
-            body::-webkit-scrollbar-thumb {
-                background-color: #1c74b2; // border-radius: 20px;
-                -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.8);
-            }
-
-            //kolor wypełnienia cornera
-            body::-webkit-scrollbar-corner {
-                background: #2F3336 url('../scroll/corner.png') 2px 2px no-repeat;
-            }
-
-            //strzałki góra dół lewa prawa
-            body::-webkit-scrollbar-button:vertical:decrement {
-                background: #2F3336 url(../scroll/up.png) 2px 2px no-repeat;
-                -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.8);
-            }
-
-            body::-webkit-scrollbar-button:vertical:increment {
-                background: #2F3336 url(../scroll/down.png) 2px 3px no-repeat;
-                -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.8);
-            }
-
-            body::-webkit-scrollbar-button:horizontal:decrement {
-                background: #2F3336 url(../scroll/left.png) 1px 2px no-repeat;
-                -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.8);
-            }
-
-            body::-webkit-scrollbar-button:horizontal:increment {
-                background: #2F3336 url(../scroll/right.png) 3px 2px no-repeat;
-                -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.8);
-            }
-            </pre>
-
-            <p>Źródła</p>
-            <ul>
-                <li>style scroli po bokach https://codepen.io/devstreak/pen/dMYgeO</li>
-                <li>opis scroli https://css-tricks.com/custom-scrollbars-in-webkit/</li>
-                <li>wykorzystanie scroli https://codepen.io/xichen/pen/mOyKqz </li>
-                <li>przykłady playerów http://freefrontend.com/css-music-players/</li>
-            </ul>
-        </section>
-
-        <section class="sass">
-            <div class="h3_line">SASS</div>
+    <div class="case" id="scssRules">
+        <div class="case__title">Scss</div>
+        <div class="case__box">
             <pre>
-                    Zagnieżdżanie
-                    .container {
-                    width: 100%;
-                    height: auto;
+                Zagnieżdżanie
+                .container {
+                width: 100%;
+                height: auto;
+                text-align: center;
+                .foto{
+                    margin-right: auto;
+                    margin-left: auto;
+                    background: #4ccc47;
+                    width: 90%;
+                    height: auto;}}
+                Zmienne
+                w pliku zmienne
+                $link-color:#e05555;
+                $link-size:70px;
+                $hover-color:#0d1545;
+                $hover-background:#15a815;
+
+                wykorzystanie:
+                .link {
+                    clear:both;
+                    background: #293fbc;
+                    display: block;
+                    color: aliceblue;
+                    width: 300px;
+                    border-radius: 5px;
+                    padding: 20px;
+                    font-size: $link-size;
+                    margin-top: 10px;
                     text-align: center;
-                    .foto{
-                        margin-right: auto;
-                        margin-left: auto;
-                        background: #4ccc47;
-                        width: 90%;
-                        height: auto;}}
-                    Zmienne
-                    w pliku zmienne
-                    $link-color:#e05555;
-                    $link-size:70px;
-                    $hover-color:#0d1545;
-                    $hover-background:#15a815;
+                &:hover{
+                    background: $hover-background;
+                    color:$hover-color;
+                    border:2px solid #293fbc;
 
-                    wykorzystanie:
-                    .link {
-                        clear:both;
-                        background: #293fbc;
-                        display: block;
-                        color: aliceblue;
-                        width: 300px;
-                        border-radius: 5px;
-                        padding: 20px;
-                        font-size: $link-size;
-                        margin-top: 10px;
-                        text-align: center;
-                    &:hover{
-                        background: $hover-background;
-                        color:$hover-color;
-                        border:2px solid #293fbc;
+                }
+                }
+                Mixiny
 
-                    }
-                    }
-                    Mixiny
+                @mixin button($width, $height, $background, $color, $border-radius) {
+                    width: $width;
+                    height: $height;
+                    line-height: $height;
+                    text-align: center;
+                    background: $background;
+                    color: $color;
+                    border-radius: $border-radius;
+                }
+                zastosowanie
 
-                    @mixin button($width, $height, $background, $color, $border-radius) {
-                      width: $width;
-                      height: $height;
-                      line-height: $height;
-                      text-align: center;
-                      background: $background;
-                      color: $color;
-                      border-radius: $border-radius;
-                    }
-                    zastosowanie
+                button {
+                    @include button(150px, 50px, #000, #fff, 8px);
+                }
+                Operacje matematyczne
 
-                    button {
-                      @include button(150px, 50px, #000, #fff, 8px);
-                    }
-                    Operacje matematyczne
+                w sass
+                div {
+                    height: (50px + 50);
+                    width: (200px - 50);
+                    margin-top: (10px * 5);
+                    padding-bottom: (50px / 5);
+                    border-radius: (101px % 51);
+                }
+                w css
+                div {
+                    height: 100px;
+                    width: 150px ;
+                    margin-top: 50px
+                    padding-bottom: 10px;
+                    border-radius:50px;
+                }
+                Możemy też wykonywać te operacje na kolorach:
 
-                    w sass
-                    div {
-                      height: (50px + 50);
-                      width: (200px - 50);
-                      margin-top: (10px * 5);
-                      padding-bottom: (50px / 5);
-                      border-radius: (101px % 51);
-                    }
-                    w css
-                    div {
-                      height: 100px;
-                      width: 150px ;
-                      margin-top: 50px
-                      padding-bottom: 10px;
-                      border-radius:50px;
-                    }
-                    Możemy też wykonywać te operacje na kolorach:
+                div {background: (#c4da1a / 2);}
+                Powstały kod CSS:
+                div { background: #626d0d; }
+                Pętle
+                @for $i from 1 through 5 {
+                    .div-#{$i} { background: url('images/image-#{$i}.jpg');  } }}
+                w css
+                .div-1 { background: url('images/image-1.jpg');}
 
-                    div {background: (#c4da1a / 2);}
-                    Powstały kod CSS:
-                    div { background: #626d0d; }
-                    Pętle
-                    @for $i from 1 through 5 {
-                     .div-#{$i} { background: url('images/image-#{$i}.jpg');  } }}
-                    w css
-                    .div-1 { background: url('images/image-1.jpg');}
+                .div-2 {  background: url('images/image-2.jpg');}
 
-                    .div-2 {  background: url('images/image-2.jpg');}
+                .div-3 {  background: url('images/image-3.jpg');}
 
-                    .div-3 {  background: url('images/image-3.jpg');}
+                .div-4 {  background: url('images/image-4.jpg');}
 
-                    .div-4 {  background: url('images/image-4.jpg');}
+                .div-5 { background: url('images/image-5.jpg');}
+                inna pętla
+                @each $element in about, portfolio, contact {
+                    .#{$element} {background-image: url('/images/#{$element}-bg.jpg');}}
+                WHILE
+                $i: 6;
+                @while $i > 0 {
+                    .size-#{$i} { font-size: 2em * $i; }
+                    $i: $i - 2;}
+                EFEKT
+                .size-6 {  font-size: 12em; }
+                .size-4 {  font-size: 8em; }
+                .size-2 { font-size: 4em; }
+                DZIEDZICZENIE
+                .input {
+                    border: 1px solid #ccc;
+                    padding: 20px;
+                    color: #000;}
+                .correct {
+                    @extend .input;
+                    border-color: green;}
+                .incorrect {
+                    @extend .input;
+                    border-color: red;}
+                Wynikowy CSS:
+                .input, .correct, .incorrect {
+                    border: 1px solid #ccc;
+                    padding: 20px;
+                    color: #000; }
+                .correct {border-color: green; }
+                .incorrect { border-color: red;
+                Lighten:
+                .before {background: #00405d;}
+                    .after {background: lighten(#00405d, 20);}
 
-                    .div-5 { background: url('images/image-5.jpg');}
-                    inna pętla
-                    @each $element in about, portfolio, contact {
-                      .#{$element} {background-image: url('/images/#{$element}-bg.jpg');}}
-                    WHILE
-                    $i: 6;
-                    @while $i > 0 {
-                      .size-#{$i} { font-size: 2em * $i; }
-                      $i: $i - 2;}
-                    EFEKT
-                    .size-6 {  font-size: 12em; }
-                    .size-4 {  font-size: 8em; }
-                    .size-2 { font-size: 4em; }
-                    DZIEDZICZENIE
-                    .input {
-                      border: 1px solid #ccc;
-                      padding: 20px;
-                      color: #000;}
-                    .correct {
-                      @extend .input;
-                      border-color: green;}
-                    .incorrect {
-                      @extend .input;
-                      border-color: red;}
-                    Wynikowy CSS:
-                    .input, .correct, .incorrect {
-                      border: 1px solid #ccc;
-                      padding: 20px;
-                      color: #000; }
-                    .correct {border-color: green; }
-                    .incorrect { border-color: red;
-                    Lighten:
-                    .before {background: #00405d;}
-                     .after {background: lighten(#00405d, 20);}
+                Darken:
+                .before2 {  background: #95cea4;}
+                    .after2 { background: darken(#95cea4, 50);}
 
-                    Darken:
-                    .before2 {  background: #95cea4;}
-                     .after2 { background: darken(#95cea4, 50);}
-
-                    Saturate:
-                    .before2 {background: #be4ad9;}
-                    .after2 {background: saturate(#be4ad9, 30);}
+                Saturate:
+                .before2 {background: #be4ad9;}
+                .after2 {background: saturate(#be4ad9, 30);}
 
 
-                    Desaturate odwrotność ww.
-
+                Desaturate odwrotność ww.
             </pre>
-        </section>
+        </div>
+    </div>
 
-        <section class="test">
-            <h3 class="h3_line">Fetch</h3>
-            <div class="acecode" ace-mode="javascript">
-            <pre>
-            //text from document
-            function getText() {
-                fetch('js/simple.txt')
-                    .then(function (res) {
-                        return res.text();
-                    })
-                    .then(function (data) {
-                        document.querySelector('.result2').innerHTML = data;
-                    })
-                    .catch(function (err) {
-                        console.log(err);
-                    })
-            }
-            //text from JSON
-            function getJson(){
-                fetch('js/users.json')
-                .then((res) => res.json())
-                .then((data) => {
-                    var output = '';
-                    data.forEach(function(user){
-                        output += '<div class="person">'+
-                        '<div class="firstName">'+user.name+'</div>'+
-                        '<div class="lastName">'+user.username+'</div>'+
-                        '<div class="email">'+user.email+'</div>'+
-                        '</div>';
-                    })
-                    document.querySelector('.result2').innerHTML = output;
-                })
-            }
-            //text from external API
-            function getAPIData() {
-                fetch('https://jsonplaceholder.typicode.com/posts')
-                    .then(function (res) {
-                        return res.json();
-                    })
-                    .then(function (data) {
-                        console.log(data);
-                    })
-            }
-            //send text using fetch
-            function addPost(e) {
-                e.preventDefault();
-                let title = document.getElementById('text').value;
-                let body = document.getElementById('textBody').value;
+    <div class="case" id="fetchcase">
+        <div class="case__title">fetch</div>
+        <div class="case__box">
+            <iframe
+                    src="https://carbon.now.sh/embed?bg=rgba(22%2C22%2C22%2C1)&t=base16-dark&wt=bw&l=auto&ds=false&dsyoff=0px&dsblur=0px&wc=false&wa=false&pv=0px&ph=0px&ln=false&fl=1&fm=Hack&fs=13px&lh=150%25&si=false&es=2x&wm=false&code=%252F%252Ftext%2520from%2520document%250Afunction%2520getText()%2520%257B%250A%2520%2520%2520%2520fetch(%27js%252Fsimple.txt%27)%250A%2520%2520%2520%2520%2520%2520%2520%2520.then(function%2520(res)%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520return%2520res.text()%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D)%250A%2520%2520%2520%2520%2520%2520%2520%2520.then(function%2520(data)%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520document.querySelector(%27.result2%27).innerHTML%2520%253D%2520data%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D)%250A%2520%2520%2520%2520%2520%2520%2520%2520.catch(function%2520(err)%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520console.log(err)%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D)%250A%257D%250A%252F%252Ftext%2520from%2520JSON%250Afunction%2520getJson()%257B%250A%2520%2520%2520%2520fetch(%27js%252Fusers.json%27)%250A%2520%2520%2520%2520.then((res)%2520%253D%253E%2520res.json())%250A%2520%2520%2520%2520.then((data)%2520%253D%253E%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520var%2520output%2520%253D%2520%27%27%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520data.forEach(function(user)%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520output%2520%252B%253D%2520%27%253Cdiv%2520class%253D%2522person%2522%253E%27%252B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%27%253Cdiv%2520class%253D%2522firstName%2522%253E%27%252Buser.name%252B%27%253C%252Fdiv%253E%27%252B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%27%253Cdiv%2520class%253D%2522lastName%2522%253E%27%252Buser.username%252B%27%253C%252Fdiv%253E%27%252B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%27%253Cdiv%2520class%253D%2522email%2522%253E%27%252Buser.email%252B%27%253C%252Fdiv%253E%27%252B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%27%253C%252Fdiv%253E%27%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D)%250A%2520%2520%2520%2520%2520%2520%2520%2520document.querySelector(%27.result2%27).innerHTML%2520%253D%2520output%253B%250A%2520%2520%2520%2520%257D)%250A%257D%250A%252F%252Ftext%2520from%2520external%2520API%250Afunction%2520getAPIData()%2520%257B%250A%2520%2520%2520%2520fetch(%27https%253A%252F%252Fjsonplaceholder.typicode.com%252Fposts%27)%250A%2520%2520%2520%2520%2520%2520%2520%2520.then(function%2520(res)%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520return%2520res.json()%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D)%250A%2520%2520%2520%2520%2520%2520%2520%2520.then(function%2520(data)%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520console.log(data)%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D)%250A%257D%250A%252F%252Fsend%2520text%2520using%2520fetch%250Afunction%2520addPost(e)%2520%257B%250A%2520%2520%2520%2520e.preventDefault()%253B%250A%2520%2520%2520%2520let%2520title%2520%253D%2520document.getElementById(%27text%27).value%253B%250A%2520%2520%2520%2520let%2520body%2520%253D%2520document.getElementById(%27textBody%27).value%253B%250A%250A%2520%2520%2520%2520fetch(%27https%253A%252F%252Fjsonplaceholder.typicode.com%252Fposts%27%252C%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520method%253A%2520%27POST%27%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520headers%253A%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%27Accept%27%253A%2520%27application%252Fjson%252C%2520text%252Fplain%252C%2520*%252F*%27%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2522Content-type%2522%253A%2520%27application%252Fjson%27%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520body%253A%2520JSON.stringify(%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520title%253A%2520title%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520body%253A%2520body%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D)%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D)%250A%2520%2520%2520%2520%2520%2520%2520%2520.then(function%2520(res)%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520return%2520res.json()%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D)%250A%2520%2520%2520%2520%2520%2520%2520%2520.then(function%2520(data)%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520console.log(data)%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D)%250A%257D"
+                    style="width: 800px; height: 1245px; border:0; transform: scale(1); overflow:hidden;"
+                    sandbox="allow-scripts allow-same-origin">
+                    </iframe>
+        </div>
+    </div>
 
-                fetch('https://jsonplaceholder.typicode.com/posts', {
-                        method: 'POST',
-                        headers: {
-                            'Accept': 'application/json, text/plain, */*',
-                            "Content-type": 'application/json'
-                        },
-                        body: JSON.stringify({
-                            title: title,
-                            body: body
-                        })
-                    })
-                    .then(function (res) {
-                        return res.json();
-                    })
-                    .then(function (data) {
-                        console.log(data);
-                    })
-            }
-            </pre>
-            </div>
-        </section>
+    <div class="case" id="tasks">
+        <div class="case__title">Tasks - w pliku js tasks</div>
+        <div class="case__box">
+            <ul class="tasks__list">
+                <li class="tasks__element">Obiekty w js, kopiowanie, chaining, iterowanie, prezentacja w devtools</li>
+                <li class="tasks__element">Przezentacja tabeli + obliczniem czasu wykonania funkcji</li>
+                <li class="tasks__element">Destructuring</li>
+                <li class="tasks__element">Template-literals</li>
+                <li class="tasks__element">Spread-syntax</li>
+                <li class="tasks__element">Reduce function</li>
+                <li class="tasks__element">Import/Export</li>
+            </ul>
+        </div>
     </div>
 </body>
 
 </html>
+
+

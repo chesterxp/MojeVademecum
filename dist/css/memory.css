@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body {
+  background: #ddd;
+  padding: 20px 10px; }
+
+.memory_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
+
+.card {
+  border: 3px solid white;
+  width: 16%;
+  height: 33.3vh;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease; }
+  .card:hover {
+    opacity: 0.8; }
+  .card.red {
+    background: #e64a0d; }
+  .card.blue {
+    background: #106ca1; }
+  .card.yellow {
+    background: #ecec0d; }
+  .card.green {
+    background: #07d407; }
+  .card.pink {
+    background: #e20ebf; }
+  .card.orange {
+    background: #e4990e; }
+  .card.brown {
+    background: brown; }
+  .card.light_blue {
+    background: #00ccff; }
+  .card.violet {
+    background: #a200ff; }
+  .card.hide {
+    background: #222; }
+  .card.get {
+    background: #ddd; }
+
+@media all and (orientation: portrait) {
+  .card {
+    width: 33.3%;
+    height: 16vh; } }
